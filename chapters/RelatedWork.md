@@ -5,7 +5,7 @@
 
 # Related Work
 
-Topics:
+<!-- Topics:
 
 - Locomotion
   - Motion Sickness
@@ -16,7 +16,7 @@ Topics:
   - ASL
   - Ergonomics
   - 
-- Locomotion with Gestures
+- Locomotion with Gestures -->
 
 
 # Motion Sickness
@@ -36,9 +36,9 @@ The actual cause of cybersickness is not known and the underlying physiological 
 
 Unfortunately all three theories have low predictive power and fail to explain some key aspects of cybersickness \cite{Davis}. 
 
-To compare systems and study how a system influences participants,  
+<!-- To compare systems and study how a system influences participants,   -->
 
-
+One way to reduce cybersickness is to break the optical flow the user perceives using different kinds of techniques \cite{Bhandari}. Optical flow is a phenomenon that allows an observer to gather information about the motion of objects and give the observer a sense of presence \cite{Gibson}. 
 
 
 # Locomotion in VR
@@ -48,10 +48,39 @@ Luca et al. collected 109 different locomotion techniques from academic sources,
 
 ## Locomotion using controllers
 
+Boletsis et al. \cite{Boletsis} categorized the four prevalent locomotion techniques into:
+- Room-scale-based: uses physical movement, translates movement from the read world one to one into VR. continuos movement, unlimited range.
+- Motion-based: uses physical movement for example swinging arms or walking in place. Continuos movement, unlimited range
+- Controller-based: The uses controller input like a joystick to move. Continuos movement, unlimited range. 
+- Teleportation-based: the viewpoint is instantly moved to a new predefined location. Non-continuos, unlimited range
 
+The room-scale-based techniques are limited to the size of the tracking space so they are not flexible enough for a general use case. If the task allows it, it should however be the preferred 
+locomotion technique because it results in the best immersion while also keeping cybersickness to a minimum. 
 
+Controller-based techniques could be adapted into a hand-tracking environment, the continuos nature of the movement, without some kind of a physical representation of the movement performed by user however would make it prone to create motion sickness. 
 
+Motion-based techniques are very dynamic because of their physical nature. That makes them hard to track with current hand-tracking technology. They also made users tired the fastest. \cite{Boletsis}
 
+For those reasons the scope of this work will focus on only teleportation-based techniques to give results that as widely useable as possible and accessible to the most amount of people without inducing cybersickness.
+
+### Teleportation-based locomotion
+
+Teleportation is one of the most used locomotion techniques. Each implementation can be slightly different in the way it is integrated into the virtual environment but the core mechanic allows the user to move the viewpoint to points on the map using some ray casting system. There is usually a limit to the teleport distance and sometimes the user is only allowed to select predefined locations as targets. The technique is categorized as non-continuos movement with unlimited range. Since not only the xy coordinates of a target location can be chosen but also points at different altitudes, the method has 3 degrees of freedom. 
+
+The research from Clifton et al. shows that on average teleportation causes less cybersickness than continuos navigation, however, there were some people (38\%) that had the opposite reaction. Clifton et al. conclude that there should always be multiple locomotion methods to choose from. The researchers theorize that the cause of the cybersickness might be that some people are more sensitive to the immediate displacement used by teleportation-based locomotion. If the participants experienced the virtual environment while sitting or standing did not make a cause a meaningful change in the reported effects, only that there seams to be slightly worse cybersickness from a seated experience. \cite{Clifton}
+
+However, teleportation is also not the perfect solution:
+#### Problems:
+
+The lack of optical flow between locations is great to minimize cybersickness, but it also introduces limitations:
+
+Path integration, a process where the brain updates the current position continuously using information from different senses. Visual, vestibular and proprioceptive sensory input are continuously integrated and create a rough estimate of the distance traveled. \cite{Bhandari}
+
+Bhandari et al. found that this can be improved by allowing some optical flow between teleport points without creating higher levels of cybersickness. This can be achieved by using a technique the researchers call "Dash". It translates the user at a constant velocity from the current point to the target. This creates a short transition period that takes a maximum of 1.1 seconds over a maximum distance of 11 meters in a virtual environment at real world scale. Previous research indicates that the duration and speed do not impact the resulting effect a lot \cite{Bowman} but these values where picked after some internal testing. Using this technique users where able to move back to a starting point after teleporting away much more accurately without any landmark or context clues. \cite{Bhandari} 
+
+<!-- optical flow improved by Royden  -->
+
+An interesting problem with teleportation-based locomotion is that is was found to be the least immersive technique out of the four types categorized by Boletsis et al. \cite{Boletsis}. This could improve using hand-tracking because the users can use their own hands and that might be more immersive for some people. (maybe included in hypotheses)
 
 
 
@@ -76,7 +105,6 @@ When filtering the locomotion database from Luca et al. for techniques that are 
 - Walking stick: a gesture instantiates a walking stick, that can be used to move the user in relation to the sticks touch point on the ground. This is only a preliminary database entry though and this is not a great solution for big distances or different altitudes. 
 
 The categorizations seam to have some issues and so going through all 109 techniques, a small list of more gestures can be found:
-
 
 
 Technologies that might work using gestures:
@@ -131,6 +159,11 @@ Current technology has some major limitations when tracking hands. Hand-to-hand 
 
 
 
+<!-- 
+# Hypotheses
 
+hand-tracking teleportation is more immersive than using controllers
 
-
+# Study
+tasks for users: find elements on the map
+Fast  Motion Sickness  (FMS)  scale -->
