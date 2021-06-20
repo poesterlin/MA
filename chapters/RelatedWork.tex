@@ -214,8 +214,8 @@ The results that are relevant for this paper are:
   abort the 90 minute test). \cite{Huang}
 \item
   Finger Run: two-handed gesture for continuos movement, the only
-  resource is a video on a game development account that mostly posts
-  prototyping ideas. % TODO cite video
+  resource is a video on a game development account that mostly posts fun
+  prototyping ideas. \cite{Beauchamp}
 \item
   Walking stick: a gesture instantiates a walking stick, that can be
   used to move the user in relation to the sticks touch point on the
@@ -231,13 +231,11 @@ Technologies that might work using gestures:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  World in miniature\\
+  World in miniature: manipulate player position on a miniature version of the environment
 \item
-  TV screen\\
+  Cloudstep: miniature teleportation steps using a joystick
 \item
-  Cloudstep\\
-\item
-  Dash Pointing
+  Dash Pointing: fast, continuos step in the direction of the controller with limited field of view
 \end{itemize}
 
 Problems:
@@ -254,7 +252,6 @@ Problems:
   technology. This might improve in the future though.\\
 \item
   Hand-to-hand interaction is confusing the hand-tracking system\\
-\item
 \end{itemize}
 
 \section{Gestures}\label{gestures}
@@ -303,4 +300,31 @@ the direction that technology will go, even if it will take some time.
 That means that even if hand-to-hand interaction is not able to be
 reliably tracked currently, it could be in the future.
 
-\subsection{Ergonomics}\label{ergonomics}
+\subsection{Intuitive and comfortable gestures}\label{ergonomics}
+For the design of a hand gesture vocabulary, the first consideration might be how well the gesture can be identified. However, gestures that are easily recognized may not be intuitive and easy to perform by the user. According to Stern at al. there are three factors that all should be maximized when choosing a gesture: intuitiveness, comfort and recognition accuracy. \cite{Stern2006}
+
+Stern et al. define intuitiveness as the cognitive association between a command or intent and its physical gestural expression. Experiments that trying to find universal gestures for a virtual reality environment were also done by Pereira et al. \cite{Pereira2015}. The in the experiment 34 participants were asked to come up with gestures for common HCI tasks. This resulted in over 1300 different gestures for 34 tasks. However, only 84 gestures were chosen by 3 or more subjects and some of them for different tasks. Expecting the user to intuitively guess the same gesture that the developers of the virtual environment intended therefore seams unrealistic. Constructing a gesture that requires no introduction or tutorial is therefore also not the goal of this paper.
+
+The research of Ardito et al. also supports this. They compare trying to design universal gestures to problems that arose with visual languages in the past. They predict that trying to use the same gesture vocabulary over a range of applications and devices is likely to fail. \cite{Ardito2014}
+
+
+As a measure for comfort, Kölsch et al. propose a method that distinguishes between a pose of some joint or body part and the user compensating using other joints to relieve strain. A compensation for a pose that requires the users head to be tilted onto its side might be to keep the head upright relative to the body but bend the torso to the side. To find the optimal comfort zone of a posture, Kölsch et al. look how users compensate or if they execute the pose without compensating. \cite{Koelsch}
+
+There are also other methods that rely on biomechanical models and physics simulations to measure how comfortable a gesture is but they are prone to errors \cite{Stern2006}.
+
+Another source of knowledge to source information from regarding gestures are sign language interpreters. They might spend more than 20 h per week signing, however, they also often suffer from hand pain and fatigue while gesturing for long sessions. This would also be a risk for prolonged sessions in virtual reality that is using hand-tracking gestures. Rempel et al. conducted a study with experienced sign language interpreters to find the discomfort level associated with signing selected hand postures, motions and characters \cite{Rempel2014}. 
+
+Rempel et al. collected findings and summarized:
+\begin{itemize}
+  \item Hands should be near the midline of the body and not further apart than the shoulders. They should be near the height of the elbows and close to the lower chest, so that the shoulder muscles are not tense. 
+  \item Sustained elbow flexion of more than 90 degrees should be avoided.
+  \item The most comfortable postures were between neutral and 45 degrees of pronation (palms rotated toward ground). Repeated full rotations to palm up (supination) or palm down (pronation) should be avoided.
+  \item Gestures that included movement of the elbow or shoulder were more comfortable than gestures with just finger movements.
+  \item The more comfortable gesture motions were up-down hand movements performed with motion at the elbows or side-to-side hand movements with motion at the shoulders. 
+  \item the most comfortable hand gestures were with the wrists straight and the fingers slightly flexed or in a loose fist.
+  \item The least comfortable gestures were those involving wrist flexion; discordant adjacent fingers; or fingers extended.
+  \item The position of the thumb did not appear to have a large influence on comfort.
+\end{itemize}
+
+
+
