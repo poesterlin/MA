@@ -1,3 +1,7 @@
+% Introduction
+% TODO: why sections are chosen
+
+
 \section{Motion Sickness}\label{motion-sickness}
 
 The phenomenon known today as motion sickness predates modern technology
@@ -12,25 +16,24 @@ be healthy when they reached their destination
 \cite{Johnson}. After the invention of the first flight
 simulator, the term simulator sickness was coined. Simulator sickness is
 a form of motion sickness that can occur when training pilots in
-simulator \cite{Johnson}. With the rise of head mounted
+simulators \cite{Johnson}. With the rise of head mounted
 displays and VR technology, motion sickness got another subcategory:
 virtual reality sickness, also known as cybersickness. It is distinct
-from simulator sickness in that the symptoms are not as much related to
+from simulator sickness because the symptoms are not as much related to
 the Oculomotor system (for example eyestrain, blurred vision, etc) but
 rather disorienting. The severity was found to be about 3 times greater
 than simulator sickness. This might be because the VR systems are more
 immersive than a flight simulator that relies on traditional displays
 \cite{Stanney}.\\Because cybersickness and simulator
 sickness are different, there needs to be a separate evaluation method
-for the two phenomena. According to Stone et al. this is because the
+for the two phenomena. According to Stone et al. \cite{Stone} this is because the
 weighted scale of the simulator sickness questionnaire does not
 translate well to the VR environment. This is improved with a new
-weighting scale proposed by Stone et al. but a new questionnaire
+weighting scale proposed by Stone et al. \cite{Stone} but a new questionnaire
 specifically created for cybersickness generates the best results.
 However the simulator sickness questionnaire is often used in reached
 anyway. This only has the benefit that the results are easy to compare
 but there are significant tradeoffs in regards to accuracy.
-\cite{Stone}
 
 \subsection{Cybersickness}\label{cybersickness}
 
@@ -42,10 +45,9 @@ be taken into account when developing VR systems.
 
 % TODO: indent direct quote
 The actual cause of cybersickness is not
-known and the underlying physiological responses uncertain. The three
+known and the underlying physiological responses uncertain. According to Davis et al. \cite{Davis} The three
 most prominent theories for the cause of cybersickness are poison
-theory, postural instability theory and sensory conflict theory
-\cite{Davis}.
+theory, postural instability theory and sensory conflict theory.
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -63,7 +65,7 @@ theory, postural instability theory and sensory conflict theory
 \end{itemize}
 
 Unfortunately all three theories have low predictive power and fail to
-explain some key aspects of cybersickness \cite{Davis}.
+explain some key aspects of cybersickness~\cite{Davis}.
 
 One way to reduce cybersickness is to break the optical flow the user
 perceives using different kinds of techniques
@@ -72,7 +74,7 @@ allows an observer to gather information about the motion of objects and
 give the observer a sense of presence \cite{Gibson}.
 
 \section{Locomotion in VR}\label{locomotion-in-vr}
-
+% TODO: cite
 The ability to move the players avatar in the virtual environment is
 called locomotion. It is required for many applications or games that
 take place on a larger scale. Without locomotion techniques VR would be
@@ -89,16 +91,14 @@ every user would have to have stairs in their tracked space. The
 implementations of locomotion techniques can be very divers and so there
 is a wide range of categorizations schemes.
 
-Luca et al. collected 109 different locomotion techniques from academic
+Luca et al. \cite{Luca} collected 109 different locomotion techniques from academic
 sources, social media and popular VR games. The result is a public
 database of methods that can be filtered and compared. Some of the
 methods are in a preliminary state and not fully implemented or
-evaluated but in general the database is a great resource
-\cite{Luca}. There are only 8 results for hand-tracking
+evaluated but in general the database is a great resource. There are only 8 results for hand-tracking
 are some of them are falsely categorized.
 
-\subsection{Locomotion using
-controllers}\label{locomotion-using-controllers}
+\subsection{Locomotion using controllers}\label{locomotion-using-controllers}
 
 Boletsis et al. \cite{Boletsis} categorized the four
 prevalent locomotion techniques into:
@@ -121,7 +121,7 @@ prevalent locomotion techniques into:
 
 The room-scale-based techniques are limited to the size of the tracking
 space so they are not flexible enough for a general use case. If the
-task allows it, it should however be the preferred\\locomotion technique
+task allows it, it should however be the preferred locomotion technique
 because it results in the best immersion while also keeping
 cybersickness to a minimum.
 
@@ -152,7 +152,7 @@ is categorized as non-continuos movement with unlimited range. Since not
 only the xy coordinates of a target location can be chosen but also
 points at different altitudes, the method has 3 degrees of freedom.
 
-The research from Clifton et al. shows that on average teleportation
+The research from Clifton et al. \cite{Clifton} shows that on average teleportation
 causes less cybersickness than continuos navigation, however, there were
 some people (38\%) that had the opposite reaction.
 Clifton et al. conclude that there should always be multiple locomotion
@@ -162,22 +162,17 @@ immediate displacement used by teleportation-based locomotion. If the
 participants experienced the virtual environment while sitting or
 standing did not make a cause a meaningful change in the reported
 effects, only that there seems to be slightly worse cybersickness from a
-seated experience. \cite{Clifton}
+seated experience. 
 
-However, teleportation is also not the perfect solution:
-
-\paragraph{Problems:}\label{problems}
-
+However, teleportation is also not the perfect solution. 
 The lack of optical flow between locations is great to minimize
-cybersickness, but it also introduces limitations:
-
+cybersickness, but it also introduces limitations. 
 Path integration, a process where the brain updates the current position
 continuously using information from different senses. Visual, vestibular
 and proprioceptive sensory input are continuously integrated and create
-a rough estimate of the distance traveled.
-\cite{Bhandari}
+a rough estimate of the distance traveled. \cite{Bhandari}
 
-Bhandari et al. found that this can be improved by allowing some optical
+Bhandari et al. \cite{Bhandari} found that this can be improved by allowing some optical
 flow between teleport points without creating higher levels of
 cybersickness. This can be achieved by using a technique the researchers
 call ``Dash''. It translates the user at a constant velocity from the
@@ -188,14 +183,13 @@ that the duration and speed do not impact the resulting effect a lot
 \cite{Bowman} but these values where picked after some
 internal testing. Using this technique users where able to move back to
 a starting point after teleporting away much more accurately without any
-landmark or context clues. \cite{Bhandari}
+landmark or context clues. 
 
 An interesting problem with teleportation-based locomotion is that is
 was found to be the least immersive technique out of the four types
 categorized by Boletsis et al. \cite{Boletsis}. This
 could improve using hand-tracking because the users can use their own
-hands and that might be more immersive for some people. % TODO: (maybe include
-in hypotheses)
+hands and that might be more immersive for some people. % TODO: (maybe include in hypotheses)
 
 % \subsection{Immersion}\label{immersion}
 
@@ -215,11 +209,11 @@ There are also two ways to confirm a target:
   \item the user uses a second hand to confirm the location. For this a method was implemented where the left hand can first rests in a neutral position while a target is selected with the right hand. To confirm the teleport location, the user performs a pointing gesture with the second hand while keeping the right hand on the target.
 \end{itemize}
 
-The results of a user study show the method using a one-handed palm gesture achieved the highest user satisfaction ratings (90 of 100 possible points). However, there appear to be some problems with the implementation. The authors noticed that bimanual methods loose tracking more often so this might influence the immersion and user satisfaction results. Another tracking issue was also found with the index method. The noise in the tracking data appears to frustrate users when trying to select a target. The tracking issues make it seem like the one handed palm gesture was only preferred by users because users found the unreliable tracking frustrating. This is also confirmed by the NASA-TLX results. The users reported to be more frustrated with the methods influenced by the bimanual tracking issues and the index finger tracking noise. The method influenced by both types of issues got the worst score. 
+The results of a user study conducted by Schäfer et al. \cite{Schafer2021} show the method using a one-handed palm gesture achieved the highest user satisfaction ratings (90 of 100 possible points). However, there appear to be some problems with the implementation. The authors noticed that bimanual methods loose tracking more often so this might influence the immersion and user satisfaction results. Another tracking issue was also found with the index method. The noise in the tracking data appears to frustrate users when trying to select a target. The tracking issues make it seem like the one handed palm gesture was only preferred by users because users found the unreliable tracking frustrating. This is also confirmed by the NASA-TLX results. The users reported to be more frustrated with the methods influenced by the bimanual tracking issues and the index finger tracking noise. The method influenced by both types of issues got the worst score. 
 
 The one-handed palm method was the gesture that had the least amount of tracking issues since it was single handed and was not only using the index finger for target selection. This is result is surprising since the gesture violates multiple principles for a comfortable gesture detailed in \ref{ergonomics}. However, in a short study this might not influence the user satisfaction too much. The negative effects of uncomfortable gestures might not be noticeable after only using the gesture for the short duration of the study, so that the users are not experiencing the longer term effects. 
 
-The winning gesture also has other limitations. It would get even more uncomfortable when trying to teleport to some elevated targets. This would put a lot of strain on the wrist, which is one of the most problematic areas. The automatic confirmation of a target used also does not provide any feedback to the user like the bimanual methods do. Some of these issues can be improved on but it seems like the tracking is the most important issues to solve for now and that this is can only be solved using different gestures that enable more robust tracking with lest noise.
+The one-handed palm method, the gesture with the highest usability score, also has other limitations. It would get even more uncomfortable when trying to teleport to some elevated targets. This would put a lot of strain on the wrist, which is one of the most problematic areas. The automatic confirmation of a target used also does not provide any feedback to the user like the bimanual methods do. Some of these issues can be improved on but it seems like the tracking is the most important issues to solve for now and that this is can only be solved using different gestures that enable more robust tracking with lest noise.
 
 For traditional locomotion using controllers, the locomotion database from Luca et al. \cite{Luca} is a great resource. It includes solutions, that are user tested, established in the industry as well as more experimental ones. However, when filtering the locomotion database for techniques that are categorized to use hand-tracking only 8 results are presented.
 The results that are relevant for this paper are:
@@ -241,10 +235,9 @@ The results that are relevant for this paper are:
 \end{itemize}
 
 The categorizations seem to have some issues and so going through all
-109 techniques, a small list of more gestures can be found:
+109 techniques, a small list of more gestures can be found that might work using gestures:
 
-Technologies that might work using gestures:
-
+% TODO: integrate
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
@@ -274,6 +267,7 @@ Problems when trying to translate other methods into an environment without cont
 \end{itemize}
 
 \section{Gestures}\label{gestures}
+% TODO: Intro
 
 \subsection{Gesture Detection}\label{gesture-detection}
 
@@ -281,7 +275,7 @@ The most accessible hand-tracking hardware for virtual reality today is
 the Oculus Quest 2 VR headset. It has hand-tracking build in, which can
 be accessed using the Oculus SDK in Unity. The exact technology the
 Oculus Quest device uses is not known. However it can be speculated that
-Oculus is using a variation of the research done by Han et al. The
+Oculus is using a variation of the research done by Han et al \cite{Han}. The
 Oculus Quest only has monochrome cameras and only a very limited amount
 of processing power, which correlates with the limitations addressed by
 Han et al. \cite{Han}. Like the Oculus Quest, the
@@ -289,7 +283,7 @@ unnamed headset in the paper has 4 cameras. They are positioned on the
 headsets corners, all facing in slightly different directions to cover a
 120° area in front and below the headset. The areas the individual
 cameras can see overlap in some places so that in the most important
-areas the hands are visible for at least 2 up to 4 cameras.\\The
+areas the hands are visible for at least 2 up to 4 cameras. The
 tracking system works by first detecting the hands in the camera streams
 using a CNN architecture optimized for efficiency named DetNet. The
 network can simultaneously localize and classify the hands which
@@ -308,7 +302,7 @@ poses.
 
 Current technology has some major limitations when tracking hands.
 Hand-to-hand interactions, self-contact and occlusion come to mind.
-Smith et al. created a system that takes in high resolution data from
+Smith et al. \cite{Smith} created a system that takes in high resolution data from
 124 cameras capturing uniformly lit hands. The images are turned into a
 mesh so detailed its basically indistinguishable from the original
 hands. The pose of two hands and even the texture is captured without
@@ -320,20 +314,21 @@ That means that even if hand-to-hand interaction is not able to be
 reliably tracked currently, it could be in the future.
 
 \subsection{Intuitive and comfortable gestures}\label{ergonomics}
-For the design of a hand gesture vocabulary, the first consideration might be how well the gesture can be identified. However, gestures that are easily recognized may not be intuitive and easy to perform by the user. According to Stern at al. there are three factors that all should be maximized when choosing a gesture: intuitiveness, comfort and recognition accuracy. \cite{Stern2006}
+For the design of a hand gesture vocabulary, the first consideration might be how well the gesture can be identified. However, gestures that are easily recognized may not be intuitive and easy to perform by the user. According to Stern at al. \cite{Stern2006} there are three factors that all should be maximized when choosing a gesture: intuitiveness, comfort and recognition accuracy.
 
-Stern et al. define intuitiveness as the cognitive association between a command or intent and its physical gestural expression. Experiments that trying to find universal gestures for a virtual reality environment were also done by Pereira et al. \cite{Pereira2015}. The in the experiment 34 participants were asked to come up with gestures for common HCI tasks. This resulted in over 1300 different gestures for 34 tasks. However, only 84 gestures were chosen by 3 or more subjects and some of them for different tasks. Expecting the user to intuitively guess the same gesture that the developers of the virtual environment intended therefore seems unrealistic. Constructing a gesture that requires no introduction or tutorial is therefore also not the goal of this paper.
+Stern et al. define intuitiveness as the cognitive association between a command or intent and its physical gestural expression. Experiments that trying to find universal gestures for a virtual reality environment were also done by Pereira et al. \cite{Pereira2015}. The in the experiment 34 participants were asked to come up with gestures for common HCI tasks like. % TODO: sample
+This resulted in over 1300 different gestures for 34 tasks. However, only 84 gestures were chosen by 3 or more subjects and some of them for different tasks. Expecting the user to intuitively guess the same gesture that the developers of the virtual environment intended therefore seems unrealistic. Constructing a gesture that requires no introduction or tutorial is therefore also not the goal of this paper.
 
-The research of Ardito et al. also supports this. They compare trying to design universal gestures to problems that arose with visual languages in the past. They predict that trying to use the same gesture vocabulary over a range of applications and devices is likely to fail. \cite{Ardito2014}
+The research of Ardito et al. \cite{Ardito2014} also supports this. They compare trying to design universal gestures to problems that arose with visual languages in the past. They predict that trying to use the same gesture vocabulary over a range of applications and devices is likely to fail. 
 
 
-As a measure for comfort, Kölsch et al. propose a method that distinguishes between a pose of some joint or body part and the user compensating using other joints to relieve strain. A compensation for a pose that requires the users head to be tilted onto its side might be to keep the head upright relative to the body but bend the torso to the side. To find the optimal comfort zone of a posture, Kölsch et al. look how users compensate or if they execute the pose without compensating. \cite{Koelsch}
+As a measure for comfort, Kölsch et al. propose a method that distinguishes between a pose of some joint or body part and the user compensating using other joints to relieve strain. A compensation for a pose that requires the users head to be tilted onto its side might be to keep the head upright relative to the body but bend the torso to the side. To find the optimal comfort zone of a posture, Kölsch et al. \cite{Koelsch} measure how users compensate or if they execute the pose without compensating. 
 
 There are also other methods that rely on biomechanical models and physics simulations to measure how comfortable a gesture is but they are prone to errors \cite{Stern2006}.
 
 Another source of knowledge to source information from regarding gestures are sign language interpreters. They might spend more than 20 h per week signing, however, they also often suffer from hand pain and fatigue while gesturing for long sessions. This would also be a risk for prolonged sessions in virtual reality that is using hand-tracking gestures. Rempel et al. conducted a study with experienced sign language interpreters to find the discomfort level associated with signing selected hand postures, motions and characters \cite{Rempel2014}. 
 
-Rempel et al. collected findings and summarized:
+Rempel et al. \cite{Rempel2014} collected findings and summarized:
 \begin{itemize}
   \item Hands should be near the midline of the body and not further apart than the shoulders. They should be near the height of the elbows and close to the lower chest, so that the shoulder muscles are not tense. 
   \item Sustained elbow flexion of more than 90 degrees should be avoided.
@@ -347,3 +342,63 @@ Rempel et al. collected findings and summarized:
 
 
 
+\section{Usage in Games}
+In the games industry there are some examples of gesture based movement present. The gestures used are probably tested and evaluated internally but there is currently no information published how well they work statistically, if they are ergonomic or usable. That means that for now, they can only be compared on a basis of personal experience. 
+
+
+\subsection{Vacation simulator}
+Vacation simulator \cite{VacSimOculus} is a VR simulation game, the sequel to the popular game Job Simulator. Released in 2019 by Owlchemy Labs, it was updated in late 2020 to enable hand-tracking support \cite{VacSimBlog}. The game has a lot of intuitive mechanics that translate very well to hand-tracking, like its use of a physical backpack as a game menu. The teleportation system is very easy to control but comes with the limitations that the user can only teleport to large predefined areas. Therefore, the gesture does not need to be very accurate. The user only needs to "pull" the target closer using a gesture shown in \ref{fig:pull}. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/elixir.jpg}
+  \caption[Selecting a target and confirming teleportation in Elixir]}
+  \label{fig:pull}
+\end{figure}
+
+This works well for this use case, where the teleportation does not need to be accurate. During testing, this was never a problem and might have even be more intuitive than using a controller because its so easy to remember and control, whereas some unexperienced users sometimes seam to have problems with the activation of controller based teleportation using the joystick. 
+
+
+\subsection{Elixir}
+One of the first hand-tracking titles for the Oculus Quest was Elixir. A short demo game where a user is allowed to explore a magic chamber. The chamber could be explored using Room-scale-based movement if the user has a large enough play space, however there is also a teleportation system included. It works using a bimanual gesture. Both hands form a triangle using both thumbs and index fingers. This can be used to target a point on the floor. The teleport resolution is limited to a grid system on the floor. Once selected a tile on the floor lights up. To confirm the tile as the target location, the user pinches the respective thumbs and index fingers together. The viewpoint is the instantly moved to the new location.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/elixir.jpg}
+  \caption[Selecting a target and confirming teleportation in Elixir]}
+  \label{fig:elixir}
+\end{figure}
+
+The system does not allow the user to teleport to any point which is technically a limitation. However, in practice it makes the tracking more stable while sill allowing good control. Having a gesture to confirm makes the system feel controllable. 
+
+
+\subsection{Waltz of the Wizard}
+In the fantasy game Waltz of the Wizard \cite{WaWizOculus} by the Studio Aldin Dynamics \cite{Aladin}, the user can learn spells and have fun manipulating the environment. The game has been updated to support hand-tracking \cite{WaWizBlog}. This also includes an adaptation of the custom teleport system the game used in its original version called Telepath \cite{WaWizTelePath}. To move, the user draws a path on the floor. This path is broken up into sections. The system moves the users viewpoint from one point to the next, while dynamically adjusting the pause between the teleport steps. This allows the user to pick up objects while walking, or increase the walking speed by swinging arms. In contrast to the other systems, Telepath can be used to move to any point, without the limitations of the other systems. It does not require a grid system on the floor and is not limited to only specified teleport points.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/waltz of the wizard - point.jpg}
+  \caption[Telepath gesture: draw walking path using index finger]}
+  \label{fig:telepath}
+\end{figure}
+
+During testing, the Telepath system did not induce cybersickness even though the movement did required a short period of getting used to. The accuracy of the gesture recognition system left a lot to be desired however and the experience was frustrating at times. Ergonomics are also a point to criticize, size the gesture strains the hands quite uncomfortably even after only a short test of 20 minutes. Drawing a path still seams to be a promising idea and might enable high levels of immersion and allow the brain to perform path integration while not inducing cybersickness. Short bursts of quick movements have also been analysed by Bhandari et al. \cite{Bhandari}. It produced promising results regarding cybersickness and and path integration. 
+
+
+\section{Conclusion}
+The research done so far has not produced a conclusive answer how to teleport using hand gestures. The game industry has found some methods for different use cases and environments, there is however no way to compare them in a controlled environment, since they are each implemented in their respective games. To compare them, it would be required to implemented the techniques into a standardized environment. This is difficult because the games algorithms are not public and it can be expected that the outcome is slightly different. Therefor the goal of this project is to combine elements from the literature, the games industry with new ideas to create a new system.
+
+
+
+
+
+
+
+
+% Requirements:
+%   Geste kann von der quest solide erkannt werden
+%   Ergonomie
+%   Immersive
+%   evtl. mit Dash statt mit blink teleport 
+%   Nutzer bekommt ein Gefühl für die zurückgelegte Distanz
+%   einfach zu benutzen aber macht evtl nicht “faul” (nutzer kann room scale locomotion noch gut nebenher benutzen)
