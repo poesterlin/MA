@@ -6,11 +6,19 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
+        with:
+          lfs: 'true'
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@2.2.1
         with:
           root_file: main.tex
-      - uses: actions/upload-artifact@v2
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@master
         with:
-          name: PDF
-          path: ./main.pdf
+          args: --acl public-read --delete --exclude '*' --include 'main.pdf'
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          SOURCE_DIR: "./"
