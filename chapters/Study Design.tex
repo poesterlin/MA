@@ -1,62 +1,55 @@
 % Introduction
-
+The user study to compare teleportation techniques and to provide quantitative figures is detailed in the following chapter.
 
 
 \section{Requirements}
 This section explains the requirements set to evaluate the gesture.
-The requirements for a new gesture to be considered functional are going to be set as:
+For the study, the requirements have to be measurable. Therefor criteria for every requirement have to be set:
 
-\begin{itemize}
-    \item The gesture can be recognized well
-    \item users don't experience above average cybersickness
-    \item gesture is comfortable
-    \item system is usable
-    \item Path integration is possible
-    \item The system encourages walking in real life if possible
-\end{itemize}
-
-
-\section{Rational}
-% TODO
-
-
-\section{Measurements}
-For the study, the requirements have to be measurable. Therefor criteria for every requirement have to be set. 
-
-
-\begin{itemize}
+\begin{enumerate}
     \item The gesture can be recognized by the tracking system with a success rate of at least 90\%
+    \item The system is efficient and effective to use
     \item No more than 20\% of users experience some cybersickness, no participant has to abort the test prematurely
     \item Even after extended use, the gesture does create strain in over 10\% of participants
     \item System has a SUS score of above 90.
     \item The user can get a sense of the distance they covered
     \item The system encourages walking in real life if possible and is not used to travel distances below 50cm
-\end{itemize}
-
-
+\end{enumerate}
 
 
 \section{Study Setup}
+The user study to compare the selected teleportation systems with respect to the different requirements has multiple sections:
+\begin{itemize}
+    \item Gesture Recognition Test
+    \item Main Test:
+    \begin{itemize}
+        \item Usability
+        \item Cybersickness
+        \item Ergonomics
+        \item Encourages walking
+    \end{itemize}
+    \item Path integration Test
+\end{itemize}
 
+\subsection{Gesture Recognition Rate}
+To test the gesture detection algorithm 3 different people run a test where they form the gesture 20 times and record how often the algorithm is able to recognize the gesture.
+The goal of this test is not to test tracking system of the Oculus Quest 2, but to test the algorithm used for gesture detection. The detection of the hands is not perfect and struggles in some scenarios and poses. For the study a environment with consistently good lighting is needed to improve the tracking conditions. 
 
 
 \subsection{Efficiency and Effectiveness}
-To test the efficiency and effectiveness of the systems, the participants have to teleport from a starting point to a goal point. During the task, a gun turret shoots particles if the user is in sight and is standing still. The user is instructed not to let this happen. The environment is supposed to be a little bit stressful but has a strong incentive on teleportation accuracy. The task completion time as well as the number of hits will be measured. All methods have the same maximum teleportation distance and the spacing between the hideouts is adjusted so that a user can never skip a hideout without getting in the sight of the turret. The teleportation mechanics are supposed to fade into the background as they should in a regular application.
+To test the efficiency and effectiveness of the systems, the participants have to teleport from a starting point to a goal point. During the task shown in \ref{fig:turret}, a gun turret shoots particles if the user is in sight and is standing still. The user is instructed not to let this happen. The environment is supposed to be somewhat stressful but has a strong incentive on teleportation accuracy. The task completion time as well as the number of particle hits will be measured. All methods have the same maximum teleportation distance and the spacing between the hideouts is adjusted so that a user can never skip a hideout without getting in the sight of the turret. The order of the different teleportation techniques will be randomized to minimize the learning effect. The teleportation mechanics are supposed to fade into the background as they should in a regular application. 
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{figures/turret study.png}
-    \caption{Gun turret fires if it can see the user, user has to get to goal point}
+    \includegraphics[height=\textwidth/2]{figures/turret study.png}
+    \caption{Gun turret fires if it can see the user, user has to get to goal point, obstacles can hide user}
     \label{fig:turret}
-  \end{figure}
-
-
-\subsection{Path integration}
-In a very basic environment without peripheral reference points, a user should be able to move away from the origin point A to a point in the distance B. The participant is then instructed to turn around and move back as close as possible to the start point A. The distance from the users hit point A` to the target A is measured. This can be compared to the distances that physical movement and teleportation using controllers create in the same setup. The distance should be somewhere between two and six meters but chosen by the user. Each user completes the same procedure with all three methods one after the other but the order is randomized for every user.
+\end{figure}
 
 
 \subsection{Usability}
-The main part of the study is some extended task in an immersive VR environment. After a short in game tutorial, the user receives the task and gets dropped in the environment. The task requires movement through the environment. The locomotion will be done entirely using the gesture and the user will have to use it extensively. The usability will be evaluated using a questionnaire after the experience.
+The main part of the study is an extended task in an immersive, magical VR environment.
+The task is to collect different ingredients for a magic potion from all over the map. The teleportation system will be changed after each object was found and brought back to the starting point. Each teleportation system is active twice and in a random order to minimize the learning effect. The user will receive a short in-game tutorial each time the locomotion system is changed and a picture of the next object that should be found. The locomotion will then be done entirely using the gesture and the user will have to use it extensively. The usability will be evaluated using a questionnaire after the experience. 
 
 
 \subsection{Cybersickness}
@@ -67,23 +60,9 @@ Cybersickness will be evaluated after the main experience using a questionnaire.
 Ergonomics are evaluated by the guidelines listed in \ref{ergonomics}. Additionally after the main study the participants will receive a questionnaire that can be evaluated into a score.
 
 
+\subsection{Path integration}
+In a very basic environment without peripheral reference points, a user should be able to move away from the origin point A to a point in the distance B. The participant is then instructed to turn around and move back as close as possible to the start point A. The distance from the users hit point A` to the target A is measured. This can be compared to the distances that physical movement and teleportation using controllers create in the same setup. The distance should be somewhere between two and six meters but chosen by the user. Each user completes the same procedure with all three methods one after the other but the order is randomized for every user to minimize the learning effect. This method is the same that Bhandari et al. \cite{Bhandari} use in their study.
+
+
 \subsection{Encouraging Walking}
 In the main study environment, the user should still use physical walking if possible. To test this, the traveled distances are recorded. The distribution can be analysed.
-
-
-
-
-
-
-
-\subsection{Gesture Recognition Rate}
-\begin{itemize}
-    \item testing the algorithm
-    \item not testing the quest tracking system
-    \item good conditions (lighting)
-    \item using 3 different hands
-    \item 20 times
-\end{itemize}
-
-
-
