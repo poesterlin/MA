@@ -212,7 +212,7 @@ There are also two ways to confirm a target:
 
 The results of a user study conducted by Schäfer et al. \cite{Schafer2021} show the method using a one-handed palm gesture achieved the highest user satisfaction ratings (90 of 100 possible points). However, there appear to be some problems with the implementation. The authors noticed that bimanual methods loose tracking more often so this might influence the immersion and user satisfaction results. Another tracking issue was also found with the index method. The noise in the tracking data appears to frustrate users when trying to select a target. The tracking issues make it seem like the one handed palm gesture was only preferred by users because users found the unreliable tracking frustrating. This is also confirmed by the NASA-TLX results. The users reported to be more frustrated with the methods influenced by the bimanual tracking issues and the index finger tracking noise. The method influenced by both types of issues got the worst score. 
 
-\begin{figure}[htb]
+\begin{figure}[hbt!]
   \centering
   \includegraphics[width=\textwidth]{figures/1h vs 2h gesture study.jpg}
   \caption{Gesture types included in the study from Schäfer et al. \cite{Schafer2021}}
@@ -361,7 +361,7 @@ In the games industry there are some examples of gesture based movement present.
 \subsection{Vacation simulator}
 Vacation simulator \cite{VacSimOculus} is a VR simulation game, the sequel to the popular game Job Simulator. Released in 2019 by Owlchemy Labs, it was updated in late 2020 to enable hand-tracking support \cite{VacSimBlog}. The game has a lot of intuitive mechanics that translate very well to hand-tracking, like its use of a physical backpack as a game menu. The teleportation system is very easy to control but comes with the limitations that the user can only teleport to large predefined areas. Therefore, the gesture does not need to be very accurate. The user only needs to "pull" the target closer using a gesture shown in \ref{fig:pull}. 
 
-\begin{figure}[htb]
+\begin{figure}[hbt!]
   \centering
   \includegraphics[width=\textwidth]{figures/vacsim.jpg}
   \caption{Selecting a target area and confirming teleportation in Vacation Simulator}
@@ -374,7 +374,7 @@ This works well for this use case, where the teleportation does not need to be a
 \subsection{Elixir}
 One of the first hand-tracking titles for the Oculus Quest was Elixir. A short demo game where a user is allowed to explore a magic chamber. The chamber could be explored using Room-scale-based movement if the user has a large enough play space, however there is also a teleportation system included. It works using a bimanual gesture. Both hands form a triangle using both thumbs and index fingers. This can be used to target a point on the floor. The teleport resolution is limited to a grid system on the floor. Once selected a tile on the floor lights up. To confirm the tile as the target location, the user pinches the respective thumbs and index fingers together. The viewpoint is the instantly moved to the new location.
 
-\begin{figure}[htb]
+\begin{figure}[hbt!]
   \centering
   \includegraphics[width=\textwidth]{figures/elixir.jpg}
   \caption{Selecting a target and confirming teleportation in Elixir}
@@ -387,7 +387,7 @@ The system does not allow the user to teleport to any point which is technically
 \subsection{Waltz of the Wizard}
 In the fantasy game Waltz of the Wizard \cite{WaWizOculus} by the Studio Aldin Dynamics \cite{Aladin}, the user can learn spells and have fun manipulating the environment. The game has been updated to support hand-tracking \cite{WaWizBlog}. This also includes an adaptation of the custom teleport system the game used in its original version called Telepath \cite{WaWizTelePath}. To move, the user draws a path on the floor. This path is broken up into sections. The system moves the users viewpoint from one point to the next, while dynamically adjusting the pause between the teleport steps. This allows the user to pick up objects while walking, or increase the walking speed by swinging arms. In contrast to the other systems, Telepath can be used to move to any point, without the limitations of the other systems. It does not require a grid system on the floor and is not limited to only specified teleport points.
 
-\begin{figure}[htb]
+\begin{figure}[hbt!]
   \centering
   \includegraphics[width=\textwidth]{figures/waltz of the wizard - point.jpg}
   \caption{Telepath gesture: draw walking path using index finger}
@@ -416,7 +416,7 @@ The study designed by Caggianese et al. \cite{Caggianese} uses a detailed, immer
 
 The dependent variables in this case are efficiency and effectiveness of each gesture. Efficiency is derived from completion time. The effectiveness is derived from performed errors, locomotion interruptions and tracking errors. There are also five questionnaires (SSQ, SAM, SUS, SEQ, NASA-TLX) for each participant to fill out after each run.
 
-\begin{figure}[htb]
+\begin{figure}[hbt!]
   \centering
   \includegraphics[width=\textwidth]{figures/path-of-study.PNG}
   \caption{Caggianese et al. \cite{Caggianese} Task}
@@ -426,7 +426,7 @@ The dependent variables in this case are efficiency and effectiveness of each ge
 
 The study designed by Bhandari et al. \cite{Bhandari} uses an extremely basic environment with only a ground plane and a sky above. This is so that the brain is not able to compute path integration from context clues. The users task is to move to a self-selected target point in the distance, to turn around and then to try to hit the start point again. A diagram is shown in \ref{fig:backAndForth}.
 
-\begin{figure}[htb]
+\begin{figure}[hbt!]
   \centering
   \includegraphics[width=\textwidth]{figures/back-and-forth.png}
   \caption{Bhandari et al. \cite{Bhandari} Task}
