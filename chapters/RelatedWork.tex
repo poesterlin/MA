@@ -223,6 +223,49 @@ The one-handed palm method was the gesture that had the least amount of tracking
 
 The one-handed palm method, the gesture with the highest usability score, also has other limitations. It would get even more uncomfortable when trying to teleport to some elevated targets. This would put a lot of strain on the wrist, which is one of the most problematic areas. The automatic confirmation of a target used also does not provide any feedback to the user like the bimanual methods do. Some of these issues can be improved on but it seems like the tracking is the most important issues to solve for now and that this is can only be solved using different gestures that enable more robust tracking with lest noise.
 
+
+
+Another study was performed by Caggianese et al. \cite{Caggianese}. The researchers designed three gesture based continuos locomotion systems and compared them to a controller based continuos navigation method. All the gesture based systems are using an activation to prevent accidentally triggering movement while completing other tasks.
+
+The gesture based techniques are detailed below.
+
+The palm-steering technique (\ref{fig:palm}) uses the normal vector of the hand palm plane to set a target point. This point it locked if the user closes their hand. This also starts the movement towards the target. The palm-steering technique allows movement in all directions without the user turning.
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=\textwidth]{figures/palm-gesture.png}
+  \caption{Selecting a target using the palm, move to the selected point by closing hand}
+  \label{fig:palm}
+\end{figure}
+
+
+The index-steering technique (\ref{fig:index}) uses a raycast from the headset through the position of the tip of the index finger to set the target position. To start the movement the user moves their thumb in to touch the middle finger.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=\textwidth]{figures/index-gesture.png}
+  \caption{Selecting a target using the index finger, close thumb to start movement}
+  \label{fig:index}
+\end{figure}
+
+
+The gaze-steering technique (\ref{fig:gaze}) uses only the gaze direction of the headset and a similar technique to the palm-steering technique to start the movement where the user closes their hand.
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=\textwidth]{figures/gaze-gesture.png}
+  \caption{Selecting a target using the gaze direction, move to the selected point by closing hand}
+  \label{fig:gaze}
+\end{figure}
+
+All methods use a targeting system but do not lock the target to a position when the locomotion starts. This lead to reports of users preferring the gaze-steering technique since it is the only technique where the hand position does not need to be continuously checked through out the movement.
+
+The results show that the performance of the gesture based techniques is similar to the controller locomotion. They do however achieved less precision, so that users made more errors along the path and the systems are therefore perceived as more difficult. 
+
+The index-steering technique was praised for the pointing system that is reminiscent of a traditional two-dimensional input system. Also having different methods for the direction and the movement control is reported to result in higher usability and less physical demand. 
+
+
+
+
+
 For traditional locomotion using controllers, the locomotion database from Luca et al. \cite{Luca} is a great resource. It includes solutions, that are user tested, established in the industry as well as more experimental ones. However, when filtering the locomotion database for techniques that are categorized to use hand-tracking only 8 results are presented.
 The results that are relevant for this paper are:
 
@@ -412,7 +455,7 @@ The study designed by Schäfer et al \cite{Schafer2021} also uses a primitive en
 In this case the dependent variables are the task completion time, the number of teleports, the number of times the tracking is lost and the results of a usability survey.
 
 
-The study designed by Caggianese et al. \cite{Caggianese} uses a detailed, immersive environment as shown in \ref{fig:path}. It includes a very long path way of 343m with distractors along the way. The users task is to follow the path from start to end. 
+The study designed by Caggianese et al. \cite{Caggianese} uses a detailed, immersive environment as shown in \ref{fig:path}. It includes a very long path way of 343m with distractors along the way. The users task is to follow the path from start to end as quickly as possible, without going off to the sides.
 
 The dependent variables in this case are efficiency and effectiveness of each gesture. Efficiency is derived from completion time. The effectiveness is derived from performed errors, locomotion interruptions and tracking errors. There are also five questionnaires (SSQ, SAM, SUS, SEQ, NASA-TLX) for each participant to fill out after each run.
 
