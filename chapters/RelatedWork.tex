@@ -310,6 +310,8 @@ limitations. Since Hand-to-hand occlusions and interactions were not
 part of the training set, the output has problems with complicated
 poses.
 
+% TODO: cite schäfer 3.3 capturing gestures
+
 \subsection{Future Technology}\label{future-technology}
 
 Current technology has some major limitations when tracking hands.
@@ -396,21 +398,119 @@ In the fantasy game Waltz of the Wizard \cite{WaWizOculus} by the Studio Aldin D
 
 During testing, the Telepath system did not induce cybersickness even though the movement did required a short period of getting used to. The accuracy of the gesture recognition system left a lot to be desired however and the experience was frustrating at times. Ergonomics are also a point to criticize, size the gesture strains the hands quite uncomfortably even after only a short test of 20 minutes. Drawing a path still seams to be a promising idea and might enable high levels of immersion and allow the brain to perform path integration while not inducing cybersickness. Short bursts of quick movements have also been analysed by Bhandari et al. \cite{Bhandari}. It produced promising results regarding cybersickness and and path integration. 
 
+\section{Study Designs}
+Methods used to compare gestures found in the literature:
+
+
+\textbf{Bozgeyikli et al. \cite{bozgeyikli}:}
+
+\begin{itemize}
+  \item Comparing 3 locomotion systems in the same environment (point and teleport, walk in place, joystick)
+  \item Basic environment to keep the focus on the locomotion:
+  \begin{itemize}
+    \item 6 target points (0.6m radius, on the ground)
+    \item 21 obstacle pillars
+  \end{itemize}
+\end{itemize}
+
+
+Task:
+\begin{enumerate}
+  \item Move to target point
+  \item Wait for 3 seconds on the point
+  \item Move to next point
+\end{enumerate}
+
+
+Objectives:
+\begin{itemize}
+  \item time to reach destination points
+  \item collisions with the obstacles (only relevant for continuos locomotion)
+  \item usability survey
+\end{itemize}
+
+
+
+\textbf{Schäfer et al \cite{Schafer2021}:}
+\begin{itemize}
+  \item primitive environment to reduce the wow effect for first time users
+  \item introduction using tutorial video
+\end{itemize}
+
+
+Task: Touch ten markers spaced out in a long corridor.
+
+
+Objectives:
+\begin{itemize}
+  \item Task completion time -> efficiency
+  \item number of teleports -> effectiveness
+  \item number of times the tracking is lost -> effectiveness
+  \item system usability scale
+\end{itemize}
+
+
+
+
+\textbf{Caggianese et al. \cite{Caggianese}:}
+
+\begin{itemize}
+  \item Detailed, immersive environment
+  \item Long path way: 343m
+  \item with distractors
+\end{itemize}
+
+
+Task: follow the path shown in \ref{fig:path}
+
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/path-of-study.PNG}
+  \caption{Caggianese et al. \cite{Caggianese} Task}
+  \label{fig:path}
+\end{figure}
+
+Objectives:
+\begin{itemize}
+  \item efficiency (i.e., completion time)
+  \item effectiveness (i.e., per-formed errors, locomotion interruptions, and tracking errors)
+  \item SSQ
+  \item SAM
+  \item SUS
+  \item SEQ
+  \item NASA-TLX
+\end{itemize}
+
+
+\textbf{Bhandari et al. \cite{Bhandari}:}
+
+\begin{itemize}
+  \item environment that does not allow path integration
+  \begin{itemize}
+    \item only ground plane and skybox
+    \item no information for peripheral vision system
+  \end{itemize}
+\end{itemize}
+
+Task (see \ref{fig:backAndForth}):
+\begin{enumerate}
+  \item Move to a target point in the distance
+  \item Turn around
+  \item Try to hit the start point again
+\end{enumerate}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/back-and-forth.png}
+  \caption{Bhandari et al. \cite{Bhandari} Task}
+  \label{fig:backAndForth}
+\end{figure}
+
+Objectives:
+\begin{itemize}
+  \item How large is the distance $a$.
+\end{itemize}
 
 \section{Conclusion}
-The research done so far has not produced a conclusive answer how to teleport using hand gestures. It is even disputed if such a solution is possible to find at all. The game industry has found some methods for different use cases and environments, there is however no way to compare them in a controlled environment, since they are each implemented in their respective games. To compare them, it would be required to implemented the techniques into a standardized environment. This is difficult because the games algorithms are not public and it can be expected that the outcome is slightly different. Therefor the goal of this project is to combine elements from the literature, the games industry with new ideas to create a new system.
-
-
-
-
-
-
-
-
-% Requirements:
-%   Geste kann von der quest solide erkannt werden
-%   Ergonomie
-%   Immersive
-%   evtl. mit Dash statt mit blink teleport 
-%   Nutzer bekommt ein Gefühl für die zurückgelegte Distanz
-%   einfach zu benutzen aber macht evtl nicht “faul” (nutzer kann room scale locomotion noch gut nebenher benutzen)
+The research done so far has not produced a conclusive answer how to teleport using hand gestures. It is even disputed if such a solution is possible to find at all. The game industry has found some methods for different use cases and environments, there is however no way to compare them in a controlled environment, since they are each implemented in their respective games. The goal of this project is therefore, to create a test environment to compare methods from the literature and selected games in a standardized way. 
