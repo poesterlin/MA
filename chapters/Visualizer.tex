@@ -14,8 +14,7 @@ SvelteKit was not chosen because it is strictly necessary but rather to get to k
 
 The websocket service is only running a small application that can relay messages from one client to another. This was only used for the first study to be able to connect a smartphone application to the vr headset, running a websocket client.
 
-
-
+New code can automatically be deployed to the server. The server is running a service that looks for new pushes on the github repo. If there are changes, the new docker images are build and run using docker-compose. This is based on Github Actions using a self-hosted runner service. This is really easy to configure and increases the development speed by a lot. 
 
 
 
