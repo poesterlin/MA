@@ -1,0 +1,10 @@
+% Introduction
+
+% - What is the motivation for the project?
+% - How is the project report structured? (Overview for the different sections)
+
+
+\section{Gesture Recognition System}
+To recognize a gesture it has to be compared to a stored gesture. The stored gestures are downloaded from the server when the VR application is started. They can then be compared to the current hand position. This algorithm is adapted from a small script found on Github.  % TODO: cite https://github.com/jorgejgnz/HandTrackingGestureRecorder 
+The gestures consists of joint positions and the algorithm compares each of them to the current positions relative to the base of the hand. If a joint is too far of and the distance exceeds a threshold the gesture is skipped. If all joints are within the threshold, all distances are added to a sum. The gesture that has the lowest total distance to the current hand position is then chosen as the recognized gesture. There is also a time based threshold that checks if the gesture is displayed by the user for at least the time set by the time threshold variable. This prevents accidental activation. The gestures that are part of a set and can currently not be reached are skipped without evaluation so they do not take up any processing time. Another optimization is to skip the evaluation of joints if one hand is not included in the gesture at all. Those optimizations are important because the algorithm is run for every frame and has to look at the 46 joint positions of all hands so it is important that it is as fast as possible.
+If a hand is skipped, for the included joints there is a default distance assumed. This is because otherwise a one handed gesture would always be picked over a two handed gesture even if the two handed gesture was indented by the user. This is because there are always small differences in the tracking or the users hand and they are summed up so that it would always loose to a skipped hand with zero distance. 
