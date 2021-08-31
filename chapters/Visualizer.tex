@@ -10,23 +10,39 @@
 
 The backend is a SvelteKit server that is connected to a MongoDB database as well as a websocket manager for instant communication with the Unity client. It stores the gestures so they can be stored securely in a database together with logs and collected statistics from the user studies. The code is hosted on a cloud server from the Microsoft Azure service. The service was chosen to get to know it and because there is a student credit program so it can be used for free. The server is accessible through a subdomain of a personal domain I already had. It is secured using an nginx reverse proxy that manages the traffic coming in from the public internet and passing it on to the internal service. This way it was also possible to encrypt the service using free ssl certificates from the lets encrypt certbot. This would not technically have been necessary but for some reason Chrome and Firefox defaulted to https only and would send http traffic. This might be because the domain without the backend subdomain was already known to the browser and is also encrypted. This took some time to setup however it was made simpler by the use of docker containers and the docker-compose application that is able to manage multiple containers and the connection between them. The database, the server, the websocket manager and the nginx reverse proxy all have their own containers. This makes the service much easier to setup, resilient to crashes and adds a layer of security on top. From the web servers logs I could see many clients trying to connect to publicly known database and administration endpoints trying to exploit cloud servers, so this seamed like a good idea even though not strictly necessary. 
 
-\section{SvelteKit Webserver}
-SvelteKit was not chosen because it is strictly necessary but rather to get to know it with all its benefits and limitations. It is a framework for websites optimized for load times, SEO and other things not needed in this project so its quite a bit overkill. On the other hand it was a good learning opportunity for personal use and made me realize some limitations like that it does not support websockets. Its still in the beta phase so this might be possible in the future. For the database connections, the javascript library Mongoose was used. This library allows easy access to the database since its able to automatically update objects if they are changed for example. For this project there would not have been any complicated queries needed, however it was still a nice convenience. 
+\section{Services}
+There are two backend services running in dedicated containers.
 
-The websocket service is only running a small application that can relay messages from one client to another. This was only used for the first study to be able to connect a smartphone application to the vr headset, running a websocket client.
+\subsection{SvelteKit Webserver}
+The SvelteKit framework was not chosen because it is strictly necessary but rather to get to know it with all its benefits and limitations. It is a framework for websites optimized for load times, SEO and other things not needed in this project so its quite a bit overkill. On the other hand it was a good learning opportunity for personal use and made me realize some limitations like that it does not support websockets. Its still in the beta phase so this might change in the future. For the database connections, the javascript library Mongoose was used. This library allows easy access to the database since its able to automatically update objects if they are changed. For this project there are no complicated queries needed, however it was still a nice convenience. 
 
-New code can automatically be deployed to the server. The server is running a service that looks for new pushes on the github repo. If there are changes, the new docker images are build and run using docker-compose. This is based on Github Actions using a self-hosted runner service. This is really easy to configure and increases the development speed by a lot. 
+\subsection{Websocket Service}
+The websocket service is only running a small application that can relay messages from one client to another. This was only used for the gesture elicitation study to be able to connect a smartphone application to the VR headset, running a C# websocket client.
 
 
-\section{Logs}
+\section{Development Process}
+New code can automatically be deployed to the server. The server is running a Github Actions Runner Service that listens for new push events on the github repo. If there are changes, the new docker images are build and run using docker-compose. This is based on Github Actions using a self-hosted runner service. This is really easy to configure and increases the development speed by a lot. 
+
+For all of the assets included in the Unity application Git LFS was used to keep the size of the repository manageable.
+
+
+\section{Server endpoints}
+The server exposes http endpoints that are registered using the SvelteKit framework.
+
+\subsection{Gesture}
+The "gesture" endpoint is able store the gestures and can also provide them to the Unity client in the correct format for serialization. This was tricky to get right since the format always has to be consist to the C# code and there needed to be a dedicated Array class just to be able to handle an array of gesture data from the JSON input.
+
+\subsection{Logs}
 Debugging the native Android code running on the Oculus Quest is difficult. To help the server is able to collect Logging information from the Unity application. The logs are then displayed on a simple web interface that shows the latest logs. The logs are only stored in memory and not in the database since they are only needed for debugging purposes. 
 
-
-\section{Statistics}
+\subsection{Statistics}
 The backend exposes a statistics endpoint. The endpoint excepts JSON data in the form with only loose structural constraints. The Unity application can connect to the endpoint to send any kind of statistics that need to be collected during the study. This information is stored in the database. The tools for the analysis of the data are not part of the project and will be implemented after.  
 
 
-\section{3D Gesture Visualizer}
+\section{Visualizations}
+With the data collected by the server it is possible to create visualizations to help understand the data. This was used to find bugs and can later be used to check the users progress during the study.
+
+\subsection{3D Gesture Visualizer}
 The gestures are serialized to a JSON format and saved on the backend. The gestures have a "name" field but are otherwise not human readable. The information about the finger positions is stored in an array of joint positions relative to the base of the hand. The joints are identified with an id and a field that tells which hand the joint is a part of. All of this can not be debugged or seen at all without the help of a tool. For this reason a Visualizer was created. Its a browser tool that uses the canvas library p5.js set to a 3D context. It can display the gesture interactively with basic support for model rotation and zooming. The visualization consists of basic shapes like cylinders and cones. They are positioned on the point that the JSON data references. There is also a rotation applied so they connect to the next cylinder and are not just oriented in the same direction. To tell the fingers apart each part of the hand has a different color. The only limitation is that the gestures are always shown in the same position, because the vector that references the position of the hand relative to the headset is not taken into account. To change gesture meta data, the Visualizer has some fields that can be updated and are synched automatically to the backend.
 
 
