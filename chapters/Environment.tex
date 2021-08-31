@@ -1,15 +1,15 @@
 
-\section{Study Environments}
+\chapter{Study Environments}
 In preparation for the user study, I created a detailed forrest environment and a simple path integration test environment in Unity.
 
 
 
-\subsection{Forrest Environment}
+\section{Forrest Environment}
 
 The forrest environment was created for the main part of the study. Here the user can teleport around freely in a large forrest area. It requires at least five teleport jumps across and creates an immersive experience for the user. The application is running natively on the Oculus Quest headset without any connection to a PC that could impact the VR experience in a negative way. The application was optimized to run very well so it is possible to enable the highest hand-tracking polling rate. This makes the experience very natural and improves the immersion. As a preparation, this environment was also used to record the gestures. For this, the Oculus "options" gesture was used to trigger the recording with a time delay. The recording functionality will be disabled in the final version of the application. % map display
 
 During the study the user is instructed to collect four items from all over the map. Each one is hidden in a secret location on the map. The user has to search each one using a different teleportation technique and return the item to the starting location. 
 
 
-\subsection{Path Integration Test Environment} % and accuracy?
+\section{Path Integration Test Environment} % and accuracy?
 To test how well the user looses their path integration while teleporting, a simple test environment was created. The environment is kept very simple and only includes a white ground plane and the skybox. The user starts at a point A and is given the task to teleport to a point B that they are free to choose, to turn around and then return to the point A. The environment was created to measure the distance between the actual point A and the point A' the user landed on after two teleportation steps. This distance is recorded together with the distance of the first teleport. The test is run with all gestures in a randomized order. The recorded data will later give insight into the ability to choose an accurate point and how well the path integration works while teleporting.
