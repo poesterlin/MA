@@ -17,14 +17,17 @@ The websocket service is only running a small application that can relay message
 New code can automatically be deployed to the server. The server is running a service that looks for new pushes on the github repo. If there are changes, the new docker images are build and run using docker-compose. This is based on Github Actions using a self-hosted runner service. This is really easy to configure and increases the development speed by a lot. 
 
 
+\section{Logs}
+Debugging the native Android code running on the Oculus Quest is difficult. To help the server is able to collect Logging information from the Unity application. The logs are then displayed on a simple web interface that shows the latest logs. The logs are only stored in memory and not in the database since they are only needed for debugging purposes. 
 
 
+\section{Statistics}
+The backend exposes a statistics endpoint. The endpoint excepts JSON data in the form with only loose structural constraints. The Unity application can connect to the endpoint to send any kind of statistics that need to be collected during the study. This information is stored in the database. The tools for the analysis of the data are not part of the project and will be implemented after.  
 
-\section{Visualizer}
 
+\section{3D Gesture Visualizer}
 The gestures are serialized to a JSON format and saved on the backend. The gestures have a "name" field but are otherwise not human readable. The information about the finger positions is stored in an array of joint positions relative to the base of the hand. The joints are identified with an id and a field that tells which hand the joint is a part of. All of this can not be debugged or seen at all without the help of a tool. For this reason a Visualizer was created. Its a browser tool that uses the canvas library p5.js set to a 3D context. It can display the gesture interactively with basic support for model rotation and zooming. The visualization consists of basic shapes like cylinders and cones. They are positioned on the point that the JSON data references. There is also a rotation applied so they connect to the next cylinder and are not just oriented in the same direction. To tell the fingers apart each part of the hand has a different color. The only limitation is that the gestures are always shown in the same position, because the vector that references the position of the hand relative to the headset is not taken into account. To change gesture meta data, the Visualizer has some fields that can be updated and are synched automatically to the backend.
 
 
-
-
-
+\section{Map Visualizer}
+To debug the teleportation and to show the users location to the study operator, I created a map visualization that is able to visualize the users teleport points that are collected by the server. The application is running in the browser and is using the p5.js canvas library but in a 2D context this time. A top down view of the unity map is used as a background with the teleport points drawn on top.
