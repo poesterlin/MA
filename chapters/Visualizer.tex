@@ -1,14 +1,6 @@
-% Introduction
-
-% - What is the motivation for the project?
-% - How is the project report structured? (Overview for the different sections)
-
-
-
 
 \chapter{Backend}
-
-The backend is a SvelteKit server that is connected to a MongoDB database as well as a websocket manager for instant communication with the Unity client. It stores the gestures so they can be stored securely in a database together with logs and collected statistics from the user studies. The code is hosted on a cloud server from the Microsoft Azure service. The service was chosen to get to know it and because there is a student credit program so it can be used for free. The server is accessible through a subdomain of a personal domain I already had. It is secured using an nginx reverse proxy that manages the traffic coming in from the public internet and passing it on to the internal service. This way it was also possible to encrypt the service using free ssl certificates from the lets encrypt certbot. This would not technically have been necessary but for some reason Chrome and Firefox defaulted to https only and would send http traffic. This might be because the domain without the backend subdomain was already known to the browser and is also encrypted. This took some time to setup however it was made simpler by the use of docker containers and the docker-compose application that is able to manage multiple containers and the connection between them. The database, the server, the websocket manager and the nginx reverse proxy all have their own containers. This makes the service much easier to setup, resilient to crashes and adds a layer of security on top. From the web servers logs I could see many clients trying to connect to publicly known database and administration endpoints trying to exploit cloud servers, so this seamed like a good idea even though not strictly necessary. 
+The backend is based on a webserver that is connected to a MongoDB database as well as a websocket manager for instant communication with the Unity client. The database stores the gestures so they can be stored securely in a database together with logs and collected statistics from the user studies. The code is hosted on a cloud server from the Microsoft Azure service. The service was chosen to get to know it and because there is a student credit program so it can be used for free. The server is accessible through a subdomain of a personal domain I already had. It is secured using an nginx reverse proxy that manages the traffic coming in from the public internet and passing it on to the internal service. This way it was also possible to encrypt the service using free ssl certificates from the lets encrypt certbot. This would not technically have been necessary but for some reason Chrome and Firefox defaulted to https only and would not send http traffic. This might be because the domain without the backend subdomain was already known to the browser and is also encrypted. The encryption took some time to setup however it was made simpler by the use of docker containers and the docker-compose tool that is able to manage multiple containers and the connection between them. The database, the server, the websocket manager and the nginx reverse proxy all have their own dedicated containers. This makes the service much easier to spin up, resilient to crashes and adds a layer of security on top. From the web servers logs I could see many clients trying to connect to publicly known database and administration endpoints trying to exploit cloud servers, so this seamed like a good idea even though not strictly necessary. 
 
 \section{Services}
 There are two backend services running in dedicated containers.
@@ -17,7 +9,7 @@ There are two backend services running in dedicated containers.
 The SvelteKit framework was not chosen because it is strictly necessary but rather to get to know it with all its benefits and limitations. It is a framework for websites optimized for load times, SEO and other things not needed in this project so its quite a bit overkill. On the other hand it was a good learning opportunity for personal use and made me realize some limitations like that it does not support websockets. Its still in the beta phase so this might change in the future. For the database connections, the javascript library Mongoose was used. This library allows easy access to the database since its able to automatically update objects if they are changed. For this project there are no complicated queries needed, however it was still a nice convenience. 
 
 \subsection{Websocket Service}
-The websocket service is only running a small application that can relay messages from one client to another. This was only used for the gesture elicitation study to be able to connect a smartphone application to the VR headset, running a C# websocket client.
+The websocket service is only running a small application that can relay messages from one client to another. This was only used for the gesture elicitation study to be able to connect a smartphone application to the VR headset, running a C\# websocket client.
 
 
 \section{Development Process}
@@ -30,7 +22,7 @@ For all of the assets included in the Unity application Git LFS was used to keep
 The server exposes http endpoints that are registered using the SvelteKit framework.
 
 \subsection{Gesture}
-The "gesture" endpoint is able store the gestures and can also provide them to the Unity client in the correct format for serialization. This was tricky to get right since the format always has to be consist to the C# code and there needed to be a dedicated Array class just to be able to handle an array of gesture data from the JSON input.
+The "gesture" endpoint is able store the gestures and can also provide them to the Unity client in the correct format for serialization. This was tricky to get right since the format always has to be consist to the C\# code and there needed to be a dedicated Array class just to be able to handle an array of gesture data from the JSON input.
 
 \subsection{Logs}
 Debugging the native Android code running on the Oculus Quest is difficult. To help the server is able to collect Logging information from the Unity application. The logs are then displayed on a simple web interface that shows the latest logs. The logs are only stored in memory and not in the database since they are only needed for debugging purposes. 
