@@ -1,0 +1,42 @@
+\chapter{Results from the Literature Research}
+
+There is not much research focused on alternative locomotion techniques in VR that do not require controllers. It is a new and experimental field of study.
+
+\section{Tracking Technology}
+Locomotion systems using hand-tracking traditionally required external tracking devices like a leap motion sensor mounted to the VR headset. %TODO: cite
+This works for a prototype but can not be expected to be something an end-user is able to set up. In the studies conducted using the leap motion sensor also reported users complaining about the sensors field of view. %TODO: cite
+The sensor has a 140° field of view and therefore can see the environment in front of the headset well, however it is not able to track hands if they are held below the headset or next to the users body, where it would be more natural and ergonomic. A much more usable implementation of hand-tracking is implemented by the Oculus Quest headsets. %TODO: cite
+The headset is using internal tracking using up to 4 cameras that are able to detect the users hands using a trained neural network. %TODO: cite
+Even though the cameras only produce black and white images and sometimes only one camera is able to see the hand, the tracking works remarkably well. There are however major limitations since the detection network is not trained to detect hand-to-hand interactions and therefore cuts out entirely until the user separates their hands again. The tracking is also sometimes inaccurate if some fingers are obstructed by others. In most cases this is not very visible to the user since the fingers are also obstructed from their perspective, it is however visible in the tracking information recorded by the headset and has to be taken into account. 
+
+\section{Requirements for Teleportation Systems}
+%TODO
+
+\section{Gestures}
+The literature has come up with a handful of gestures and ways to study them in a laboratory environment. The games industry however has implemented some fully usable systems for actual users. Both types of sources were taken into account to produce this list of comparable gestures:
+
+\begin{itemize}
+    \item One-Handed Palm Gesture: %TODO: cite
+    Researchers propose a teleportation gesture that is using a single, wide open hand. The target location is selected using a ray starting as the normal vector of the palm of the hand. The teleportation is then executed after 1.5 seconds.
+
+    \item One-Handed Index Gesture: %TODO: cite
+    Researchers propose a teleportation gesture that is using one hand with the index finger extended to use as a pointing device. To select a point, a user can just point at it. The teleportation is then executed after 1.5 seconds.
+    
+    \item Two-Handed Palm Gesture: %TODO: cite
+    Same targeting gesture as the One-Handed Index Gesture. The second hand is used to confirm the teleport by opening the hand.
+
+    \item One-Handed Index Gesture: %TODO: cite
+    Same targeting gesture as the One-Handed Index Gesture. The second hand is used to confirm the teleport by extending the index finger.
+
+    \item Triangle Gesture: %TODO: cite
+    A game called Elixir which is a short hand-tracking demo for the Oculus Quest uses a bimanual gesture. Both hands form a triangle connecting both thumbs and index fingers together. This can be used to target a point on the floor. To confirm the target location, the user pinches thumbs and index fingers together.
+    
+    \item Pull Gesture: %TODO: cite
+    A game called Vacation Simulator has one of the best implementations of hand-tracking found in games so far. For the locomotion it is using a one-handed pulling gesture. In the game this is only used for low resolution target selection. 
+
+\end{itemize}
+
+After my own subjective testing using a prototype of the final application, the systems using a time delay were found to be disorienting. Because the teleportation can not be confirmed explicitly it is not transparent to the user when it is going to be executed. The locomotion systems of the first four gestures are also very similar and lead to very similar results in previous testing. Because of this, I decided to combine the one- and two-handed systems. The result is two one-handed systems that have a confirmation step to execute the teleportation. To get feedback on how intuitive this change was, a gesture elicitation study was performed. 
+
+\section{Testing Methodology}
+The internal test game studios are using are not known, so the sources for testing methodology are limited. 
