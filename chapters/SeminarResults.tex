@@ -12,6 +12,8 @@ Even though the cameras only produce black and white images and sometimes only o
 \section{Requirements for Teleportation Systems}
 %TODO
 
+
+
 \section{Gestures}
 The literature has come up with a handful of gestures and ways to study them in a laboratory environment. The games industry however has implemented some fully usable systems for actual users. Both types of sources were taken into account to produce this list of comparable gestures:
 
@@ -32,11 +34,18 @@ The literature has come up with a handful of gestures and ways to study them in 
     A game called Elixir which is a short hand-tracking demo for the Oculus Quest uses a bimanual gesture. Both hands form a triangle connecting both thumbs and index fingers together. This can be used to target a point on the floor. To confirm the target location, the user pinches thumbs and index fingers together.
     
     \item Pull Gesture: %TODO: cite
-    A game called Vacation Simulator has one of the best implementations of hand-tracking found in games so far. For the locomotion it is using a one-handed pulling gesture. In the game this is only used for low resolution target selection. 
-
+    A game called Vacation Simulator has one of the best implementations of hand-tracking found in games so far. For the locomotion it is using a one-handed pulling gesture. In the game this is only used for low resolution target selection.
 \end{itemize}
 
 After my own subjective testing using a prototype of the final application, the systems using a time delay were found to be disorienting. Because the teleportation can not be confirmed explicitly it is not transparent to the user when it is going to be executed. The locomotion systems of the first four gestures are also very similar and lead to very similar results in previous testing. Because of this, I decided to combine the one- and two-handed systems. The result is two one-handed systems that have a confirmation step to execute the teleportation. To get feedback on how intuitive this change was, a gesture elicitation study was performed. 
 
 \section{Testing Methodology}
-The internal test game studios are using are not known, so the sources for testing methodology are limited. 
+The internal test game studios are using are not known, so the sources for testing methodology are limited. In the literature many studies rely on completion time and the number of errors during a task as a measure of a good locomotion system. %TOOO: cite
+This might cause some problems however since theoretically a system that can teleport right to the end of the environment would have a much better completion time than a system with a shorter teleport range even though this would not be a good system for the user. To combat this, it is necessary to have the same maximum teleport distance to compare systems. However it would be better to not rely on the completion time as a measure and rather look for actual signs of user satisfaction. The number of errors seams like a good measure though since it can be very frustrating and disorienting to be teleported to the wrong location. 
+
+The testing environments used for the studies are very diverse. Sometimes the prototype implementations are using a detailed environment so that it is very immersive for the test participant and other times it is created so that its not distracting the player and therefore very clean and simple. %TODO: cite long path paper and 
+Since there is no one-to-one comparison between results of the same locomotion system in a different environment, there is not an established, way to approach this.
+
+The task the user is supposed to execute in the testing environment differs also depending on the study, however mostly it is about teleporting to checkpoints along a corridor or in an open space. %cite corridor study
+This way the user is forced to hit points in the world accurately. This mechanic is easy to test however it is also not that similar to a game or a productivity application that an actual user would use. The need to hit an exact point and teleporting around just to get from one point to another without an objective are rarely found. Therefore adding an objective like to avoid an enemy or to search for something in the environment while teleporting would create a more realistic testing environment. This puts the teleportation itself in the background as it would be in an actual implementation of a teleportation system. However, if the system is not satisfying to use, the user will be able to notice the deficiencies since it is impeding the objective. An objective like this would make the task completion measure even more of a problem since it would not be the fault of the teleportation system if the user can not complete the objective on the first try and then takes longer. 
+
