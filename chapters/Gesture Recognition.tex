@@ -20,6 +20,28 @@ To be able to create a vector from the gesture, the positions of key joints are 
 
 % TODO: describe teleporters and left handed mode
 
+The three types of target selection methods all function using a ray cast. A ray cast is using a start position finds objects that can be found in the direction of a vector. The vectors the ray follows and the start positions are created differently for each method. 
+The palm and the triangle gesture both use a plane created using different joints. The normal vector of the plane is used to get the direction of the ray cast. The start position is a joint in the middle of the hand, in the case of the palm gesture as seen in \ref{fig:palmTracker}. The triangle gesture is using the middle of the hands. It is calculated by linear interpolating from the base of one index finger half way to the base of the index finger of the other hand. The tip of the triangle is calculated in a similar way using the tips of the index fingers as seen in \ref{fig:triangleTracker}. The selection method using the index gesture is generating a ray cast vector direction from the position of the wrist towards the position of the tip of the index finger as seen in \ref{fig:indexTracker}. All methods are using some amount of smoothing applied to the selection targets to make the output more resilient to tracking errors. This is done by linear interpolating the last target to the next target by a small amount. This way the new target only contributes a limited amount of change. The smoothing values are adapted to fit the accuracy of each gesture. The palm gesture for example requires more smoothing since the confirmation step can otherwise disturb the previously set target.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth/5]{figures/palm tracker.jpg}
+    \caption{The joints used to construct and plane from the palm gesture.}
+    \label{fig:palmTracker}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth/5]{figures/triangle tracker.jpg}
+    \caption{The joints used to construct and plane from the triangle gesture.}
+    \label{fig:triangleTracker}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth/5]{figures/index tracker.jpg}
+    \caption{The joints used to construct a vector from the index gesture.}
+    \label{fig:indexTracker}
+\end{figure}
+
 If the teleporter has converted a users input gesture to a position in the environment using a ray cast, the location is picked up and a teleport is executed. This requires the deactivation of the Oculus player controller, so that a new position for the player and the camera can be set. After the teleport is complete, the player controller is enabled again. Other than the teleport, this process is invisible to the user. 
 
 \section{Study Observers}
