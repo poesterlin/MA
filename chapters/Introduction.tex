@@ -1,3 +1,18 @@
 
 \chapter{Introduction}
-% TODO: write
+% TOPICS:
+% - Locomotion
+% - Motion Sickness
+% - Immersiveness
+% - Cybersickness
+% - Ergonomics
+% - Path integration
+% - Hand-tracking hardware
+
+Enabling simulated movement in virtual environments is not a new problem. The techniques that allow the user to move their avatars viewpoint can be implemented in a lot of different ways that all can have different effects on different people. Therefore they require special attention in regards to many different factors. Otherwise moving can result in motion sickness, a low level of immersions, disorientation and an overall frustrating user experience. To produce a good VR experience, it is important to understand the users needs when it comes to locomotion and motion sickness. 
+
+Motion sickness or more accurately cybersickness is a phenomenon not completely understood. It can be a problem in VR like it is when riding the train backwards, reading a book in a moving car and even for pilots in airplane simulators. VR should be fun and cause as little cybersickness as possible. To reduce the effects there are a couple of techniques. First, the application should perform well and run with a consistently high framerate. Performance is a key consideration when developing for VR. Modern hardware makes this less and less of a problem and it is possible to run even highly detailed applications with a high framerate. However, cybersickness will sill come up for some people if there is optical flow when moving in VR while standing still in real life. Optical flow is the phenomenon that allows the brain to gather information about the motion of objects the give the user a sense of presence. This effect produces an immersive VR experience if it does not stand in conflict with the sensors the human body has that are not tricked by a VR headset. Optical flow during movement in VR is especially a problem in the peripheral vision. To reduce this some applications allow the user to enable a virtual helmet that reduces the field of view. A good example of this would be the game Rollercoaster Simulator. A rollercoaster ride moves the player continuously in VR while they are standing still in real life. This can make even experienced VR users motion sick, so the implementation of the helmet makes a lot of sense. 
+
+The most popular way to implement locomotion is to allow the user to teleport in the virtual environment. A teleportation jump instantaneously transports the avatars viewpoint to a new locomotion without any transition. This way the effects of motion sickness are reduced since there is no optical flow. No optical flow is a good way to reduce cybersickness, however it also has an effect on the immersiveness of the experience. Some users have a harder time experiencing the environment fully since the optical flow is also a major factor controlling the level of immersion. This is not ideal however it is not as sirius of an effect as some users not able to use the application at all because of the cybersickness symptoms. 
+
+In traditional controller-based applications the focus lied on the implementation itself and activating the locomotion only required a button press. With hand-tracking, there is another human factors to consider, namely the ergonomics of repeating some action over potentially multiple hours. Ergonomics can be something different from person to person, there are some key rules to follow though. This includes allowing the hands to held at a natural hight, not requiring the elbow to be flexed to more than 90 degrees over a long time, not requiring hands to turn more than 45 degrees from the position of the palm facing the ground and allowing movement to mostly come out of the elbows and shoulders. 
