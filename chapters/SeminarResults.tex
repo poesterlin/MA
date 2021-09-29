@@ -49,13 +49,12 @@ The literature has come up with a handful of gestures and ways to study them in 
     However, this gesture is using continuous movement and not teleportation and therefore is not really comparable to the others.
 \end{itemize}
 
-After my own subjective testing using a prototype of the final application, the systems using a time delay were found to be disorienting. Because the teleportation can not be confirmed explicitly it is not transparent to the user when it is going to be executed. The locomotion systems of the first four gestures are also very similar and lead to very similar results in the previous testing. Also the similarity to the palm- and index-steering gestures proposed by Caggianese et al. would make studying the two methods separately kind of redundant. Because of this, it was decided to combine the one- and two-handed systems. This results in two one-handed systems that have a confirmation step to execute the teleportation. To get feedback on how intuitive this change was, a gesture elicitation study was performed. The pull gesture was not implemented since it is only used for low-resolution target selection in the previous implementation. The triangle gesture is not described in the literature so it was be replicated as closely as possible. There could however still be small differences in the way the implementation works which might not represent the original gesture exactly. After the selection the final three gestures are:
+After my own subjective testing using a prototype of the final application, the systems using a time delay were found to be disorienting. Because the teleportation can not be confirmed explicitly it is not transparent to the user when it is going to be executed. The locomotion systems of the first four gestures are also very similar and lead to very similar results in the previous testing. Also the similarity to the palm- and index-steering gestures proposed by Caggianese et al. would make studying the two methods separately kind of redundant. Because of this, it was decided to combine the one- and two-handed systems. This results in two one-handed systems that have a confirmation step to execute the teleportation. To get feedback on how intuitive this change was, a gesture elicitation study was performed. The pull gesture was not implemented since it is only used for low-resolution target selection in the previous implementation. The triangle gesture is not described in the literature so it was be replicated as closely as possible. There could however still be small differences in the way the implementation works which might not represent the original gesture exactly. After the selection the final three gestures are introduced in \ref{tbl:gestures}.
 
-% TODO: detail
 Index Gesture: 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/indexinfo.jpg}
+    \includegraphics[width=0.4\textwidth]{figures/indexinfo.jpg}
     \caption{The two steps of the index gesture}
     \label{fig:indexInfo}
 \end{figure}
@@ -63,18 +62,33 @@ Index Gesture:
 Palm Gesture:
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/palminfo.jpg}
+    \includegraphics[width=0.4\textwidth]{figures/palminfo.jpg}
     \caption{The two steps of the palm gesture}
     \label{fig:palmInfo}
 \end{figure}
 
-Triangle Gesture:
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/triangleinfo.jpg}
-    \caption{The two steps of the triangle gesture}
-    \label{fig:triangleInfo}
-\end{figure}
+\begin{table}[h!]
+    \begin{center}
+    \begin{tabular}{c p{5cm} p{5cm}}
+    \toprule
+     Name & Steps & Description \\ 
+
+   \cmidrule(r){1-1}\cmidrule(lr){2-2}\cmidrule(l){3-3}
+   Index Gesture
+    & 
+
+    \raisebox{-\totalheight}{
+        \includegraphics[width=0.3\textwidth, height=60mm]{figures/triangleinfo.jpg}
+    }
+
+    & 
+    A triangle formed using both hands is used to select a target.
+    \\ \bottomrule
+    \end{tabular}
+    \caption{Introduction to all implemented gestures.}
+    \label{tbl:gestures}
+    \end{center}
+\end{table}
 
 \subsection{Gesture Detection}
 To detect if the current hand position is part of a gesture Schäfer et al. \cite{Schafer2021} propose an algorithm
