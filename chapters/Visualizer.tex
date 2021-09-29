@@ -13,7 +13,7 @@ The WebSocket service is only running a small application that can relay message
 
 
 \subsection{Development Process}
-New code can automatically be deployed to the server. The server is running a Github Actions Runner Service that listens for new push events on the GitHub repo. If there are changes, the new docker images are built and run using docker-compose. This is based on Github Actions using a self-hosted runner service. This is really easy to configure and increases the development speed by a lot. 
+New code can automatically be deployed to the server. The server is running a Github Actions Runner Service that listens for new push events on the GitHub repo. If there are changes, the new docker images are built and run using docker-compose. This is based on Github Actions using a self-hosted runner service. This is easy to configure and increases the development speed by a lot. 
 
 For all of the assets included in the Unity application, Git LFS was used to keep the size of the repository manageable.
 
@@ -25,7 +25,7 @@ The server exposes HTTP endpoints that are registered using the SvelteKit framew
 The "gesture" endpoint is able to store the gestures and can also provide them to the Unity client in the correct format for serialization. This was tricky to get right since the format always has to be consistent with the C\# code and there needed to be a dedicated Array class just to be able to handle an array of gesture data from the JSON input.
 
 \subsubsection{Logs}
-Debugging the native Android code running on the Oculus Quest is difficult. To help the server is able to collect Logging information from the Unity application. The logs are then displayed on a simple web interface that shows the latest logs. The logs are only stored in memory and not in the database since they are only needed for debugging purposes. 
+Debugging the native Android code running on the Oculus Quest is difficult. To help, the server can collect Logging information from the Unity application. The logs are then displayed on a simple web interface that shows the latest logs. The logs are only stored in memory and not in the database since they are only needed for debugging purposes. 
 
 \subsubsection{Statistics}
 The backend exposes a statistics endpoint. The endpoint excepts JSON data in the form with only loose structural constraints. The Unity application can connect to the endpoint to send any kind of statistics that need to be collected during the study. This information is stored in the database. The tools for the analysis of the data are not part of the project and will be implemented after.  
@@ -46,7 +46,7 @@ The gestures are serialized to a JSON format and saved on the backend. The gestu
 
 
 \subsection{Map Visualizer}
-To debug the teleportation and to show the users location to the study operator, I created a map visualization that is able to visualize the users' teleport points that are collected by the server. The application is running in the browser and is using the p5.js canvas library but in a 2D context this time. A top-down view of the unity map is used as a background with the teleport points drawn on top. In the future this map could be expanded to analyse the teleport steps that were recorded during the user study. An example of the current implementation can be seen in \ref{fig:map}.
+To debug the teleportation and to show the users location to the study operator, I created a map visualization that is able to visualize the users' teleport points that are collected by the server. The application is running in the browser and is using the p5.js canvas library but in a 2D context this time. A top-down view of the unity map is used as a background with the teleport points drawn on top. In the future, this map could be expanded to analyse the teleport steps that were recorded during the user study. An example of the current implementation can be seen in \ref{fig:map}.
 
 \begin{figure}[!ht]
     \centering
