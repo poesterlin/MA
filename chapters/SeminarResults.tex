@@ -18,7 +18,6 @@ The most popular way to implement locomotion is to allow the user to teleport in
 In traditional controller-based applications the focus lied on the implementation itself and activating the locomotion only required a button press. With hand-tracking, there is another human factors to consider, namely the ergonomics of repeating some action over potentially multiple hours. Ergonomics can be something different from person to person, there are some key rules to follow though. This includes allowing the hands to held at a natural hight, not requiring the elbow to be flexed to more than 90 degrees over a long time, not requiring hands to turn more than 45 degrees from the position of the palm facing the ground and allowing movement to mostly come out of the elbows and shoulders. 
 
 
-
 \section{Gestures}
 The literature has come up with a handful of gestures and ways to study them in a laboratory environment. The games industry however has implemented some fully usable systems for actual users. Both types of sources were taken into account to produce this list of comparable gestures:
 
@@ -76,6 +75,15 @@ Triangle Gesture:
     \caption{The two steps of the triangle gesture}
     \label{fig:triangleInfo}
 \end{figure}
+
+\subsection{Gesture Detection}
+To detect if the current hand position is part of a gesture Schäfer et al. \cite{Schafer2021} propose an algorithm
+that detects gestures based on the finger state and the palm direction. The finger state can only be curled or
+stretched. The authors give the example of a fist gesture that is characterized by to have all fingers in a curled
+state. For direction dependent gestures like a thumbs up gesture, the algorithm also takes the direction of the
+palm into account. This seams to have some limitations for gestures like an okay sign where the thumb and index
+finger are touching and are nether in a curled nor stretched state. However without the actual implementation that
+Schäfer et al. developed its hard to know if the okay sign could be recognized or not.
 
 \section{Testing Methodology}
 The internal test game studios are using are not known, so the sources for the testing methodology are limited. In the literature, many studies rely on completion time and the number of errors during a task as a measure of a good locomotion system. Examples are Schäfer et al. \cite{Schafer2021} and Bozgeyikli et al \cite{bozgeyikli}.
