@@ -1,0 +1,13 @@
+/\chapter{Introduction to Selected Gesture Systems} % (fold)
+\label{cha:Introduction to Selected Gesture Systems}
+
+\section{Selecting Gestures to Test}
+
+To keep the implementation and study time in a reasonable timeframe, only a limited number of locomotion systems can be picked for the comparative study. Also to keep the systems comparable, only teleportation based systems are going to be considered since teleportation is currently the most popular and accessible method. This leaves the gestures from the games industry and the gestures researched by Schäfer et al. \cite{Schafer2021}. 
+
+The games industry has produced gesture systems for a variety of environments and use cases. The vacation simulator pull gesture is only used for low resolution tasks and is therefore too limited. The elixir and telepath gesture on the other hand will be implemented for the study.
+
+The gestures from the Schäfer study have variations for both two and one handed modes. The second hand is only used to confirm the teleport and not for the targeting system. 
+This is interesting when compared to the study performed by Caggianese et al. \cite{Caggianese} where the same one handed gestures are used only with a confirmation method using the same hand. Schäfer et al. use a time delay of 1.5 seconds to confirm the one handed versions of their gestures. This might lead to unexpected teleport jumps which can be very disorienting for users. The confirmation mechanic developed by Caggianese et al. is proven to work well and could make the one handed index and palm methods of Schäfer more controllable. The gestures were therefore modified in this way for the implementation to reduce user discomfort.
+
+% chapter Introduction to Selected Gesture Systems (end)
