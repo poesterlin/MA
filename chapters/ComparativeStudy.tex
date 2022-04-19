@@ -1,14 +1,15 @@
 \chapter{Comparative Study}
 The user study to compare teleportation techniques and to provide quantitative figures is detailed in the following chapter.
 
+\section{}
 
 % Research question: 
 % wie unterscheiden sich die 3 gesten, lernability, statisfaction
 % How does the user experience differ between the 3 gestures?
 
-\section{Requirements}
-This section explains the requirements set to evaluate the gesture.
-For the study, the requirements have to be measurable. Therefor criteria for every requirement have to be set:
+% \section{Requirements}
+% This section explains the requirements set to evaluate the gesture.
+% For the study, the requirements have to be measurable. Therefor criteria for every requirement have to be set:
 
 % \begin{enumerate}
 %     \item The gesture can be recognized by the tracking system with a success rate of at least 90\%
@@ -20,26 +21,29 @@ For the study, the requirements have to be measurable. Therefor criteria for eve
 %     \item The system encourages walking in real life if possible and is not used to travel distances below 50cm
 % \end{enumerate}
 
-
-\section{Study Setup}
+\section{Study Procedure}
 The study consisted of two main experiments. It was conducted with 18 participants. The participants first got an introduction to the gesture system, succeeded by the calibration step explained in the implementation section. %ref
 The order of the gesture systems the participants had to use was fully counter balanced in order to minimize the learning effect. This means that during the study it was made sure that three participants would always receive each of the six combinations possible. 
 
 %TODO: ablauf schaubild
-
+\subsection{Experiment One}
 The first experiment is based on a task that would be a realistic use case for a locomotion system. It was conducted using a playful magical VR environment shown in ... %ref figure. 
 The participant was tasked to collect an ingredient for a magic potion that could be hidden anywhere on the map. The teleportation system has to be used to search for the ingredient and for it to be brought back to the starting point. The user received a short in-game tutorial each time with a picture of the ingredient that should be found with animated hands presenting the gesture and how to use it. This was inspired by the tutorial in the ... game %cite
 Each teleport was recorded, together with the players position and head gaze direction. The task was specifically designed not to put too much pressure on the participant so they can get to know the gesture and ideally have fun looking around. However, like in a real application, the teleportation was still an essential part of the experience and so small details about the implementation, the detection and the ergonomics would still stand out to the participant. The ingredients were randomly hidden in one out of eight predefined spots so the user would have to search in a new spot every time.
+
+\subsection{Experiment Two}
 The second experiment was based on the work from Bozgeyikli et al. %cite
 The original design for the experiment was followed as closely as possible. There were however some changes that needed to be made to adapt it. Like before, the experiment starts by first showing an animated tutorial again. This time the user is instructed to teleport between platforms placed on the ground quickly. This time the environment is kept very simple, so the focus is on the task and so the user would not get distracted by the world. Unlike before, during this experiment the task execution time and the accuracy were the main focus. In order to record the start time correctly the original environment by Bozgeyikli et al. was modified and a button was placed in the center of the platforms. The participants were instructed to teleport to the button and press it once they felt ready to start. After the button was activated, it was removed from the environment and the first platform was highlighted. Like in the original experiment the next platform on the ground would light up to tell the user where to teleport to. To give the user feedback, a quick confirmation sound played when a teleport hit the correct platform. The player was instructed to stay on the platform for three seconds, after which a different sound was played and the next platform was highlighted. If a user accidentally teleported off the platform too soon, an error sound was played and they had to return to the platform and wait for the full three seconds. 
 
+\section{Experiment Design}
+
+\section{Procedure}
 
 \subsection{Cybersickness}
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was only a problem during the implementation testing where the detection algorithm was still in development.
 
 
-\subsection{Results}
-\label{sub:Results}
+\section{Results}
 
 In general the difference between the gestures is not pronounced. Especially in the qualitative reports the participants gave, the expressed opinions were sometimes just opposite to others. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. 
 
