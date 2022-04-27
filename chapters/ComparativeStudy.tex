@@ -1,7 +1,11 @@
 \chapter{Comparative Study}
-The user study to compare teleportation techniques and to provide quantitative figures is detailed in the following chapter.
+The user study to compare teleportation techniques and to provide quantitative figures is detailed in the following chapter. Using the detection methods from the previous chapters in with a virtual environment, a controlled lab study was performed. 
 
 \section{}
+
+\section{Study Design}
+
+
 
 % Research question: 
 % wie unterscheiden sich die 3 gesten, lernability, statisfaction
@@ -37,7 +41,37 @@ The original design for the experiment was followed as closely as possible. Ther
 
 \section{Experiment Design}
 
+\section{Apparatus}
+%TODO: tablet questionnaire
+
+The experiments were conducted using a Meta Quest 2 with hand-tracking enabled. The headset was connected to the internet and submitted all recorded data to a custom server. To be able to monitor and control the experiment, the server also had a web interface with a number of tools available. The study operator could control which experiment is currently running. During testing it was found that it can be disorienting for the participant to be switched from on scene to another. That is why this control was done manually so the operator can make sure the participant knows what is coming and is not surprised by the scene switch.
+
+The operator would also manually run the calibration of each gesture. The calibration procedure is explained in ... % TODO: \ref{}
+To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information as shown in \ref{fig:vis}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step, since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording each can be selected individually and deleted if there was a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy to delete a recording that was assigned to the wrong gesture state and therefore very dissimilar to the other recordings. The recording would then show a large distance to the others and could easily be deleted and rerecorded. All this was very important so the calibration was consistent and reliable for every participant.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/visualizer.jpg}
+    \caption{3D visualization of recorded gesture information as a point cloud, together with static joints.}
+    \label{fig:vis}
+\end{figure}
+% TODO: update grafik
+
+As shown in \ref{fig:map}, the operator was also able to see the position and gaze direction of the participant on a map, as well as the position of the magic potion. This was done in order to be able to give some support to the participant if they required it and to check if the data recording was working. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/map.png}
+    \caption{Study operators view of the participants position and gaze direction.}
+    \label{fig:map}
+\end{figure}
+% TODO: update grafik
+
+
 \section{Procedure}
+
+
+
 
 \subsection{Cybersickness}
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was only a problem during the implementation testing where the detection algorithm was still in development.
@@ -45,6 +79,10 @@ After the user study not a single user reported any problems with cybersickness 
 
 \section{Results}
 
-In general the difference between the gestures is not pronounced. Especially in the qualitative reports the participants gave, the expressed opinions were sometimes just opposite to others. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. 
 
-As part of the final quantitative questionnaire after all experiments were conducted, the participants were asked to come up with ideas for other gesture systems, similar to the gesture elicitation study. It was expected that the answers would be biased by the study up to this point but this task was included because this study included more participants that now also had some experience with how the teleportation using hand-tracking feels like. As expected, the answers were largely based on the previous gestures but some interesting ideas could still be collected. Multiple participants came up with the idea of a one handed version of the triangle gesture system. Also one participant suggested to change the palm gesture systems target direction so the targeting hand would be in a more comfortable position and the direction vector would not change when the hand is closed to confirm the teleport location. The change they proposed would have the hand in an orientation where the thumb would face towards the user with the hand edge pointing in the teleport direction. Both ideas seem like a promising implementation of the participants feedback and could be interesting to investigate in future research.
+The distance of every teleport was recorded in both experiments. A 
+
+
+In general the difference between the gestures is not pronounced. The quantitative differences are mainly not statistically significant and the opinions the participants expressed during the experiment and in the interview were sometimes just opposite to others. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. 
+
+As part of the final quantitative questionnaire after all experiments were conducted, the participants were asked to come up with ideas for other gesture systems, similar to the gesture elicitation study. It was to be expected that the answers would be biased by the study up to this point but this task was included because this study included more participants that now also had some experience with how the teleportation using hand-tracking feels like. As expected, the answers were largely based on the previous gestures but some interesting ideas could still be collected. Multiple participants came up with the idea of a one handed version of the triangle gesture system. Also one participant suggested to change the palm gesture systems target direction so the targeting hand would be in a more comfortable position and the direction vector would not change when the hand is closed to confirm the teleport location. The change they proposed would have the hand in an orientation where the thumb would face towards the user with the hand edge pointing in the teleport direction. Both ideas seem like a promising implementation of the participants feedback and could be interesting to investigate in future research.
