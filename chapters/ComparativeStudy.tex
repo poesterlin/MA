@@ -41,12 +41,12 @@ The original design for the experiment was followed as closely as possible. Ther
 
 \section{Experiment Design}
 
+
 \section{Apparatus}
 %TODO: tablet questionnaire
 
 The experiments were conducted using a Meta Quest 2 with hand-tracking enabled. The headset was connected to the internet and submitted all recorded data to a custom server. To be able to monitor and control the experiment, the server also had a web interface with a number of tools available. The study operator could control which experiment is currently running. During testing it was found that it can be disorienting for the participant to be switched from on scene to another. That is why this control was done manually so the operator can make sure the participant knows what is coming and is not surprised by the scene switch.
 
-The operator would also manually run the calibration of each gesture. The calibration procedure is explained in ... % TODO: \ref{}
 To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information as shown in \ref{fig:vis}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step, since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording each can be selected individually and deleted if there was a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy to delete a recording that was assigned to the wrong gesture state and therefore very dissimilar to the other recordings. The recording would then show a large distance to the others and could easily be deleted and rerecorded. All this was very important so the calibration was consistent and reliable for every participant.
 
 \begin{figure}[!ht]
@@ -69,18 +69,22 @@ As shown in \ref{fig:map}, the operator was also able to see the position and ga
 
 
 \section{Procedure}
+Before the experiment could start, the participants were informed about teleportation in general and that there is not yet an established way to control teleportation using hand-tracking.
+
+The operator would then give instructions how the calibration is performed, show the participant how the gesture works and calibrate it together with the participant. The calibration procedure was run three times per state, switching gesture states after each recording. The natural differences between each repetition gave added flexibility since the recordings are all used as a reference during the gesture detection.
+
+After the calibration, the participants would complete both experiments and fill out the questionnaires. This did not done in the VR headset itself to give the user some resting time between each run. This procedure was repeated for all three gestures. After all experiments and quantitative information was collected, the participants where asked to give some qualitative feedback and to share the impressions they got from using the system, as well as rank the gestures. The ranking was both done for overall preference and for how ergonomic the gesture was to use.   
 
 
+
+\section{Results}
 
 
 \subsection{Cybersickness}
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was only a problem during the implementation testing where the detection algorithm was still in development.
 
 
-\section{Results}
-
-
-The distance of every teleport was recorded in both experiments. A 
+The distance of every teleport was recorded in both experiments. When looking at the data, some interesting insights can be found. %TODO: distance statistics
 
 
 In general the difference between the gestures is not pronounced. The quantitative differences are mainly not statistically significant and the opinions the participants expressed during the experiment and in the interview were sometimes just opposite to others. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. 
