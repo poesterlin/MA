@@ -1,11 +1,13 @@
 \chapter{Comparative Study}
 The user study to compare teleportation techniques and to provide quantitative figures is detailed in the following chapter. Using the detection methods from the previous chapters in with a virtual environment, a controlled lab study was performed. 
 
-\section{}
+% TODO: picture of the study environment
 
 \section{Study Design}
+When looking at the study designs done by by Schäfer et al \cite{Schafer2021} or by Caggianese et al. \cite{Caggianese} it is apparent that task completion time is an important measurement to rank teleportation methods by. There are some problems with this approach though. If somebody would implement a teleportation method that takes the user straight to the end of the map where their destination is, it would lead to the quickest task completion times possible. This does not make the method easy to control or satisfying to use however. Therefor the task completion time was only used as a secondary measure while measures like usability and task load are more appropriate to compare the methods, since they take the users opinions into account. 
 
-
+\section{Participants}
+Eight-teen participants (9 female, 9 male) between 19 and 29 years old ($M=23.18,SD=2.58$) completed the study. Only one person considered themselves a VR expert, while everyone else reported very limited or no experience with VR. Two of the participants were left handed, the 16 other participants had a dominant right hand. 
 
 % Research question: 
 % wie unterscheiden sich die 3 gesten, lernability, statisfaction
@@ -38,8 +40,6 @@ Each teleport was recorded, together with the players position and head gaze dir
 \subsection{Experiment Two}
 The second experiment was based on the work from Bozgeyikli et al. %cite
 The original design for the experiment was followed as closely as possible. There were however some changes that needed to be made to adapt it. Like before, the experiment starts by first showing an animated tutorial again. This time the user is instructed to teleport between platforms placed on the ground quickly. This time the environment is kept very simple, so the focus is on the task and so the user would not get distracted by the world. Unlike before, during this experiment the task execution time and the accuracy were the main focus. In order to record the start time correctly the original environment by Bozgeyikli et al. was modified and a button was placed in the center of the platforms. The participants were instructed to teleport to the button and press it once they felt ready to start. After the button was activated, it was removed from the environment and the first platform was highlighted. Like in the original experiment the next platform on the ground would light up to tell the user where to teleport to. To give the user feedback, a quick confirmation sound played when a teleport hit the correct platform. The player was instructed to stay on the platform for three seconds, after which a different sound was played and the next platform was highlighted. If a user accidentally teleported off the platform too soon, an error sound was played and they had to return to the platform and wait for the full three seconds. 
-
-\section{Experiment Design}
 
 
 \section{Apparatus}
@@ -76,13 +76,16 @@ The operator would then give instructions how the calibration is performed, show
 After the calibration, the participants would complete both experiments and fill out the questionnaires. This did not done in the VR headset itself to give the user some resting time between each run. This procedure was repeated for all three gestures. After all experiments and quantitative information was collected, the participants where asked to give some qualitative feedback and to share the impressions they got from using the system, as well as rank the gestures. The ranking was both done for overall preference and for how ergonomic the gesture was to use.   
 
 
-
 \section{Results}
 % TODO: explain statistics
 
 \subsection{Cybersickness}
-After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was only a problem during the implementation testing where the detection algorithm was still in development.
+After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
 
 
 The distance of every teleport was recorded in both experiments. When looking at the data, some interesting insights can be found. %TODO: distance statistics
 
+\section{Limitations}
+The system was not configured for left handed gestures to eliminate another variable but this would be needed for use in a productive environment and was also something that was requested by the participants even by somebody with a dominant right hand to get some variety. 
+
+The study originally included an experiment designed to compare the teleportation methods based on path integration like Bhandari et al. \cite{Bhandari} did in their study. This was dropped because of a lack of time but could be an interesting experiment to run in the future.
