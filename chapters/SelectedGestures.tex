@@ -6,10 +6,43 @@
 To keep the implementation and study time in a reasonable timeframe, only a limited number of locomotion systems can be picked for the comparative study. Also to keep the systems comparable, only teleportation based systems are going to be considered since teleportation is currently the most popular and accessible method. This leaves the gestures from the games industry and the gestures researched by Schäfer et al. \cite{Schafer2021}. 
 
 The games industry has produced gesture systems for a variety of environments and use cases. The vacation simulator pull gesture is only used for low resolution tasks and is therefore too limited. The telepath system is very interesting but harder to compare to the other systems. This would have made it difficult to implement and evaluate. %cite
-The elixir gesture system on the other hand will be implemented for the study. A version of it was also proposed by the participants of the Gesture Evaluation Study. This system will be referred to as triangle gesture in the following work. %cite
+The elixir gesture system on the other hand will be implemented for the study, since it was also proposed by the participants of the Gesture Evaluation Study.  %cite 
+This system will be referred to as triangle gesture in the following work. As seen in \ref{fig:triangleTracker}, the gesture is converted to a vector by creating a plane from the base of the two thumbs and the center point of the tips of the index fingers. The normal vector of this plane is used to select the target destination.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/triangle tracker.jpg}
+    \caption{The joints used to construct and plane from the triangle gesture.}
+    \label{fig:triangleTracker}
+\end{figure}
 
 The gestures from the Schäfer study have variations for both two and one handed modes. The second hand is only used to confirm the teleport and not for the targeting system. 
-This is interesting when compared to the study performed by Caggianese et al. \cite{Caggianese} where the same one handed gestures are used only with a confirmation method using the same hand. Schäfer et al. use a time delay of $1.5$ seconds to confirm the one handed versions of their gestures. According to the participants of the Gesture Evaluation Study, this might lead to unexpected teleport jumps and a confirmation step would be preferred. The confirmation mechanic developed by Caggianese et al. is proven to work well and could make the one handed index and palm methods of Schäfer more controllable. The gestures were therefore modified in this way for the implementation to reduce user discomfort and comply to the users intuitions better.
+This is interesting when compared to the study performed by Caggianese et al. \cite{Caggianese} where the same one handed gestures are used only with a confirmation method using the same hand. Schäfer et al. use a time delay of $1.5$ seconds to confirm the one handed versions of their gestures. According to the participants of the Gesture Evaluation Study, this might lead to unexpected teleport jumps and a confirmation step would be preferred. The confirmation mechanic developed by Caggianese et al. is proven to work well and could make the one handed index and palm methods of Schäfer more controllable. The gestures were therefore modified in this way for the implementation to reduce user discomfort and comply to the users intuitions better. The resulting gestures are referred to as index gesture and palm gesture respectively. 
+
+Aiming using the index gesture is done using the vector from the base of the hand to the tip of the index finger, as seen in \ref{fig:indexTracker} projected out into the environment. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/index tracker.jpg}
+    \caption{The joints used to construct a vector from the index gesture.}
+    \label{fig:indexTracker}
+\end{figure}
+
+The palm gesture is converted into a vector by creating a plane from three points as shown in \ref{fig:palmTracker}. The wrist position and the tip of the index and ring finger are used to create the plane. The normal vector of the plane is used for the targeting.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/palm tracker.jpg}
+    \caption{The joints used to construct and plane from the palm gesture.}
+    \label{fig:palmTracker}
+\end{figure}
+
+
+% The three types of target selection methods all function using a ray cast. A ray cast is using a start position to find objects that can be found in the direction of a vector. The vectors the ray follows and the start positions are created differently for each method. 
+% The palm and the triangle gesture both use a plane created using different joints. The normal vector of the plane is used to get the direction of the ray cast. The start position is a joint in the middle of the hand, in the case of the palm gesture as seen in \ref{fig:palmTracker}. The triangle gesture is using the middle of the hands. It is calculated by linear interpolating from the base of one index finger halfway to the base of the index finger of the other hand. The tip of the triangle is calculated in a similar way using the tips of the index fingers as seen in \ref{fig:triangleTracker}. The selection method using the index gesture is generating a ray cast vector direction from the position of the wrist towards the position of the tip of the index finger as seen in \ref{fig:indexTracker}. All methods are using some amount of smoothing applied to the selection targets to make the output more resilient to tracking errors. This is done by linear interpolating the last target to the next target by a small amount. This way the new target only contributes a limited amount of change. The smoothing values are adapted to fit the accuracy of each gesture. The palm gesture for example requires more smoothing since the confirmation step can otherwise disturb the previously set target.
+
+
+
+% If the teleporter has converted a users input gesture to a position in the environment using a ray cast, the location is picked up and a teleport is executed. This requires the deactivation of the Oculus player controller so that a new position for the player and the camera can be set. After the teleport is complete, the player controller is enabled again. Other than the teleport, this process is invisible to the user. 
 
 \section{Teleport Mechanic and Design}
 During the presentation of the previous results in an expert interview, the question came up how improve the user experience of the targeting system that would convert a vector from the gesture into a teleport destination. In the games industry it is standard practice to use a ray-cast of some kind and a target reticle that shows the destination point. The ray-cast can be implemented linearly or by using a simulated projectile path. Both have some benefits and drawbacks, especially in this use-case since it might force the user to put their hands in an uncomfortable position to reach a target. It was proposed that the system should adapt to the user. This means that if the vector produced from the gesture recognition system hits a valid point in the world, this point will be used as a destination. However, if the vector does not hit the ground within a specified distance, the targeting system uses a simulated projectile path to curve the teleport path downwards. Both targeting versions have the same smoothing applied in order to eliminate small tracking inconsistencies or gesture changes. A small confirmation sound was also added to give the user additional feedback when they are teleporting. This was also a good addition for debugging since it is easily apparent that a teleport was not performed when there is no confirmation sound even without looking at the users screen.
