@@ -1,6 +1,8 @@
 \chapter{Comparative Study}
 The user study to compare teleportation techniques and to provide quantitative figures is detailed in the following chapter. Using the detection methods from the previous chapters in with a virtual environment, a controlled lab study was performed. 
 
+
+
 % TODO: picture of the study environment
 
 \section{Study Design}
@@ -36,6 +38,15 @@ Each teleport was recorded, together with the players position and head gaze dir
 The second experiment was based on the work from Bozgeyikli et al. %cite
 The original design for the experiment was followed as closely as possible. There were however some changes that needed to be made to adapt it. Like before, the experiment starts by first showing an animated tutorial again. This time the user is instructed to teleport between platforms placed on the ground quickly. This time the environment is kept very simple, so the focus is on the task and so the user would not get distracted by the world. Unlike before, during this experiment the task execution time and the accuracy were the main focus. In order to record the start time correctly the original environment by Bozgeyikli et al. was modified and a button was placed in the center of the platforms. The participants were instructed to teleport to the button and press it once they felt ready to start. After the button was activated, it was removed from the environment and the first platform was highlighted. Like in the original experiment the next platform on the ground would light up to tell the user where to teleport to. To give the user feedback, a quick confirmation sound played when a teleport hit the correct platform. The player was instructed to stay on the platform for three seconds, after which a different sound was played and the next platform was highlighted. If a user accidentally teleported off the platform too soon, an error sound was played and they had to return to the platform and wait for the full three seconds. 
 
+\subsection{Questionnaire}
+After each completion of both experiments, participants would fill out two questionnaires. 
+
+\subsubsection{NASA-TLX}
+The NASA-TLX questionnaire % TODO cite Hart & Staveland, 1988
+was designed to get insights into the participants perceived workload. It was chosen for this study since it is a standard in the industry and to give information about how performing the experiments using the different gestures systems might result in a difference in the workload. The NASA-TLX questionnaire consists of six scales for participants to rate their perceived mental demands, physical demands, time demands, performance, effort, and frustration. To simplify the scoring process, a short version of the NASA-TLX was used that does not include a weighting procedure. % TODO cite (Bustamante & Spain, 2008).
+
+\subsubsection{User Experience Questionnaire (UEQ)}
+To get information about the user experience of the locomotion systems, the participants also filled out a User Experience Questionnaire (UEQ) based on the work of Laugwitz et al. \cite{Laugwitz2008}. The UEQ questionnaire includes 26 scales that are evaluated to produce scores for the six factors attractiveness, efficiency, dependability, perspicuity, stimulation, and novelty.
 
 \section{Apparatus}
 %TODO: tablet questionnaire
@@ -62,7 +73,9 @@ As shown in \ref{fig:map}, the operator was also able to see the position and ga
 \end{figure}
 % TODO: update grafik
 
-To start 
+To be able to identify what data point belongs to what participant, the server included an interface to manage runs. The operator would first start a new run, which generates a random 3 letter code. This code was used to be able to match the recording data of one participant anonymously to other data collected during the experiment, like from the questionnaires. The operator stopped the run after the experiments were completed using the interface and was then able to download and backup the data for each run individually.
+% TODO: runs grafik
+% TODO: ref
 
 \section{Procedure}
 Before the experiment could start, the participants were informed about teleportation in general and that there is not yet an established way to control teleportation using hand-tracking.
