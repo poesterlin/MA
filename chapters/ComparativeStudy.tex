@@ -57,11 +57,20 @@ To check if the gesture was recorded correctly, the server provides a 3D visuali
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/visualizer.jpg}
+    \includegraphics[width=0.8\textwidth]{figures/point cloud vis.jpg}
     \caption{3D visualization of recorded gesture information as a point cloud, together with static joints.}
     \label{fig:vis}
 \end{figure}
-% TODO: update grafik
+\begin{figure}[!htb]
+    \minipage{0.49\textwidth}
+        \includegraphics[width=\linewidth]{figures/point cloud vis.JPG}
+    \endminipage\hfill
+    \minipage{0.\textwidth}
+        \includegraphics[width=\linewidth]{figures/point cloud vis2.JPG}
+        \label{fig:vis}
+    \endminipage\hfill
+    \caption{3D visualization of recorded gesture information for two different states as a point cloud, together with static joints. The green points are selected during the calibration step.}
+\end{figure}
 
 As shown in \ref{fig:map}, the operator was also able to see the position and gaze direction of the participant on a map, as well as the position of the magic potion. This was done in order to be able to give some support to the participant if they required it and to check if the data recording was working. 
 
@@ -89,13 +98,47 @@ After all experiments and quantitative information was collected, the participan
 %TODO: ablauf schaubild
 
 \section{Results}
-% TODO: explain statistics
+Following the order of the research questions, this section presents the results of the study. To
+indicate the approach for action integration, subscript S is used for Separation, subscript C for
+Composition, and subscript H for Hybrid. The Shapiro-Wilk test was used to test if the results
+for the different measures were normally distributed. As the data violated the assumption of a
+normal distribution, a non-parametric approach was used to analyze it. Further, medians (Mdn) are
+reported. To detect differences between the three conditions for each pass, Friedman’s ANOVA was
+used. If this test showed differences, post hoc analysis was performed with Dunn-Bonferroni-Tests.
+The Wilcoxon signed-rank test was used for comparing the passes within each condition (i.e., pass
+1 versus pass 2). Generally, an alpha level of 0.05 was assumed for all statistical tests. For the
+pairwise comparisons, the Bonferroni correction required to adjust the alpha level to (.05/3) ≈ .016.
+% TODO: reword
+
+The analysis of the task completion time for the second experiment shows a statistically significant difference when using the different gesture systems. 
+
+The distance of every teleport was recorded in both experiments. When looking at the data, some interesting insights can be found. %TODO: distance statistics
+
+The data recorded from the second experiment is displayed in \ref{fig:exp2maps} similarly to the way Bozgeyikli et al. %cite
+display their results. 
+
+\begin{figure}[!htb]
+    \minipage{0.32\textwidth}
+        \includegraphics[width=\linewidth]{figures/index map.png}
+        \caption{A really Awesome Image}\label{fig:map_index}
+    \endminipage\hfill
+    \minipage{0.32\textwidth}
+        \includegraphics[width=\linewidth]{figures/palm map.png}
+        \caption{A really Awesome Image}\label{fig:map_palm}
+    \endminipage\hfill
+    \minipage{0.32\textwidth}%
+        \includegraphics[width=\linewidth]{figures/triangle map.png}
+        \caption{A really Awesome Image}\label{fig:map_triangle}
+        \label{fig:exp2maps}
+    \endminipage
+\end{figure}
+    
+The visualizations clearly show a difference in how messy the teleport targets where placed using the index gesture, and how much cleaner they are when the participants used the triangle gesture, with the palm gesture somewhere in the middle. However none of the gesture based teleportation techniques produce as efficient routes between the targets as the results shown by Bozgeyikli et al.
+
+
 
 \subsection{Cybersickness}
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
-
-
-The distance of every teleport was recorded in both experiments. When looking at the data, some interesting insights can be found. %TODO: distance statistics
 
 \section{Limitations}
 The system was not configured for left handed gestures to eliminate another variable but this would be needed for use in a productive environment and was also something that was requested by the participants even by somebody with a dominant right hand to get some variety. 
