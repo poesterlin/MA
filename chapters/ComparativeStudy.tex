@@ -51,7 +51,14 @@ To get information about the user experience of the locomotion systems, the part
 \section{Apparatus}
 %TODO: tablet questionnaire
 
-The experiments were conducted using a Meta Quest 2 with hand-tracking enabled. The headset was connected to the internet and submitted all recorded data to a custom server. To be able to monitor and control the experiment, the server also had a web interface with a number of tools available. The study operator could control which experiment is currently running. During testing it was found that it can be disorienting for the participant to be switched from on scene to another. That is why this control was done manually so the operator can make sure the participant knows what is coming and is not surprised by the scene switch.
+The experiments were conducted using a Meta Quest 2 with hand-tracking enabled. The headset was connected to the internet and submitted all recorded data to a custom server. To be able to monitor and control the experiment, the server also had a web interface with a number of tools available, shown in \ref{fig:settings}. The study operator could control which experiment is currently running. During testing it was found that it can be disorienting for the participant to be switched from on scene to another. That is why this control was done manually so the operator can make sure the participant knows what is coming and is not surprised by the scene switch.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/settings.JPG}
+    \caption{Settings menu to change scenes and get information about the current state.}
+    \label{fig:settings}
+\end{figure}
 
 To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information as shown in \ref{fig:vis}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step, since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording each can be selected individually and deleted if there was a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy to delete a recording that was assigned to the wrong gesture state and therefore very dissimilar to the other recordings. The recording would then show a large distance to the others and could easily be deleted and rerecorded. All this was very important so the calibration was consistent and reliable for every participant.
 
@@ -82,9 +89,14 @@ As shown in \ref{fig:map}, the operator was also able to see the position and ga
 \end{figure}
 % TODO: update grafik
 
-To be able to identify what data point belongs to what participant, the server included an interface to manage runs. The operator would first start a new run, which generates a random 3 letter code. This code was used to be able to match the recording data of one participant anonymously to other data collected during the experiment, like from the questionnaires. The operator stopped the run after the experiments were completed using the interface and was then able to download and backup the data for each run individually.
-% TODO: runs grafik
-% TODO: ref
+To be able to identify what data point belongs to what participant, the server included an interface to manage runs, as shown in \ref{fig:runs}. The operator would first start a new run, which generates a random 3 letter code. This code was used to be able to match the recording data of one participant anonymously to other data collected during the experiment, like from the questionnaires. The operator stopped the run after the experiments were completed using the interface and was then able to download and backup the data for each run individually.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/runs.JPG}
+    \caption{List of study participants runs.}
+    \label{fig:runs}
+\end{figure}
 
 \section{Procedure}
 Before the experiment could start, the participants were informed about teleportation in general and that there is not yet an established way to control teleportation using hand-tracking.
@@ -107,7 +119,7 @@ reported. To detect differences between the three conditions for each pass, Frie
 used. If this test showed differences, post hoc analysis was performed with Dunn-Bonferroni-Tests.
 The Wilcoxon signed-rank test was used for comparing the passes within each condition (i.e., pass
 1 versus pass 2). Generally, an alpha level of 0.05 was assumed for all statistical tests. For the
-pairwise comparisons, the Bonferroni correction required to adjust the alpha level to (.05/3) = .016.
+pairwise comparisons, the Bonferroni correction required to adjust the alpha level to (.05/3) \approx .016.
 % TODO: reword
 
 The analysis of the task completion time for the second experiment shows a statistically significant difference when using the different gesture systems. 
