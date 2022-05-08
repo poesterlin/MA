@@ -110,22 +110,15 @@ After all experiments and quantitative information was collected, the participan
 %TODO: ablauf schaubild
 
 \section{Results}
-Following the order of the research questions, this section presents the results of the study. To
-indicate the approach for action integration, subscript S is used for Separation, subscript C for
-Composition, and subscript H for Hybrid. The Shapiro-Wilk test was used to test if the results
-for the different measures were normally distributed. As the data violated the assumption of a
-normal distribution, a non-parametric approach was used to analyze it. Further, medians (Mdn) are
-reported. To detect differences between the three conditions for each pass, Friedman’s ANOVA was
-used. If this test showed differences, post hoc analysis was performed with Dunn-Bonferroni-Tests.
-The Wilcoxon signed-rank test was used for comparing the passes within each condition (i.e., pass
-1 versus pass 2). Generally, an alpha level of 0.05 was assumed for all statistical tests. For the
+This section presents the results of the study. Several methods were used for the statistical analysis. The Shapiro-Wilk test was used to check whether the data were normally distributed. Since the data was not normally distributed, a non-parametric approach was used for detailed analysis. Friedman ANOVA was used to determine the differences between the three gestures. If this test showed significant differences, further analysis was performed using the Dunn-Bonferron test. All tests were held to a standard alpha level of 0.05. For the
 pairwise comparisons, the Bonferroni correction required to adjust the alpha level to $(.05/3) \approx .016$.
-% TODO: reword
 
-The analysis of the task completion time for the second experiment shows a statistically significant difference when using the different gesture systems. 
+\subsection{Task Completion Time}
+The analysis of the task completion time for the second experiment shows a statistically significant difference when using the different gesture systems. The time was recorded individually for every checkpoint in the second experiment. The analysis using the Friedman’s test shows an overall significant difference between the gestures. Additionally, there are significant differences comparing the triangle and palm gestures, as well as the index and palm gestures. The difference between the task completion time using the triangle or index gesture was not significant though.
 
-The distance of every teleport was recorded in both experiments. When looking at the data, some interesting insights can be found. %TODO: distance statistics
+% TODO: spss Diagram with error bars
 
+\subsection{Teleport Trajectories}
 The data recorded from the second experiment is displayed in \ref{fig:exp2maps} similarly to the way Bozgeyikli et al. %cite
 display their results. 
 
@@ -145,12 +138,21 @@ display their results.
     \endminipage
 \end{figure}
     
-The visualizations clearly show a difference in how messy the teleport targets where placed using the index gesture, and how much cleaner they are when the participants used the triangle gesture, with the palm gesture somewhere in the middle. However none of the gesture based teleportation techniques produce as efficient routes between the targets as the results shown by Bozgeyikli et al.
+The visualizations clearly show a difference in how chaotic the teleport targets where placed using the index gesture, and how much cleaner they are when the participants used the triangle gesture, with the palm gesture somewhere in the middle. However none of the gesture based teleportation techniques produce as clean and efficient routes between the targets as the results shown by Bozgeyikli et al. This indicates that the triangle gesture system is the method that allows users to teleport with the most accuracy and repeatability, with the palm gesture system on second place. It is clear however, that there is still some room for improvement even for the triangle gesture system. 
+
+\subsection{Time Between Teleports}
+The time users took between teleports was used as a measurement because in the second experiment users where instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference of the time between teleports that the users took when using the different gesture systems. 
+
+% TODO test pairwise difference
 
 
 
 \subsection{Cybersickness}
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
+
+\subsection{Quantitative Results}
+
+
 
 \section{Limitations}
 The system was not configured for left handed gestures to eliminate another variable but this would be needed for use in a productive environment and was also something that was requested by the participants even by somebody with a dominant right hand to get some variety. 
