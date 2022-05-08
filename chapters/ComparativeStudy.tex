@@ -146,12 +146,39 @@ The time users took between teleports was used as a measurement because in the s
 % TODO test pairwise difference
 
 
+% Analyse teleport heading vs gaze position
+
 
 \subsection{Cybersickness}
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
 
 \subsection{Quantitative Results}
 
+\subsection{Interview Results}
+During the interview the participants where asked to give commentary for every gesture, both positively and negatively. The opinions the participants expressed are evaluated in the following section. In general there is not a clearly overall preferred gesture. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. The participants where asked to rank the gestures based on preference and based on ergonomic they found the gestures to be. Both categories have the triangle gesture in first place but the result are not statistically significant. The users commentary is summarized in table \ref{tbl:interview}. 
+
+\begin{table}[]
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    sentiment &
+      index &
+      palm &
+      triangle \\ \hline
+    positive &
+      fast, only little tiring, percice, fun &
+      easy to do, known gesture, natural &
+      predictable, easy to aim, uses two hands, kreative \\ \hline
+    negative &
+      produces the most false positive activations, index finger tipps down to meet the thumb while acivating, most suceptable to tracking errors for example when turning hand, unpredictable, conflicted with gesture to grab flask &
+      tiring, puts pressure on wrist, difficult to aim very far, very near and persice since closing the hand can change the target and it is not easy to hold the hand paralell to the body &
+      difficult to aim far, 2 handed use, some activation problems \\ \hline
+    \end{tabular}%
+    }
+\label{tbl:interview}
+\end{table}
+
+The comments seem to come mainly from a point of frustration with a gesture or the tracking system. So while there are less and more negative comments, only few people reported having a fun and comfortable time using the gestures. The most negative feedback was aimed at the index gesture, since it produced the most false positive activations and therefore frustrated some participants. This issue might be solvable in the future with better tracking. On Second place was the palm gesture with mostly feedback concerning the gesture itself and not the tracking. Opening and closing the hand a lot was very tiring for some people. Additionally, activating the gesture would always move the target point at least a little. The comment that it was hard to teleport far can also be seen in the data, where the palm gesture has the shortest average teleport distance. The triangle gesture received much less negative comments, manly about ergonomic problems that make it difficult to tilt the hands up and that some users prefer a one-handed gesture. There where however also participants that preferred two hands since they would make the gesture more distinctly different from other hand gestures. 
 
 
 \section{Limitations}
