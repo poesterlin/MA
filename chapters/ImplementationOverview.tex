@@ -64,16 +64,15 @@ In order to complete the third requirement, various design decisions were taken 
 
 During the presentation of the previous results in an expert interview, the question came up how improve the user experience of the targeting system that would convert a vector from the gesture into a teleport destination. In the games industry it is standard practice to use a ray-cast of some kind and a target reticle that shows the destination point. The ray-cast can be implemented linearly or by using a simulated projectile path. Both have some benefits and drawbacks, especially in this use-case since it might force the user to put their hands in an uncomfortable position to reach a target. It was proposed that the system should adapt to the user. This means that if the vector produced from the gesture recognition system hits a valid point in the world, this point will be used as a destination as shown in \ref{fig:tpray}. However, if the vector does not hit the ground within a specified distance, therefore producing an invalid result, the targeting system uses a simulated projectile path to curve the teleport path downwards as shown in \ref{fig:tparc}. Both targeting versions have the same smoothing applied in order to eliminate jitter caused by small tracking inconsistencies or gesture changes. A small confirmation sound was also added to give the user additional feedback when they are teleporting. This was also a good addition for debugging since it is easily apparent that a teleport was not performed when there is no confirmation sound even without looking at the users screen.
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/teleport ray.png}
-    \caption{Teleport ray originating from triangle gesture with reticle.}
-    \label{fig:tpray}
+\begin{figure}[!htb]
+    \minipage{0.40\textwidth}
+        \includegraphics[width=\linewidth]{figures/teleport ray.png}
+        \caption{Teleport ray originating from triangle gesture with reticle.}
+        \label{fig:tpray}
+    \endminipage\hfill
+    \minipage{0.40\textwidth}
+        \includegraphics[width=\linewidth]{figures/teleportArc.png}
+        \caption{Curved teleport arc originating from triangle gesture with reticle.}
+        \label{fig:tparc}
+    \endminipage\hfill
 \end{figure}
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/teleportArc.png}
-    \caption{Curved teleport arc originating from triangle gesture with reticle.}
-    \label{fig:tparc}
-\end{figure}
-
