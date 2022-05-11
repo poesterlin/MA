@@ -1,9 +1,27 @@
 \chapter{Gesture Elicitation Study}
 In order to get an overview over what kind of gesture systems can be considered intuitive a small Gesture Elicitation Study based on the research of Villarreal-Narvaez et al. \cite{elicitation} was performed. This was an important first step in the selection of the gesture systems to conduct further research on. Especially since none of the related work that focused on gesture based locomotion documented a user driven design approach.
 
-\section{Study Setup}
-The participants were instructed to come up with teleportation techniques and to explain them in detail. One and two-handed gesture systems are allowed. To understand the limitations of hand-tracking the subjects were wearing the Oculus Quest device with hand-tracking enabled. This way it is easy to tell which gesture is tracking well and what is not detected by the tracking cameras. A simple environment with only a plain on the bottom, the skybox and the users tracked virtual hands was used. The environment was created so that the focus lies on the hands and the gestures. During the study, the headset was connected to a simple web interface over which the study operator could record the current gesture. The recorded position data was stored for detailed analysis after the study. This was done because it would not have been realistic to record everything the participant does with their hands. The conversation between the operator and the participants was also recorded on video for analysis. The sessions lasted on average about six minutes.
+\section{Participants}
+The study was conducted with 6 participants, all from the HCI research group and all male. Everyone except from one person would consider themselves experienced or experts at VR.
 
+\section{Apparatus}
+The study was conducted using a Meta Quest 2 with hand-tracking enabled. The headset was connected to the internet and submitted all recorded data to a custom cloud server instance. To be able to monitor and control the experiment, the server also had a web interface running on a smartphone with an button, as shown in \ref{fig:savebtn}, for recording the current gesture and a 3D visualization that would display the stored gesture as shown in \ref{fig:vis2}. The implementation was specifically designed for low latency between the press of the button and the headset recoding a snapshot of the current hand and joint positions. This was done because it would not have been realistic to record everything the participant does with their hands. This way some information might have been lost. However, because of the simple interface the operator could look at the participants hands and determine when to start a recording while pressing the button without having to look at their screen. This ensured that the operator had an easy and accurate way to record the data. All of the commentary the participants gave as well as video of the participants gesturing was recoded using a Fujifilm X-T4 camera. 
+
+\begin{figure}[!htb]
+    \minipage{0.40\textwidth}
+        \includegraphics[width=0.5\textwidth]{figures/visualizer.jpg}
+        \caption{3D visualization in the browser.}
+        \label{fig:vis2}
+    \endminipage\hfill
+    \minipage{0.40\textwidth}
+        \includegraphics[width=\linewidth]{figures/save btn.JPG}
+        \caption{Button to store current gesture and joint information.}
+        \label{fig:savebtn}
+    \endminipage\hfill
+\end{figure}
+
+\section{Study Setup}
+The participants were instructed to come up with teleportation techniques and to explain them in detail. The operator would only mirror the participants ideas back to them to get as much insights from them as possible, while keeping the participant unbiased. One and two-handed gesture systems where allowed. To understand the limitations of hand-tracking the subjects were wearing the Oculus Quest device with hand-tracking enabled. This way it is easy to tell which gesture is tracking well and what is not detected by the tracking cameras. A simple environment with only a plain on the bottom, the skybox and the users tracked virtual hands was used. The environment was created so that the focus lies on the hands and the gestures. During the study, the headset was connected to a simple web interface over which the study operator could record the current gesture. The recorded position data was stored for detailed analysis after the study. The conversation between the operator and the participants was also recorded on video for analysis. The sessions lasted on average about six minutes.
 
 \section{Results}
 $33$ different gesture systems were collected from the video and gesture snapshot information, with five systems appearing twice. Nine gesture systems are not usable for the comparison since they are either not strictly teleportation systems or because they can not be compared to other teleportation methods like a system using a minimap or a type of proxy system. Out of the usable $24$ systems, seven use a bimanual approach while $17$ use one hand. This trend to one-handed gesture systems was also explicitly called for by two participants that expressed some possible downsides of bimanual systems. The participants reported more physical effort and not being able to carry something in one hand while teleporting as a disadvantage.
