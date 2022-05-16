@@ -166,9 +166,8 @@ display their results.
 The visualizations clearly show a difference in how chaotic the teleport targets where placed using the index gesture, and how much cleaner they are when the participants used the triangle gesture, with the palm gesture somewhere in the middle. However none of the gesture based teleportation techniques produce as clean and efficient routes between the targets as the results shown by Bozgeyikli et al. This indicates that the triangle gesture system is the method that allows users to teleport with the most accuracy and repeatability, with the palm gesture system on second place. It is clear however, that there is still some room for improvement even for the triangle gesture system. 
 
 \subsection{Time Between Teleports}
-The time users took between teleports was used as a measurement because in the second experiment users where instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference of the time between teleports that the users took when using the different gesture systems. 
+The time users took between teleports was used as a measurement because in the second experiment users where instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference of the time between teleports that the users took when using the different gesture systems. The pairwise comparisons are also all leading to the same result with a statistically significant difference and an alpha level below the excepted level of $.016$. 
 
-% TODO test pairwise difference
 
 
 % Analyse teleport heading vs gaze position
@@ -178,32 +177,52 @@ The time users took between teleports was used as a measurement because in the s
 After the user study not a single user reported any problems with cybersickness or quit the experiment even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
 
 \subsection{Quantitative Results}
+The individual results of the NASA-TLX and the UEQ questionnaires, as well as the overall results are not statistically significant. The overall scores favour the triangle gesture but not to a point that could be considered significantly better than the other gestures. 
 
 \subsection{Interview Results}
-During the interview the participants where asked to give commentary for every gesture, both positively and negatively. The opinions the participants expressed are evaluated in the following section. In general there is not a clearly overall preferred gesture. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. The participants where asked to rank the gestures based on preference and based on ergonomic they found the gestures to be. Both categories have the triangle gesture in first place but the result are not statistically significant. The users commentary is summarized in table \ref{tbl:interview}. 
+During the interview the participants where asked to give commentary for every gesture, both positively and negatively. The opinions the participants expressed are evaluated in the following section. In general there is not a clearly overall preferred gesture. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. The participants where asked to rank the gestures based on preference and based on ergonomic they found the gestures to be. Both categories have the triangle gesture in first place but the result are not statistically significant. The users commentary is summarized in table \ref{tbl:interview1}. 
 
-\begin{landscape}
-    \begin{table}[]
-    \resizebox{\columnwidth}{!}{%
-    \begin{tabular}{llll}
-    \hline
-    sentiment &
-      index &
-      palm &
-      triangle \\ \hline
-    \multicolumn{1}{|l|}{positive} &
-      \multicolumn{1}{l|}{fast, only little tiring, accurate, fun} &
-      \multicolumn{1}{l|}{easy to do, known gesture, natural} &
-      \multicolumn{1}{l|}{predictable, easy to aim, uses two hands, kreative} \\ \hline
-    negative &
-       \makecell{produces the most false positive activations, \\index finger tips down to meet the thumb while activating, \\most susceptable to tracking errors for example when turning hand, \\unpredictable, \\conflicted with gesture to grab flask} &
-       \makecell{tiring,\\ puts pressure on wrist,\\ difficult to aim acturatly \\ since closing the hand can change the target\\ and it is not easy to hold the hand parallel to the body} &
-       \makecell{difficult to aim far,\\ 2 handed use,\\ some activation problems} \\ \hline
-    \end{tabular}%
-    }
-\label{tbl:interview}
+\begin{table}[]
+
+\begin{tabular}{llll}
+\hline
+sentiment &
+    index \\ \hline
+\multicolumn{1}{|l|}{positive} &
+    \multicolumn{1}{l|}{fast, only little tiring, accurate, fun} \\ \hline
+negative &
+    \makecell{produces the most false positive activations, \\index finger tips down to meet the thumb while activating, \\most susceptable to tracking errors for example when turning hand, \\unpredictable, \\conflicted with gesture to grab flask} \\ \hline
+\end{tabular}%
+\label{tbl:interview1}
 \end{table}
-\end{landscape}
+
+\begin{table}[]
+
+\begin{tabular}{llll}
+\hline
+sentiment &
+    palm \\ \hline
+\multicolumn{1}{|l|}{positive} &
+    \multicolumn{1}{l|}{easy to do, known gesture, natural} \\ \hline
+negative &
+    \makecell{tiring,\\ puts pressure on wrist,\\ difficult to aim acturatly \\ since closing the hand can change the target\\ and it is not easy to hold the hand parallel to the body} \\ \hline
+\end{tabular}%
+\label{tbl:interview2}
+\end{table}
+
+\begin{table}[]
+
+\begin{tabular}{llll}
+\hline
+sentiment &
+    triangle \\ \hline
+\multicolumn{1}{|l|}{positive} &
+    \multicolumn{1}{l|}{predictable, easy to aim, uses two hands, kreative} \\ \hline
+negative &
+    \makecell{difficult to aim far,\\ 2 handed use,\\ some activation problems} \\ \hline
+\end{tabular}%
+\label{tbl:interview3}
+\end{table}
 
 The comments seem to come mainly from a point of frustration with a gesture or the tracking system. So while there are less and more negative comments, only few people reported having a fun and comfortable time using the gestures. The most negative feedback was aimed at the index gesture, since it produced the most false positive activations and therefore frustrated some participants. This issue might be solvable in the future with better tracking. On Second place was the palm gesture with mostly feedback concerning the gesture itself and not the tracking. Opening and closing the hand a lot was very tiring for some people. Additionally, activating the gesture would always move the target point at least a little. The comment that it was hard to teleport far can also be seen in the data, where the palm gesture has the shortest average teleport distance. The triangle gesture received much less negative comments, manly about ergonomic problems that make it difficult to tilt the hands up and that some users prefer a one-handed gesture. There where however also participants that preferred two hands since they would make the gesture more distinctly different from other hand gestures. 
 
