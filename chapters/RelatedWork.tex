@@ -271,18 +271,31 @@ The results that are relevant for this paper are:
 
 \begin{itemize}
 \item
-  Hand Close: a gesture for continuos movement. Seems to have problems
-  with cybersickness (25\% of study participants had to
-  abort the 90 minute test). \cite{Huang}
+  Hand Close: a gesture for continuos movement that uses the flexing and extending of the fingers as input. Flexed fingers make the user move forward, while extended fingers move the user backwards, with a dead zone in the middle where the fingers can rest. This method seems to have problems
+  with cybersickness (25\% of study participants had to abort the 90 minute test). \cite{Huang}
+  \begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/HUANG gesture.png}
+    \caption{Visualization of locomotion control gesture developed by Huang et al. \cite{Huang}}
+    \label{fig:gaze}
+  \end{figure}
+
 \item
-  Finger Run: two-handed gesture for continuos movement, the only
+  Finger Run: interesting idea for a two-handed gesture for continuos movement, the only
   resource is a video on a game development account that mostly posts fun
-  prototyping ideas. \cite{Beauchamp}
+  prototyping ideas. \cite{Beauchamp} This gesture could not be reproduced with the Quest 2 headsets hand tracking since there was too much occlusion of the lower hand by the upper hand so the tracking cut out.
+  \begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fingerrun.png}
+    \caption{Visualization of locomotion control gesture developed by Huang et al. \cite{Huang}}
+    \label{fig:gaze}
+  \end{figure}
+
 \item
   Walking stick: a gesture instantiates a walking stick, that can be
   used to move the user in relation to the sticks touch point on the
   ground. This is only a preliminary database entry though and this is
-  not a great solution for big distances or different altitudes. % TODO: cite
+  not a great solution for big distances or different altitudes. The author also included other mechanics that also used the walking stick like for example a shield or a gun. So this could be a useful method if there are already a number of gadgets present in the environment and a walking stick would make sense as an addition. \cite{walkingstick}
 \end{itemize}
 
 The categorizations seem to have some issues and so going through all
@@ -292,7 +305,7 @@ The categorizations seem to have some issues and so going through all
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  World in miniature: manipulate player position on a miniature version of the environment
+  World in miniature: a way to manipulate player position using a handheld, miniature representation of the users environment. \cite{Englmeier}
 \item
   Cloudstep: small teleportation steps using a joystick
 \item
