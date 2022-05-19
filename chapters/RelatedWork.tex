@@ -271,24 +271,24 @@ The results that are relevant for this paper are:
 
 \begin{itemize}
 \item
-  Hand Close: a gesture for continuos movement that uses the flexing and extending of the fingers as input. Flexed fingers make the user move forward, while extended fingers move the user backwards, with a dead zone in the middle where the fingers can rest. This method seems to have problems
-  with cybersickness (25\% of study participants had to abort the 90 minute test). \cite{Huang}
+  Hand Close: a gesture for continuos movement that uses the flexing and extending of the fingers as input as seen in figure \ref{fig:handclose}. Flexed fingers make the user move forward, while extended fingers move the user backwards, with a dead zone in the middle where the fingers can rest. This method seems to have problems
+  with producing cybersickness (25\% of study participants had to abort the 90 minute test). \cite{Huang}
   \begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/HUANG gesture.png}
     \caption{Visualization of locomotion control gesture developed by Huang et al. \cite{Huang}}
-    \label{fig:gaze}
+    \label{fig:handclose}
   \end{figure}
 
 \item
   Finger Run: interesting idea for a two-handed gesture for continuos movement, the only
   resource is a video on a game development account that mostly posts fun
-  prototyping ideas. \cite{Beauchamp} This gesture could not be reproduced with the Quest 2 headsets hand tracking since there was too much occlusion of the lower hand by the upper hand so the tracking cut out.
+  prototyping ideas \cite{Beauchamp}. The user holds one hand as a flat running surface and forms legs with the index and middle finger of the other hand that walk on the surface of the other hand as seen in figure \ref{fig:fingerrun}. This gesture could not be reproduced with the Meta Quest 2 headsets hand tracking since there was too much occlusion of the lower hand by the upper hand so the tracking cut out. This could be worked around by guessing the lower hands position if the tracking cuts out since the hand would get tracked again if the position changes, but this is not a great solution.
   \begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/fingerrun.png}
-    \caption{Visualization of locomotion control gesture developed by Huang et al. \cite{Huang}}
-    \label{fig:gaze}
+    \caption{Finger run gesture as shown in the demo video \cite{Beauchamp}}
+    \label{fig:fingerrun}
   \end{figure}
 
 \item
