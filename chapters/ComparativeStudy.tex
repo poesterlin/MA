@@ -157,6 +157,56 @@ The analysis of the task completion time for the second task shows a statistical
     \label{fig:ueqIndex}
 \end{figure}
 
+\subsubsection{Time Between Teleports}
+The time users took between teleports was used as a measurement because in the second task users where instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference of the time between teleports that the users took when using the different gesture systems. The pairwise comparisons are also all leading to the same result with a statistically significant difference and an alpha level below the excepted level of $.016$. 
+
+\subsubsection{Teleport Distances}
+TODO: \ref{fig:dist1} \ref{fig:dist2}
+
+\begin{figure}[!htb]
+    \minipage{0.45\textwidth}
+        \includegraphics[width=\linewidth]{figures/distances.pdf}
+        \caption{Teleport distances}
+        \label{fig:dist1}
+    \endminipage\hfill
+    \minipage{0.45\textwidth}
+        \includegraphics[width=\linewidth]{figures/distances2.pdf}
+        \caption{Teleport distances}
+        \label{fig:dist2}
+    \endminipage\hfill
+\end{figure}
+
+
+% \subsection{Cybersickness}
+% After the user study not a single user reported any problems with cybersickness or quit the task even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
+
+\subsubsection{Questionnaires}
+Both overall scores of NASA-TLX and the UEQ questionnaire, do not lead to statistically significant findings. The individual dimensions can be seen in figure \ref{fig:ueqDimensions}. They do not consistently favour a gesture or display a visual pattern of some sort. This result is somewhat surprising since the quantitative results reliably favour the triangle gesture. Comparing the individual dimensions individually leads to a significant result for the dependability scores. They are shown separately using  in figure \ref{fig:ueqDependability}. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/UEQ Scores.pdf}
+    \caption{UEQ scores of all dimensions}
+    \label{fig:ueqDimensions}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/ueq dependability.pdf}
+    \caption{UEQ dependability scores}
+    \label{fig:ueqDependability}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/NASA-TLX.pdf}
+    \caption{NASA-TLX scores}
+    \label{fig:ueqDependability}
+\end{figure}
+
+
+\subsection{Qualitative Results}
+
 \subsubsection{Teleport Trajectories}
 The data recorded from the second task is displayed in figure \ref{fig:exp2maps} similarly to the way Bozgeyikli et al. %cite
 display their results. 
@@ -196,39 +246,7 @@ The visualizations clearly show a difference in how chaotic the teleport targets
 
 The teleport trajectories seen in figures \ref{fig:map_index2} to \ref{fig:map_triangle2} show where all of the teleport locations were placed relative to the users position and head gaze direction. This data was only collected from the accuracy task. This was done because before the task the users were instructed to only teleport quickly from one check point to another so ideally this would result in only teleport trajectories straight up. As seen in the visualizations, there is quite a bit of variance. The index gesture produces the most false positive activations which contribute to the teleport locations behind the user. Otherwise the most trajectories are going slightly to the left since that would give the user a more ergonomic hand position. The palm gesture results in a much more open spread of trajectories. Users reported the teleport location changing when they closed their hands to confirm the teleport location which is an explanation for this result. There trajectories also do not range as far as the other gestures do which matches participants comments about a strained writs when trying to teleport far. There are on the other hand far less teleport locations behind the user which is consistent with the participants comments about less false positive activations with the palm gesture compared to the index gesture. The triangle gesture's visualization shows a narrow spread of teleport trajectories, with only a few short teleports behind the user that could also be done on purpose to teleport a step back after traveling too far. This result can therefore be considered the best since it matches the expected pattern the best. 
 
-\subsubsection{Time Between Teleports}
-The time users took between teleports was used as a measurement because in the second task users where instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference of the time between teleports that the users took when using the different gesture systems. The pairwise comparisons are also all leading to the same result with a statistically significant difference and an alpha level below the excepted level of $.016$. 
-
-
-% \subsection{Cybersickness}
-% After the user study not a single user reported any problems with cybersickness or quit the task even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false positive detections that could make the system unpredictable.
-
-\subsubsection{Questionnaires}
-Both overall scores of NASA-TLX and the UEQ questionnaire, do not lead to statistically significant findings. The individual dimensions can be seen in figure \ref{fig:ueqDimensions}. They do not consistently favour a gesture or display a visual pattern of some sort. This result is somewhat surprising since the quantitative results reliably favour the triangle gesture. Comparing the individual dimensions individually leads to a significant result for the dependability scores. They are shown separately using  in figure \ref{fig:ueqDependability}. 
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/UEQ Scores.pdf}
-    \caption{UEQ scores of all dimensions}
-    \label{fig:ueqDimensions}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/ueq dependability.pdf}
-    \caption{UEQ dependability scores}
-    \label{fig:ueqDependability}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/NASA-TLX.pdf}
-    \caption{NASA-TLX scores}
-    \label{fig:ueqDependability}
-\end{figure}
-
-
-\subsection{Qualitative Results}
+\subsubsection{Interview}
 During the interview the participants where asked to give commentary for every gesture, both positively and negatively. The opinions the participants expressed are evaluated in the following section. In general there is not a clearly overall preferred gesture. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. The participants where asked to rank the gestures based on preference and based on ergonomic they found the gestures to be. Both categories have the triangle gesture in first place but the result are not statistically significant. The users commentary is summarized in the tables \ref{tbl:interview1} to \ref{tbl:interview3}. 
 
 \begin{table}[]
@@ -237,9 +255,9 @@ During the interview the participants where asked to give commentary for every g
 sentiment &
     index \\ \hline
 \multicolumn{1}{|l|}{positive} &
-    \multicolumn{1}{l|}{fast, only little tiring, accurate, fun} \\ \hline
+    \multicolumn{1}{l|}{fast, fun, only little tiring, accurate } \\ \hline
 negative &
-    \makecell{produces the most false positive activations, \\index finger tips down to meet the thumb while activating, \\most susceptable to tracking errors for example when turning hand, \\unpredictable, \\conflicted with gesture to grab flask} \\ \hline
+    \makecell{produces the most false positive activations, \\index finger tips down to meet the thumb while activating, \\susceptable to tracking errors for example when turning hand} \\ \hline
 \end{tabular}%
 \label{tbl:interview1}
 \end{table}
@@ -270,7 +288,7 @@ negative &
 \label{tbl:interview3}
 \end{table}
 
-The comments are coming mainly from a point of frustration with a gesture or the tracking system. So while there are less and more negative comments, only few people reported having a fun and comfortable time using the gestures. The most negative feedback was aimed at the index gesture, since it produced the most false positive activations and therefore frustrated some participants. This issue might be solvable in the future with better tracking. On Second place was the palm gesture with mostly feedback concerning the gesture itself and not the tracking. Opening and closing the hand a lot was very tiring for some people. Additionally, activating the gesture would always move the target point at least a little. The comment that it was hard to teleport far can also be seen in the data, where the palm gesture has the shortest average teleport distance. The triangle gesture received much less negative comments, manly about ergonomic problems that make it difficult to tilt the hands up and that some users prefer a one-handed gesture. There where however also participants that preferred two hands since they would make the gesture more distinctly different from other hand gestures. 
+The comments are coming mainly from a point of frustration with a gesture or the tracking system. So while there are less and more negative comments, only few people reported having a fun and comfortable time using the gestures. The index gesture received mixed feedback with a some positive comments that described the gesture as fast and fun to use. However since it produced the most false positive activations it received frustrated comments by the participants about the gesture detection. The palm gesture on the other hand received mostly feedback concerning the gesture itself and not the tracking. Opening and closing the hand a lot was very tiring for some people. Additionally, activating the gesture would always move the target point at least a little. The comment that it was hard to teleport far can also be seen in the data, where the palm gesture has the shortest average teleport distance. The triangle gesture received much less negative comments, manly about ergonomic problems that make it difficult to tilt the hands up and that some users prefer a one-handed gesture. There where however also participants that preferred two hands since they would make the gesture more distinctly different from other hand gestures. 
 
 
 \section{Limitations}
