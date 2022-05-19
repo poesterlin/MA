@@ -77,19 +77,14 @@ The tasks were conducted using a Meta Quest 2 with hand-tracking enabled. The he
     \label{fig:settings}
 \end{figure}
 
-To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information as shown in figure \ref{fig:vis}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step, since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording each can be selected individually and deleted if there was a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy to delete a recording that was assigned to the wrong gesture state and therefore very dissimilar to the other recordings. The recording would then show a large distance to the others and could easily be deleted and rerecorded. All this was very important so the calibration was consistent and reliable for every participant.
+To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information as shown in figures \ref{fig:vis} and  \ref{fig:vis2}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step, since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording each can be selected individually and deleted if there was a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy to delete a recording that was assigned to the wrong gesture state and therefore very dissimilar to the other recordings. The recording would then show a large distance to the others and could easily be deleted and rerecorded. All this was very important so the calibration was consistent and reliable for every participant.
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/point cloud vis.jpg}
-    \caption{3D visualization of recorded gesture information as a point cloud, together with static joints.}
-    \label{fig:vis}
-\end{figure}
 \begin{figure}[!htb]
-    \minipage{0.49\textwidth}
+    \minipage{0.4\textwidth}
         \includegraphics[width=\linewidth]{figures/point cloud vis.JPG}
+        \label{fig:vis2}
     \endminipage\hfill
-    \minipage{0.\textwidth}
+    \minipage{0.4\textwidth}
         \includegraphics[width=\linewidth]{figures/point cloud vis2.JPG}
         \label{fig:vis}
     \endminipage\hfill
@@ -144,7 +139,12 @@ pairwise comparisons, the Bonferroni correction required to adjust the alpha lev
 \subsection{Task Completion Time}
 The analysis of the task completion time for the second task shows a statistically significant difference when using the different gesture systems. The time was recorded individually for every checkpoint in the second task. The analysis using the Friedman’s test shows an overall significant difference between the gestures. Additionally, there are significant differences comparing the triangle and palm gestures, as well as the index and palm gestures. The difference between the task completion time using the triangle or index gesture was not significant though with an alpha level of $.136$.
 
-% TODO: Diagram with error bars
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/task completion time.pdf}
+    \caption{Average task completion times for second task in seconds using the respective gestures.}
+    \label{fig:ueqIndex}
+\end{figure}
 
 \subsection{Teleport Trajectories}
 The data recorded from the second task is displayed in figure \ref{fig:exp2maps} similarly to the way Bozgeyikli et al. %cite
@@ -197,22 +197,11 @@ The comparing the individual dimensions of the NASA-TLX and the UEQ questionnair
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/ueq index.pdf}
-    \caption{UEQ questionnaire scores of index gesture.}
-    \label{fig:ueqIndex}
+    \includegraphics[width=0.6\textwidth]{figures/ueq dependability.pdf}
+    \caption{UEQ dependability scores}
+    \label{fig:ueqDependability}
 \end{figure}
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/ueq palm.pdf}
-    \caption{UEQ questionnaire scores of index gesture.}
-    \label{fig:ueqPalm}
-\end{figure}
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/ueq triangle.pdf}
-    \caption{UEQ questionnaire scores of index gesture.}
-    \label{fig:ueqTriangle}
-\end{figure}
+
 
 \subsection{Interview Results}
 During the interview the participants where asked to give commentary for every gesture, both positively and negatively. The opinions the participants expressed are evaluated in the following section. In general there is not a clearly overall preferred gesture. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. The participants where asked to rank the gestures based on preference and based on ergonomic they found the gestures to be. Both categories have the triangle gesture in first place but the result are not statistically significant. The users commentary is summarized in table \ref{tbl:interview1}. 
