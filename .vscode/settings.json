@@ -5,5 +5,12 @@
         "distractors",
         "immersiveness",
         "timeframe"
-    ]
+    ],
+    "grammarly.include": [
+        "*.tex"
+    ],
+    "grammarly.domain": "academic",
+    "grammarly.emotions": [
+        "analytical"
+    ],
 }
