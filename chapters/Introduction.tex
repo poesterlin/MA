@@ -1,14 +1,36 @@
 
 \chapter{Introduction}
-The world of virtual reality (VR) is getting increasingly diverse. All kinds of tools and games are built, pushing the boundary of what is possible to create with current technologies. The computing hardware is also getting more powerful and more consumer-friendly. Standalone headsets that do not require a powerful computer linked over a cable are cheaper and can even be more immersive since the user does not has to keep track of the cable. The next step on the path of simplifying the experience could be to make it possible to use VR without controllers. They will still have their place for applications that require very acuate tracking, lots of different types of inputs or where it makes sense to hold something like a gun or paintbrush. Many experiences do not require this, however. Especially for applications and tools used to collaborate, enabling users to enhance their communication with gestures might be helpful. Use-cases like this are where hand-tracking will allow the implementation of immersive, natural interfaces. This can allow anybody to just put the headset on and start interacting with the virtual world without first being told how to grab something or how to activate a button, as shown in figure \ref{fig:example}. However, as stated before, the interactions do have limitations in terms of accuracy and their number of inputs and are a challenge to get right. Users will first apply the mental model built during decades of experience using their hands in the real world. Differences between the real and the virtual world might therefore make the experience less immersive than if the user were using a controller where there is no previous knowledge. This raises the question of what to do if the virtual world allows users to do more with their hands than in the real world. 
+The world of virtual reality (VR) is getting increasingly diverse. All kinds of tools and games are built, pushing the boundary of what is possible to create with current technologies. The computing hardware is also getting more powerful and more consumer-friendly.
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/handtracking.jpg}
+    \caption{Meta Quest hand-tracking announcement in 2019 \cite{annoucment}}
+    \label{fig:quest}
+\end{figure}
+
+Standalone headsets that do not require a powerful computer linked over a cable are cheaper and can even be more immersive since the user does not has to keep track of the cable. The next step on the path of simplifying the experience could be to make it possible to use VR without controllers. Controllers will still have their place for applications that require very acuate tracking, lots of different types of inputs or where it makes sense to hold something like a gun or paintbrush. Many experiences do not require this, however. 
+Especially for applications and tools used to collaborate, enabling users to enhance their communication with gestures might be helpful. Use-cases like this are where hand-tracking will allow the implementation of immersive, natural interfaces. This can allow anybody to simply put a headset on and start interacting with the virtual world without first being told how to grab something or how to activate a button, as shown in figure \ref{fig:example}.
+
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/wave.JPG}
+    \caption{Waving to talk to bots in Vacation Simulator}
+    \label{fig:waving}
+\end{figure}
+
+
+
+For now, with the current technology, there are still lots of changes to solve. Owlchemy Labs, the developers for the popular game ``Vacation Simulator'' share their experience adding hand-tracking support on their blog and write: ``It’s very easy to occlude fingers, for hands to leave the tracking area, and for velocity to be high enough that no accurate data is available.'' \cite{VacSimBlog}. This is an examples for the limitations hand-tracking has, in terms of accuracy and the number of possible distinct inputs. When converting an existing application to support hand-tracking or creating a new one from scratch, the inputs are a big challenge to get right. Users will first apply the mental model built during decades of experience using their hands in the real world. If this experience translates to the virtual world, it can be great experience. ``In Vacation Simulator you can wave at bots to start conversations, and it’s fun and intuitive. This was one place where hand tracking made the gameplay even better. With waving there is no abstraction at all in what you are doing. The game feel is unmatched.'' write the Owlchemy Labs developers further. This interaction can be seen in figure \ref{fig:waving}. However, there are going to be some differences between the real world interaction and the virtual word, that make the experience less immersive. This raises the question of what to do if the virtual world allows users to do more with their hands than in the real world. 
+
+
+\begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{figures/examplegestures.png}
     \caption{Example of users interacting with objects in VR using hand-tracking. \cite{Han}}
     \label{fig:example}
 \end{figure}
-
 
 One simple way where VR technology can expand on what is possible in the real world is scale. The area a user is physically able to explore and walk around comfortably is limited. For most casual users of VR, that might be the size of their living room. In VR, this is not a limitation. There, a user can be given the ability to fly, teleport or use any number of so-called locomotion techniques to increase their level of comfort and allow them to go wherever they want. While not completely understood, the disconnect between the real world's movement and VR is likely one source of motion sickness. This makes locomotion a necessary mechanic to implement in large scale VR experiences and a very divisive one since it can impact the users' immersion and level of comfort a lot. VR experiences only offering continuous locomotion can, for some users that are more prone to get motion sick, only be usable for a few minutes, only with a limited field of view or not useable at all. On the other hand, users that are used to continuous navigation do not get motion sick as quickly or even at all report being frustrated by having to use another, less immersive locomotion mechanic that might get in the way a lot more. So while teleportation based locomotion is not needed for everyone, it allows most people to at least use large scale VR experiences comfortably without getting sick. This makes it the first and sometimes only mechanic that is implemented, and so it should be as well understood and implemented as possible. Especially when in combination with hand-tracking and gesture-based teleportation, there is only minimal research done so far.
 
