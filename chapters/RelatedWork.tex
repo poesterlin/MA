@@ -263,8 +263,6 @@ The index-steering technique was praised for the pointing system that is reminis
 
 
 
-
-
 For traditional locomotion using controllers, the locomotion database from Luca et al. \cite{Luca} is a great resource. It includes solutions that are user-tested and established in the industry, as well as more experimental ones. However, when filtering the locomotion database for techniques that are categorized to use hand-tracking, only eight results are presented.
 The results that are relevant for this paper are:
 
@@ -337,18 +335,18 @@ Emerging technologies enable new human-computer interaction techniques. Gestures
 \subsection{Gesture Detection}\label{gesture-detection}
 
 The most accessible hand-tracking hardware for virtual reality today is
-the Oculus Quest 2 VR headset. It has a hand-tracking build in, which can
-be accessed using the Oculus SDK in Unity. The exact technology the
-Oculus Quest device uses are not known. However, it can be speculated that
-Oculus is using a variation of the research done by Han et al. \cite{Han}. The
-Oculus Quest only has monochrome cameras and only a very limited amount
+the Meta Quest 2 VR (formerly named Oculus Quest 2) headset. It has a hand-tracking system build in, which can
+be accessed using the Meta SDK in Unity. The exact technology the
+Meta Quest device uses are not known. However, it can be speculated that
+Meta is using a variation of the research done by Han et al. \cite{Han}. The
+Meta Quest only has monochrome cameras and only a very limited amount
 of processing power, which correlates with the limitations addressed by
-Han et al. \cite{Han}. Like the Oculus Quest, the
+Han et al. \cite{Han}. Like the Meta Quest, the
 unnamed headset in the paper has four cameras. They are positioned on the
 headsets corners, all facing in slightly different directions to cover a
 120° area in front and below the headset. The areas the individual
 cameras can see overlap in some places so that in the most important
-areas, the hands are visible for at least two up to 4 cameras. The
+areas, the hands are visible for at least two up to 4 cameras, as shown in figure \ref{fig:questcam}. The
 tracking system works by first detecting the hands in the camera streams
 using a CNN architecture optimized for efficiency named DetNet. The
 network can simultaneously localize and classify the hands, which
@@ -362,6 +360,14 @@ real-time processing on mobile hardware, but there are definite
 limitations. Since Hand-to-hand occlusions and interactions were not
 part of the training set, the output has problems with complicated
 poses.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=\textwidth]{figures/questcam.png}
+  \caption{Meta Quest camera locations and tracking regions. The colors represent how many cameras can see this region of the tracking space.}
+  \label{fig:questcam}
+\end{figure}
+
 
 To check if the hand positioning currently resembles a stored gesture, Schäfer et al. \cite{Schafer2021} propose an algorithm that detects gestures based on the finger state and the palm direction. The finger state can only be curled or stretched. The authors give the example of a fist gesture that is characterized by having all fingers in a curled state. For direction-dependent gestures like a thumbs-up gesture, the algorithm also takes the direction of the palm into account. This seems to have some limitations for gestures like an okay sign where the thumb and index finger are touching and neither in a curled nor stretched state. However, without the actual implementation that Schäfer et al. developed, it is hard to know if the okay sign could be recognized or not.
 
@@ -435,7 +441,7 @@ This works well for this use case, where the teleportation does not need to be a
 
 
 \subsection{Elixir}
-One of the first hand-tracking titles for the Oculus Quest was Elixir. A short demo game where a user is allowed to explore a magic chamber. The chamber could be explored using Room-scale-based movement if the user has a large enough play space. However, there is also a teleportation system included. It works using a bimanual gesture. Both hands form a triangle using both thumbs and index fingers. This can be used to target a point on the floor. The teleport resolution is limited to a grid system on the floor. Once selected, a tile on the floor lights up. To confirm the tile as the target location, the user pinches the respective thumbs and index fingers together. The viewpoint is instantly moved to the new location.
+One of the first hand-tracking titles for the Meta Quest was Elixir. A short demo game where a user is allowed to explore a magic chamber. The chamber could be explored using Room-scale-based movement if the user has a large enough play space. However, there is also a teleportation system included. It works using a bimanual gesture. Both hands form a triangle using both thumbs and index fingers. This can be used to target a point on the floor. The teleport resolution is limited to a grid system on the floor. Once selected, a tile on the floor lights up. To confirm the tile as the target location, the user pinches the respective thumbs and index fingers together. The viewpoint is instantly moved to the new location.
 
 \begin{figure}[hbt!]
   \centering
