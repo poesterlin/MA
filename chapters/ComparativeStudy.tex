@@ -146,16 +146,29 @@ This section presents the results of the study. Several methods were used for th
 pairwise comparisons, the Bonferroni correction is required to adjust the alpha level to $(.05/3) \approx .016$.
 
 \subsection{Quantitative Results}
+% TODO
 
 \subsubsection{Task Completion Time}
-The analysis of the task completion time for the second task shows a statistically significant difference when using the different gesture systems. The time was recorded individually for every checkpoint in the second task. The analysis using the Friedman's test shows an overall significant difference between the gestures. Additionally, there are significant differences comparing the triangle and palm gestures, as well as the index and palm gestures. The difference between the task completion time using the triangle or index gesture was not significant, though with an alpha level of $.136$.
+The analysis of the task completion time for the second task shows a statistically significant difference when using the different gesture systems. The time was summed up over all checkpoints, but like in the original study, the first two checkpoints were omitted to give users some time to get used to the task. The analysis using the Friedman's test shows an overall significant difference between the gestures. Additionally, there are significant differences comparing the triangle and palm gesture. The difference between the task completion time using the triangle or index gesture was not significant, with an alpha level of $.67$. Also comparing the index and palm gesture did not lead to a significant result with an alpha level of $.267$.
+The task completion times can be seen in figure \ref{fig:taskCompletionTime}, that shows a box plot of the data, with detailed information in table \ref{tbl:taskCompletionTime}. 
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/task completion time.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/Task Completion Times (in seconds).pdf}
     \caption{Average task completion times for second task in seconds using the respective gestures.}
-    \label{fig:ueqIndex}
+    \label{fig:taskCompletionTime}
 \end{figure}
+
+\begin{table}[]
+\begin{tabular}{lrl}
+    \textbf{Gesture} & \multicolumn{1}{l}{\textbf{Median}} & \textbf{z} \\
+    Index            & $103.2935$                            & ?      \\
+    Palm             & $127.0485$                            & ?      \\
+    Triangle         & $89.294$                              & ?     
+    \label{tbl:taskCompletionTime}
+\end{tabular}
+\end{table}
+% TODO z values
 
 \subsubsection{Time Between Teleports}
 The time users took between teleports was used as a measurement because, in the second task, users were instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds, but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference in the time between teleports that the users took when using the different gesture systems. The pairwise comparisons are also all leading to the same result with a statistically significant difference and an alpha level below the excepted level of $.016$. 
