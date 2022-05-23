@@ -154,6 +154,7 @@ The task completion times can be seen in figure \ref{fig:taskCompletionTime}, th
 \end{figure}
 
 \begin{table}[]
+\centering
 \begin{tabular}{lrl}
     \textbf{Gesture} & \multicolumn{1}{l}{\textbf{Median}} & \textbf{z} \\
     Index            & $103.2935$                            & ?      \\
@@ -166,7 +167,7 @@ The task completion times can be seen in figure \ref{fig:taskCompletionTime}, th
 % TODO z values
 
 \subsubsection{False-Positive Teleport Activations}
-The figure \ref{fig:fpActivations} displays the false-positive teleport activations. This data was collected in the Accuracy task. If a participant teleported away from a checkpoint during the three second waiting period, this would be logged. That means that this measure only tracks how well the gesture detection is able to detect a neutral position that is not supposed to be teleport activation and not how often the gesture activated in between checkpoints without the users intent to do so. Therefore, the number of accidental teleport is potentially higher. This difference between the gestures overall is statistically significant with an alpha level of $<0.01$. However, when looking at the individual differences it can only be shown that the triangle gesture has the least amount of false-positive activations, while the index and palm gesture do not show a significant difference.
+The figure \ref{fig:fpActivations} displays the false-positive teleport activations, with detailed information in table \ref{tbl:fpActivations}. This data was collected in the Accuracy task. If a participant teleported away from a checkpoint during the three second waiting period, this would be logged. That means that this measure only tracks how well the gesture detection is able to detect a neutral position that is not supposed to be teleport activation and not how often the gesture activated in between checkpoints without the users intent to do so. Therefore, the number of accidental teleport is potentially higher. This difference between the gestures overall is statistically significant with an alpha level of $<0.01$. However, when looking at the individual differences it can only be shown that the triangle gesture has the least amount of false-positive activations, while the index and palm gesture do not show a significant difference.
 
 \begin{figure}[!h]
     \centering
@@ -174,6 +175,17 @@ The figure \ref{fig:fpActivations} displays the false-positive teleport activati
     \caption{False Positive Teleport Activations as a percentage of the overall done teleportations.}
     \label{fig:fpActivations}
 \end{figure}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{lrl}
+    \textbf{Gesture} & \multicolumn{1}{l}{\textbf{Median}} & \textbf{z} \\
+    Index            & 0,16\%                                & ?          \\
+    Palm             & 0,14\%                                & ?          \\
+    Triangle         & 0,07\%                                & ?         
+    \label{tbl:fpActivations}
+\end{tabular}
+\end{table}
 
 
 \subsubsection{Time Between Teleports}
@@ -269,6 +281,7 @@ The teleport trajectories, seen in figures \ref{fig:map_index2} to \ref{fig:map_
 During the interview, the participants were asked to give commentary on every gesture, both positively and negatively. The opinions the participants expressed are evaluated in the following section. In general, there is not a clearly overall preferred gesture. Some participants reported the opening and closing of the entire hand to form a fist as a confirmation step for the palm gesture to be very tiresome, while others specifically reported this to be the easiest part and that they could do this all day. The participants were asked to rank the gestures based on preference and based on ergonomics they found the gestures to be. Both categories have the triangle gesture in the first place, but the result is not statistically significant. The users commentary is summarized in the tables \ref{tbl:interview1} to \ref{tbl:interview3}. 
 
 \begin{table}[]
+\centering
 \begin{tabular}{llll}
 \hline
 Sentiment &
@@ -282,6 +295,7 @@ negative &
 \end{table}
 
 \begin{table}[]
+\centering
 \begin{tabular}{llll}
 \hline
 Sentiment &
@@ -295,6 +309,7 @@ negative &
 \end{table}
 
 \begin{table}[]
+\centering
 \begin{tabular}{llll}
 \hline
 Sentiment &
