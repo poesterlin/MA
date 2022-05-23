@@ -165,6 +165,17 @@ The task completion times can be seen in figure \ref{fig:taskCompletionTime}, th
 
 % TODO z values
 
+\subsubsection{False-Positive Teleport Activations}
+The figure \ref{fig:fpActivations} displays the false-positive teleport activations. This data was collected in the Accuracy task. If a participant teleported away from a checkpoint during the three second waiting period, this would be logged. That means that this measure only tracks how well the gesture detection is able to detect a neutral position that is not supposed to be teleport activation and not how often the gesture activated in between checkpoints without the users intent to do so. Therefore, the number of accidental teleport is potentially higher. This difference between the gestures overall is statistically significant with an alpha level of $<0.01$. However, when looking at the individual differences it can only be shown that the triangle gesture has the least amount of false-positive activations, while the index and palm gesture do not show a significant difference.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/False Positive Teleport Activations.pdf}
+    \caption{False Positive Teleport Activations as a percentage of the overall done teleportations.}
+    \label{fig:fpActivations}
+\end{figure}
+
+
 \subsubsection{Time Between Teleports}
 The time users took between teleports was used as a measurement because, in the second task, users were instructed to teleport between the checkpoints as fast as possible. That resulted in much shorter delays between teleports. The system allows one teleport every 0.7 seconds, but it takes the user some additional time to reorient themselves, pick the next target and execute another teleport. There is a statistically significant difference in the time between teleports that the users took when using the different gesture systems. The pairwise comparisons are also all leading to the same result with a statistically significant difference and an alpha level below the excepted level of $.016$. 
 
@@ -260,10 +271,10 @@ During the interview, the participants were asked to give commentary on every ge
 \begin{table}[]
 \begin{tabular}{llll}
 \hline
-sentiment &
-    index \\ \hline
-\multicolumn{1}{|l|}{positive} &
-    \multicolumn{1}{l|}{fast, fun, only little tiring, accurate } \\ \hline
+Sentiment &
+    Index Gesture \\ \hline
+\multicolumn{1}{positive} &
+    \multicolumn{1}{fast, fun, only little tiring, accurate } \\ \hline
 negative &
     \makecell{produces the most false positive activations, \\index finger tips down to meet the thumb while activating, \\susceptable to tracking errors for example when turning hand} \\ \hline
 \end{tabular}%
@@ -273,10 +284,10 @@ negative &
 \begin{table}[]
 \begin{tabular}{llll}
 \hline
-sentiment &
-    palm \\ \hline
-\multicolumn{1}{|l|}{positive} &
-    \multicolumn{1}{l|}{easy to do, known gesture, natural} \\ \hline
+Sentiment &
+    Palm Gesture \\ \hline
+\multicolumn{1}{positive} &
+    \multicolumn{1}{easy to do, known gesture, natural} \\ \hline
 negative &
     \makecell{tiring,\\ puts pressure on wrist,\\ difficult to aim acturatly \\ since closing the hand can change the target\\ and it is not easy to hold the hand parallel to the body} \\ \hline
 \end{tabular}%
@@ -286,17 +297,17 @@ negative &
 \begin{table}[]
 \begin{tabular}{llll}
 \hline
-sentiment &
-    triangle \\ \hline
-\multicolumn{1}{|l|}{positive} &
-    \multicolumn{1}{l|}{predictable, easy to aim, uses two hands, kreative} \\ \hline
+Sentiment &
+    Triangle Gesture \\ \hline
+\multicolumn{1}{positive} &
+    \multicolumn{1}{predictable, easy to aim, uses two hands, kreative} \\ \hline
 negative &
     \makecell{difficult to aim far,\\ 2 handed use,\\ some activation problems} \\ \hline
 \end{tabular}%
 \label{tbl:interview3}
 \end{table}
 
-The comments are coming mainly from the point of frustration with a gesture or the tracking system. So while there are fewer and more negative comments, only a few people reported having a fun and comfortable time using the gestures. The index gesture received mixed feedback with some positive comments that described the gesture as fast and fun to use. However, since it produced the most false-positive activations, it received frustrated comments from the participants about gesture detection. The palm gesture, on the other hand, received mostly feedback concerning the gesture itself and not the tracking. Opening and closing the hand a lot was very tiring for some people. Additionally, activating the gesture would always move the target point at least a little. The comment that it was hard to teleport far can also be seen in the data, where the palm gesture has the shortest average teleport distance. The triangle gesture received much fewer negative comments, mainly about ergonomic problems that make it difficult to tilt the hands up and that some users prefer a one-handed gesture. There were, however, also participants that preferred two hands since they would make the gesture more distinctly different from other hand gestures. 
+The comments are coming mainly from the point of frustration with a gesture or the tracking system. So while there are fewer and more negative comments, only a few people reported having a fun and comfortable time using the gestures. The index gesture received mixed feedback with some positive comments that described the gesture as fast and fun to use. However, since it produced the most false-positive activations, it received frustrated comments from the participants about gesture detection. The palm gesture, on the other hand, received mostly feedback concerning the gesture itself and not the tracking. Opening and closing the hand a lot was very tiring for some people. Additionally, activating the gesture would always move the target point at least a little. The triangle gesture received much fewer negative comments, mainly about ergonomic problems that make it difficult to tilt the hands up and that some users prefer a one-handed gesture. There were, however, also participants that preferred two hands since they would make the gesture more distinctly different from other hand gestures. 
 
 
 \section{Limitations}
