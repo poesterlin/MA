@@ -1,15 +1,14 @@
 \chapter{Design of Teleportation Techniques}
 \label{cha:ImplementationOverview}
-
-% TODO new intro
-The custom prototype implemented for the comparative user study was built to be able to get all gestures into the same, controlled VR environment. The implementation was done using the Unity game engine. More technical information can be found in the master report. 
+This chapter provides a technical overview over the gestures that were selected to be implemented and the prototype used for the study. More technical information can be found in the master report. 
+The study prototype implemented for the comparative user study was built to be able to access all gestures in the same, controlled VR environment. The implementation was done using the Unity game engine. 
 
 \section{Implemented Gestures}
 
 To keep the implementation and study time in a reasonable timeframe, only a limited number of locomotion systems can be picked for the comparative study. Also, to keep the systems comparable, only teleportation based systems are going to be considered since teleportation is currently the most popular and accessible method. This leaves the gestures from the games industry and the gestures researched by Schäfer et al. \cite{Schafer2021}. 
 
-The games industry has produced gesture systems for a variety of environments and uses cases. The vacation simulator pull gesture is only used for low-resolution tasks and is therefore too limited. The telepath system is very interesting but harder to compare to the other systems. This would have made it difficult to implement and evaluate. %cite
-The elixir gesture system, on the other hand, will be implemented for the study since it was also proposed by the participants of the Gesture Evaluation Study.  %cite 
+The games industry has produced gesture systems for a variety of environments and uses cases. The vacation simulator pull gesture is only used for low-resolution tasks and is therefore too limited. The telepath system \cite{WaWizTelePath} is very interesting but harder to compare to the other systems. This would have made it difficult to implement and evaluate.
+The elixir gesture system \cite{Magnopus}, on the other hand, will be implemented for the study since it was also proposed by the participants of the Gesture Evaluation Study. 
 This system will be referred to as the triangle gesture in the following work. As seen in figure \ref{fig:triangleTracker}, the gesture is converted to a vector by creating a plane from the base of the two thumbs and the center point of the tips of the index fingers. The normal vector of this plane is used to select the target destination.
 
 \begin{figure}[!ht]

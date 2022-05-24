@@ -2,9 +2,6 @@
 Enabling simulated movement in virtual environments is not a new problem. 
 The techniques that allow the user to move their viewpoint require special attention in regards to immersiveness, cybersickness, ergonomics and path integration, concepts explained in the following chapter.
 
-% TODO: why sections are chosen
-
-
 \section{Motion Sickness}\label{motion-sickness}
 
 The phenomenon, known today as motion sickness, predates modern technology
@@ -72,7 +69,6 @@ allows an observer to gather information about the motion of objects and
 give the observer a sense of presence \cite{Gibson}.
 
 \section{Locomotion in VR}\label{locomotion-in-vr}
-% TODO: cite
 The ability to move the players' avatar in the virtual environment is
 called locomotion. It is required for many applications or games that
 take place on a larger scale. Without locomotion techniques, VR would be
@@ -186,7 +182,7 @@ An interesting problem with teleportation-based locomotion is that it is
 found to be the least immersive technique out of the four types
 categorized by Boletsis et al. \cite{Boletsis}. This
 could improve using hand-tracking because the users can use their own
-hands, and that might be more immersive for some people. % TODO: (maybe include in hypotheses)
+hands, and that might be more immersive for some people.
 
 
 \subsection{Locomotion using hand-tracking}\label{locomotion-using-hand-tracking}
@@ -294,7 +290,6 @@ The results that are relevant for this paper are:
 The categorizations seem to have some issues, and so going through all
 109 techniques, a small list of more gestures can be found that might work using gestures:
 
-% TODO: integrate
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
@@ -374,7 +369,7 @@ Hand-to-hand interactions, self-contact and occlusion, come to mind.
 Smith et al. \cite{Smith} created a system that takes in high-resolution data from
 One hundred twenty-four cameras, capturing uniformly lit hands. The images are turned into a
 mesh so detailed that it is basically indistinguishable from the original
-hands. The pose of the two hands and even the texture is captured without
+hands, as seen in figure \ref{fig:smithOcclusion}. The pose of the two hands and even the texture is captured without
 any artefacts. This process is very complex, and it takes minutes to
 render per frame, so it will take some optimization until detailed hand
 models like this can be included in a VR environment. However, this is
@@ -382,11 +377,11 @@ the direction that technology will go, even if it will take some time.
 That means that even if hand-to-hand interaction is not able to be
 reliably tracked currently, it could be in the future.
 
-\begin{figure}[hbt!]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{figures/smithpaper hand tracking.png}
   \caption{Tracking results of method developed by Smith et al. \cite{Smith} of a subjects hands with lots of occlusion and self-contact.}
-  \label{fig:elixir}
+  \label{fig:smithOcclusion}
 \end{figure}
 
 
@@ -437,7 +432,7 @@ This works well for this use case, where the teleportation does not need to be a
 
 
 \subsection{Elixir}
-One of the first hand-tracking titles for the Meta Quest was Elixir. A short demo game where a user is allowed to explore a magic chamber. The chamber could be explored using Room-scale-based movement if the user has a large enough play space. However, there is also a teleportation system included. It works using a bimanual gesture. Both hands form a triangle using both thumbs and index fingers. This can be used to target a point on the floor. The teleport resolution is limited to a grid system on the floor. Once selected, a tile on the floor lights up. To confirm the tile as the target location, the user pinches the respective thumbs and index fingers together. The viewpoint is instantly moved to the new location.
+One of the first hand-tracking titles for the Meta Quest was Elixir \cite{Magnopus}. A short demo game where a user is allowed to explore a magic chamber. The chamber could be explored using Room-scale-based movement if the user has a large enough play space. However, there is also a teleportation system included. It works using a bimanual gesture. Both hands form a triangle using both thumbs and index fingers. This can be used to target a point on the floor. The teleport resolution is limited to a grid system on the floor. Once selected, a tile on the floor lights up. To confirm the tile as the target location, the user pinches the respective thumbs and index fingers together. The viewpoint is instantly moved to the new location.
 
 \begin{figure}[hbt!]
   \centering
@@ -490,7 +485,7 @@ The dependent variables in this study are the efficiency and effectiveness of ea
 
 Bozgeyikli et al. \cite{bozgeyikli} conducted a study to compare task execution time, but also the accuracy and controllability of different locomotion mechanics. They developed an experiment that took place in a neutral VR environment with 5 checkpoints placed in a pattern. They had participants travel to each checkpoint twice in a fixed order. The participants had to stand on each checkpoint for three seconds to activate the next one. This was implemented to detect accidental movement activations. After six completed checkpoints, obstacles, shown in figure \ref{fig:obstacles}, would be placed in the environment that users should avoid while traveling. The trajectories where recorded to create visualizations like the one shown in figure \ref{fig:pointandTp}.
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \minipage{0.45\textwidth}
       \includegraphics[width=\linewidth]{figures/point&tp.JPG}
       \caption{Visualization of movement trajectories by Bozgeyikli et al. \cite{bozgeyikli}}

@@ -22,9 +22,16 @@ Research Questions:
 Two tasks were implemented to let participants first gather some experience with VR, teleportation and the gesture that is currently active and then gather insights on the accuracy of the gesture detection and the speed at which the participants can execute a task.
 
 \subsubsection{Task One: Exploration}
-The first task is based on a task that would be a realistic use case for a locomotion system. It was conducted using a playful, magical VR environment shown in ... %ref figure. 
-The participant was tasked to collect an ingredient for a magic potion that could be hidden anywhere on the map. The teleportation system has to be used to search for the ingredient and for it to be brought back to the starting point. Each time, the user received a short in-game tutorial with a picture of the ingredient that should be found with animated hands presenting the gesture and how to use it. This was inspired by the tutorial in the ... game %cite
+The first task is based on a task that would be a realistic use case for a locomotion system. It was conducted using a playful, magical VR environment shown in figure \ref{fig:forestEnv}. 
+The participant was tasked to collect an ingredient for a magic potion that could be hidden anywhere on the map. The teleportation system has to be used to search for the ingredient and for it to be brought back to the starting point. Each time, the user received a short in-game tutorial with a picture of the ingredient that should be found with animated hands presenting the gesture and how to use it. This was inspired by the tutorial in the Elixir game \cite{Magnopus}, that can be seen in the background of figure \ref{fig:elixir}.
 Each teleport was recorded with the player's position and head gaze direction. The task was specifically designed not to put too much pressure on the participant so they could get to know the gesture and ideally have fun looking around. However, like in a real application, teleportation was still an essential part of the experience, and so small details about the implementation, the detection and the ergonomics would still stand out to the participant. The ingredients were randomly hidden in one out of eight predefined spots, so the user would have to search in a new spot every time.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/forestenv.JPG}
+    \caption{Environment to explore in the first task.}
+    \label{fig:forestEnv}
+\end{figure}
 
 \subsubsection{Task Two: Accuracy}
 The second task was based on the work from Bozgeyikli et al. \cite{bozgeyikli}. The original design for the task was followed as closely as possible. There were, however, some changes that needed to be made to adapt it. Like before, the task starts by first showing an animated tutorial again. This time, the user is instructed to quickly teleport between platforms placed on the ground. The platforms are placed in a similar pattern to the original environment by Bozgeyikli et al. and can be seen in figure \ref{fig:accOver}. This time the environment is kept very simple, so the focus is on the task, and so the user would not get distracted by the world. Unlike before, during this task, the task execution time and the accuracy were the main focus. In order to record the start time correctly, the original environment by Bozgeyikli et al. was modified, and a button was placed in the center of the platforms, as shown in figure \ref{fig:accBtn}. The participants were instructed to teleport to the button and press it once they felt ready to start. After the button was activated, it was removed from the environment, and the first platform was highlighted. Like in the original task, the next platform on the ground would light up in a distinctly visual way, as shown in \ref{fig:accPad}, to tell the user where to teleport to. A quick confirmation sound is played when a teleport hits the correct platform to give the user feedback. The player was instructed to stay on the platform for three seconds, after which a different sound was played, and the next platform was highlighted. If a user accidentally teleported off the platform too soon, an error sound was played, and they had to return to the platform and wait for the full three seconds. 
@@ -55,17 +62,11 @@ A semi-structured interview was conducted after the tasks were completed to get 
 
 Various information was recorded to get information on how the gesture affects the way the tasks are executed for the second research question. This included all teleport events with information on the destination and the target, the distance travelled, the time they were executed, during which task, by which participant and using which kind of gesture. Also, the participant's movement and head gaze direction was recorded ten times every second.  
 
-Data to answer the third research question was collected using the NASA-TLX questionnaire. % TODO cite Hart & Staveland, 1988
-The NASA-TLX questionnaire consists of six scales for participants to rate their perceived mental demands, physical demands, time demands, performance, effort, and frustration. It was designed to get insights into the participants' perceived workload. It was chosen for this study since it is a standard in the industry and to give information about how performing the tasks using the different gestures systems might result in a difference in the workload. A short version of the NASA-TLX was used to simplify the scoring process that does not include a weighting procedure. % TODO cite (Bustamante & Spain, 2008).
+Data to answer the third research question was collected using the NASA-TLX questionnaire developed by Hart et al. \cite{Hart1988}.
+The NASA-TLX questionnaire consists of six scales for participants to rate their perceived mental demands, physical demands, time demands, performance, effort, and frustration. It was designed to get insights into the participants' perceived workload. It was chosen for this study since it is a standard in the industry and to give information about how performing the tasks using the different gestures systems might result in a difference in the workload. A short version of the NASA-TLX was used to simplify the scoring process that does not include a weighting procedure. According to Bustamante et al. \cite{Bustamante2008}, this is also a valid way to use the test.
 
 \subsection{Participants}
 Eight-teen participants (9 female, 9 male) between 19 and 29 years old ($M=23.18,SD=2.58$) completed the study. Only one person considered themselves a VR expert, while everyone else reported very limited or no experience with VR. Two of the participants were left-handed; the 16 other participants had a dominant right hand. 
-
-% Research question: 
-% wie unterscheiden sich die 3 gesten, lernability, statisfaction
-% How does the user experience differ between the three gestures?
-
-
 
 
 \subsection{Apparatus}
@@ -127,13 +128,18 @@ For the questionnaires, an Apple Ipad Pro was used, as seen in figure \ref{fig:I
 \subsection{Procedure}
 Before the task could start, the participants were informed about teleportation in general and that there is not yet an established way to control teleportation using hand-tracking.
 
-The operator would then give instructions on how the calibration is performed, show the participant how the gesture works and calibrate it together with the participant. The calibration procedure was run three times per state, switching gesture states after each recording. The natural differences between each repetition gave added flexibility since the recordings are all used as a reference during gesture detection. After the three recording steps for each gesture state, the operator would check the recordings if they were recorded and stored correctly. If this was the case, the calibration was done. Otherwise, the recordings were deleted using the 3D visualizer tool, and the step was repeated. This was only the case once. The other recordings were all done correctly and were easy to fix with a quick rerun of the calibration. 
+The operator would then give instructions on how the calibration is performed, show the participant how the gesture works and calibrate it together with the participant. The calibration was done in the VR environment shown in figure \ref{fig:calibrationEnv}. The calibration procedure was run three times per state, switching gesture states after each recording. The natural differences between each repetition gave added flexibility since the recordings are all used as a reference during gesture detection. After the three recording steps for each gesture state, the operator would check the recordings if they were recorded and stored correctly. If this was the case, the calibration was done. Otherwise, the recordings were deleted using the 3D visualizer tool, and the step was repeated. This was only the case once. The other recordings were all done correctly and were easy to fix with a quick rerun of the calibration. 
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/calibration env.JPG}
+    \caption{Environment used for calibration.}
+    \label{fig:calibrationEnv}
+\end{figure}
 
 After the calibration, the participants would complete both tasks and fill out the questionnaires. This was not done using the VR headset itself but using a tablet device to give the user some resting time between each run. This procedure was repeated for all three gestures. 
 The order of the gestures the participants had to use was fully counterbalanced in order to minimize the learning effect. This means that during the study, it was made sure that three participants would always receive each of the six combinations possible. 
 After all tasks and quantitative information were collected, the participants were asked to give some qualitative feedback and share the impressions they got from using the system, as well as rank the gestures. The ranking was both done for overall preference and for how ergonomic the gesture was used.   
-
-%TODO: ablauf schaubild
 
 \section{Results}
 This section presents the results of the study. Several methods were used for the statistical analysis. The Shapiro-Wilk test was used to check whether the data were normally distributed. Since the data were not normally distributed, a non-parametric approach was used for detailed analysis. Friedman ANOVA was used to determine the differences between the three gestures. If this test showed significant differences, further analysis was performed using the Dunn-Bonferroni test. All tests were held to a standard alpha level of 0.05. For the
@@ -156,15 +162,14 @@ The task completion times can be seen in figure \ref{fig:taskCompletionTime}, th
 \begin{table}[]
 \centering
 \begin{tabular}{lrl}
-    \textbf{Gesture} & \multicolumn{1}{l}{\textbf{Median}} & \textbf{z} \\
-    Index            & $103.2935$                            & ?      \\
-    Palm             & $127.0485$                            & ?      \\
-    Triangle         & $89.294$                              & ?     
+    \textbf{Gesture} & \textbf{Median} \\
+    Index            & $103.2935$               \\
+    Palm             & $127.0485$               \\
+    Triangle         & $89.294$                
     \label{tbl:taskCompletionTime}
 \end{tabular}
 \end{table}
 
-% TODO z values
 
 \subsubsection{False-Positive Teleport Activations}
 The figure \ref{fig:fpActivations} displays the false-positive teleport activations, with detailed information in table \ref{tbl:fpActivations}. This data was collected in the Accuracy task. If a participant teleported away from a checkpoint during the three second waiting period, this would be logged. That means that this measure only tracks how well the gesture detection is able to detect a neutral position that is not supposed to be teleport activation and not how often the gesture activated in between checkpoints without the users intent to do so. Therefore, the number of accidental teleport is potentially higher. This difference between the gestures overall is statistically significant with an alpha level of $<0.01$. However, when looking at the individual differences it can only be shown that the triangle gesture has the least amount of false-positive activations, while the index and palm gesture do not show a significant difference.
@@ -176,15 +181,13 @@ The figure \ref{fig:fpActivations} displays the false-positive teleport activati
     \label{fig:fpActivations}
 \end{figure}
 
-% todo change colors
-
 \begin{table}[!h]
 \centering
 \begin{tabular}{lrl}
-    \textbf{Gesture} & \multicolumn{1}{l}{\textbf{Median}} & \textbf{z} \\
-    Index            & 0,16\%                                & ?          \\
-    Palm             & 0,14\%                                & ?          \\
-    Triangle         & 0,07\%                                & ?         
+    \textbf{Gesture} & \textbf{Median} \\
+    Index            & 0,16\%                            \\
+    Palm             & 0,14\%                            \\
+    Triangle         & 0,07\%                           
     \label{tbl:fpActivations}
 \end{tabular}
 \end{table}
@@ -208,10 +211,6 @@ As seen in figures \ref{fig:dist1} and \ref{fig:dist2}, the teleport distances o
         \label{fig:dist2}
     \endminipage\hfill
 \end{figure}
-
-
-% \subsection{Cybersickness}
-% After the user study, not a single user reported any problems with cybersickness or quit the task even after a session of 40 minutes. Cybersickness was a problem during the implementation testing where the detection algorithm was still in development because of false-positive detections that could make the system unpredictable.
 
 \subsubsection{Questionnaires}
 Both overall scores of NASA-TLX and the UEQ questionnaire do not lead to statistically significant findings. The individual dimensions can be seen in figure \ref{fig:ueqDimensions}. They do not consistently favour a gesture or display a visual pattern of some sort. This result is somewhat surprising since the quantitative results reliably favour the triangle gesture. Comparing the individual dimensions pairwise leads to a significant result for the dependability scores. They are shown separately using in figure \ref{fig:ueqDependability}. 
@@ -249,7 +248,7 @@ The participants were instructed to come up with two rankings of the gestures. T
         \includegraphics[width=\linewidth]{figures/Histogram of Palm Gesture Rankings.pdf}
         \label{fig:rankinghisto_palm}
     \endminipage\hfill
-    \minipage{0.32\textwidth}%
+    \minipage{0.32\textwidth}
         \includegraphics[width=\linewidth]{figures/Histogram of Triangle Gesture Rankings.pdf}
         \label{fig:rankinghisto_triangle}
         \label{fig:exp2maps}
@@ -260,8 +259,7 @@ The participants were instructed to come up with two rankings of the gestures. T
 \subsection{Qualitative Results}
 
 \subsubsection{Teleport Trajectories}
-The data recorded from the second task is displayed in figure \ref{fig:exp2maps} similarly to the way Bozgeyikli et al. %cite
-display their results. 
+The data recorded from the second task is displayed in figure \ref{fig:exp2maps} similarly to the way Bozgeyikli et al. \cite{bozgeyikli} display their results. 
 
 \begin{figure}[!htb]
     \minipage{0.32\textwidth}
@@ -272,7 +270,7 @@ display their results.
         \includegraphics[width=\linewidth]{figures/palm map.png}
         \caption{Map of all teleport locations using the palm gestures}\label{fig:map_palm}
     \endminipage\hfill
-    \minipage{0.32\textwidth}%
+    \minipage{0.32\textwidth}
         \includegraphics[width=\linewidth]{figures/triangle map.png}
         \caption{Map of all teleport locations using the triangle gestures}\label{fig:map_triangle}
         \label{fig:exp2maps}
@@ -290,7 +288,7 @@ The visualizations clearly show a difference in how chaotic the teleport targets
         \includegraphics[width=\linewidth]{figures/palm heading.png}
         \caption{Teleport trajectories using the palm gestures}\label{fig:map_palm2}
     \endminipage\hfill
-    \minipage{0.32\textwidth}%
+    \minipage{0.32\textwidth}
         \includegraphics[width=\linewidth]{figures/triangle heading.png}
         \caption{Teleport trajectories using the triangle gestures}\label{fig:map_triangle2}
     \endminipage
@@ -311,7 +309,7 @@ positive &
     fast, fun, only little tiring, accurate  \\ \hline
 negative &
     \makecell{produces the most false positive activations, \\index finger tips down to meet the thumb while activating, \\susceptable to tracking errors for example when turning hand} \\ \hline
-\end{tabular}%
+\end{tabular}
 \label{tbl:interview1}
 \end{table}
 
@@ -325,7 +323,7 @@ positive &
     easy to do, known gesture, natural \\ \hline
 negative &
     \makecell{tiring,\\ puts pressure on wrist,\\ difficult to aim acturatly \\ since closing the hand can change the target\\ and it is not easy to hold the hand parallel to the body} \\ \hline
-\end{tabular}%
+\end{tabular}
 \label{tbl:interview2}
 \end{table}
 
@@ -339,7 +337,7 @@ positive &
     predictable, easy to aim, uses two hands, creative \\ \hline
 negative &
     \makecell{difficult to aim far,\\ 2 handed use,\\ some activation problems} \\ \hline
-\end{tabular}%
+\end{tabular}
 \label{tbl:interview3}
 \end{table}
 
