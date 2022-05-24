@@ -82,18 +82,17 @@ The tasks were conducted using a Meta Quest 2 with hand-tracking enabled. The he
     \label{fig:settings}
 \end{figure}
 
-To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information, as shown in figures \ref{fig:vis} and  \ref{fig:vis22}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording, each can be selected individually and deleted if there is a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy for deleting a recording assigned to the wrong gesture state and, therefore, very dissimilar to the other recordings. The recording would then show a large distance from the others and could easily be deleted and rerecorded. All this was very important, so the calibration was consistent and reliable for every participant.
+To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information, as shown in figures \ref{fig:vis}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording, each can be selected individually and deleted if there is a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy for deleting a recording assigned to the wrong gesture state and, therefore, very dissimilar to the other recordings. The recording would then show a large distance from the others and could easily be deleted and rerecorded. All this was very important, so the calibration was consistent and reliable for every participant.
 
 \begin{figure}[!htb]
     \minipage{0.4\textwidth}
         \includegraphics[width=\linewidth]{figures/point cloud vis.JPG}
-        \label{fig:vis22}
-    \endminipage\hfill
+        \endminipage\hfill
     \minipage{0.4\textwidth}
         \includegraphics[width=\linewidth]{figures/point cloud vis2.JPG}
+        \endminipage\hfill
+        \caption{3D visualization of recorded gesture information for two different states as a point cloud, together with static joints. The green points are selected during the calibration step.}
         \label{fig:vis}
-    \endminipage\hfill
-    \caption{3D visualization of recorded gesture information for two different states as a point cloud, together with static joints. The green points are selected during the calibration step.}
 \end{figure}
 
 As shown in figure \ref{fig:map}, the operator was also able to see the position and gaze direction of the participant on a map, as well as the position of the magic potion. This was done in order to be able to give some support to the participant if they required it and to check if the data recording was working. 
