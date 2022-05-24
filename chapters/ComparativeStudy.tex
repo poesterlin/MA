@@ -82,12 +82,12 @@ The tasks were conducted using a Meta Quest 2 with hand-tracking enabled. The he
     \label{fig:settings}
 \end{figure}
 
-To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information, as shown in figures \ref{fig:vis} and  \ref{fig:vis2}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording, each can be selected individually and deleted if there is a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy for deleting a recording assigned to the wrong gesture state and, therefore, very dissimilar to the other recordings. The recording would then show a large distance from the others and could easily be deleted and rerecorded. All this was very important, so the calibration was consistent and reliable for every participant.
+To check if the gesture was recorded correctly, the server provides a 3D visualization of the gesture, as well as a way to delete improperly recorded information, as shown in figures \ref{fig:vis} and  \ref{fig:vis22}. This visualization also shows which of the previous recordings are also able to be used to aid the gesture detection step since they are similar to the current recording. They are shown in green in the visualization, while red points represent ignored data points. To be able to find which data points belong to which recording, each can be selected individually and deleted if there is a problem. To be able to find outliers quickly, the average distance to all the other gestures is also displayed in the selection menu. This was very handy for deleting a recording assigned to the wrong gesture state and, therefore, very dissimilar to the other recordings. The recording would then show a large distance from the others and could easily be deleted and rerecorded. All this was very important, so the calibration was consistent and reliable for every participant.
 
 \begin{figure}[!htb]
     \minipage{0.4\textwidth}
         \includegraphics[width=\linewidth]{figures/point cloud vis.JPG}
-        \label{fig:vis2}
+        \label{fig:vis22}
     \endminipage\hfill
     \minipage{0.4\textwidth}
         \includegraphics[width=\linewidth]{figures/point cloud vis2.JPG}
@@ -213,7 +213,7 @@ As seen in figures \ref{fig:dist1} and \ref{fig:dist2}, the teleport distances o
 \end{figure}
 
 \subsubsection{Questionnaires}
-Both overall scores of NASA-TLX and the UEQ questionnaire do not lead to statistically significant findings. The individual dimensions can be seen in figure \ref{fig:ueqDimensions}. They do not consistently favour a gesture or display a visual pattern of some sort. This result is somewhat surprising since the quantitative results reliably favour the triangle gesture. Comparing the individual dimensions pairwise leads to a significant result for the dependability scores. They are shown separately using in figure \ref{fig:ueqDependability}. 
+Both overall scores of NASA-TLX and the UEQ questionnaire do not lead to statistically significant findings. The individual dimensions can be seen in figure \ref{fig:ueqDimensions}. They do not consistently favour a gesture or display a visual pattern of some sort. This result is somewhat surprising since the quantitative results reliably favour the triangle gesture. Comparing the individual dimensions pairwise leads to a significant result for the dependability scores. They are shown separately using in figure \ref{fig:ueqDependability}, with the NASA-TLX scores in \ref{fig:tlx}. 
 
 \begin{figure}[!ht]
     \centering
@@ -233,7 +233,7 @@ Both overall scores of NASA-TLX and the UEQ questionnaire do not lead to statist
     \centering
     \includegraphics[width=0.7\textwidth]{figures/NASA-TLX.pdf}
     \caption{NASA-TLX scores}
-    \label{fig:ueqDependability}
+    \label{fig:tlx}
 \end{figure}
 
 \subsubsection{Ranking by Preference and Ergonomics}
@@ -251,7 +251,6 @@ The participants were instructed to come up with two rankings of the gestures. T
     \minipage{0.32\textwidth}
         \includegraphics[width=\linewidth]{figures/Histogram of Triangle Gesture Rankings.pdf}
         \label{fig:rankinghisto_triangle}
-        \label{fig:exp2maps}
     \endminipage
 \end{figure}
     
