@@ -7,18 +7,21 @@ After the exciting literature was reviewed, a gesture elicitation study was cond
 After the study was completed, the resulting gestures were grouped into similar categories, and some slight differences in the execution and the behaviour of the gestures were adjusted so the resulting three gestures could be implemented as a prototype. It uses stored recordings of a base version of the gesture as a reference for the detection algorithm, together with a calibration procedure that corrects for the user's hand size and stores individual variants of the gesture.
 
 \begin{figure}[!h]
-    \minipage{0.32\textwidth}
+    \begin{subfigure}{0.32\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/index tracker.jpg}
         \caption{Index gesture}
-    \endminipage\hfill
-    \minipage{0.32\textwidth}
+    \end{subfigure}%
+    \begin{subfigure}{0.32\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/palm tracker.jpg}
         \caption{Palm gesture}
-    \endminipage
-    \minipage{0.32\textwidth}
+    \end{subfigure}%
+    \begin{subfigure}{0.32\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/triangle tracker.jpg}
         \caption{Triangle gesture}
-    \endminipage
+    \end{subfigure}%
     \hfill
     \caption{Gestures based on the gesture elicitation study and how they convert the gesture into a vector.}
 \end{figure}

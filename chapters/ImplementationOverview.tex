@@ -70,14 +70,16 @@ After the implementation was completed, a paper by Matviienko et al. \cite{Andri
 Both targeting versions have the same smoothing applied in order to eliminate jitter caused by small tracking inconsistencies or gesture changes. A small confirmation sound was also added to give the user additional feedback when they are teleporting. This was also a good addition for debugging since it is easily apparent that a teleport was not performed when there is no confirmation sound, even without looking at the users' screen. 
 
 \begin{figure}[!htb]
-    \minipage{0.40\textwidth}
+    \begin{subfigure}{0.5\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/teleport ray.png}
         \caption{Teleport ray originating from triangle gesture with reticle.}
         \label{fig:tpray}
-    \endminipage\hfill
-    \minipage{0.40\textwidth}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/teleportArc.png}
         \caption{Curved teleport arc originating from triangle gesture with reticle.}
         \label{fig:tparc}
-    \endminipage\hfill
+    \end{subfigure}%
 \end{figure}

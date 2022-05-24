@@ -8,16 +8,18 @@ The study was conducted with 6 participants, all from the HCI research group and
 The study was conducted using a Meta Quest 2 with hand-tracking enabled. The headset was connected to the internet and submitted all recorded data to a custom cloud server instance. To be able to monitor and control the task, the server also had a web interface running on a smartphone via a button, as shown in figure \ref{fig:savebtn}, for recording the current gesture and a 3D visualization that would display the stored gesture as shown in figure \ref{fig:vis2}. The implementation was designed explicitly for low latency between the press of the button and the headset recording a snapshot of the current hand and joint positions. This was done because it would not have been realistic to record everything the participant did with their hands. This way, some information might have been lost. However, because of the simple interface, the operator could look at the participant's hands and determine when to start a recording while pressing the button without looking at their screen. This ensured that the operator had an easy and accurate way to record the data. All of the commentaries the participants gave as well as video of the participants gesturing, were recorded using a Fujifilm X-T4 camera. 
 
 \begin{figure}[!htb]
-    \minipage{0.40\textwidth}
+    \begin{subfigure}{0.5\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/visualizer.jpg}
         \caption{3D visualization in the browser.}
         \label{fig:vis2}
-    \endminipage\hfill
-    \minipage{0.40\textwidth}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+  \centering
         \includegraphics[width=\linewidth]{figures/save btn.JPG}
         \caption{Button to store current gesture and joint information.}
         \label{fig:savebtn}
-    \endminipage\hfill
+    \end{subfigure}%
 \end{figure}
 
 \section{Study Setup}
